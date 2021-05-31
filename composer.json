@@ -8,5 +8,7 @@
             "email": "dom.schmidt1986@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "slim/slim": "3.*"
+    }
 }
