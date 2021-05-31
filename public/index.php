@@ -10,24 +10,39 @@
 // Autoloader
 include_once ('../vendor/autoload.php');
 
-$app = new \Slim\App();
+try{
+    $container = new \Slim\Container();
+    $app = new \Slim\App();
+    // $container = $app->getContainer();
 
-// Route
-$app->get('/', function ($request, $response, $args){
-    $response->write('Welcome to Slim crash course from FrontendTips');
-});
+    // Konfiguration Container
+    $config = '';
+    include_once ('../config/global.php');
+    $container['config'] = $config;
 
-// Json rückgabe
-$countries = array(
-    array('name' => 'USA'),
-    array('name' => 'Germany'),
-    array('name' => 'Poland'),
-    array('name' => 'Usbekistan')
-);
+    include_once ('../config/test.php');
+    // Konfiguration der Tools
+    include_once ('../config/tool.php');
+    // Konfiguration des Mappers
+    include_once ('../config/mapper.php');
+    // Konfiguration des Models
+    include_once ('../config/model.php');
+    // Konfiguration der Action
+    include_once ('../config/action.php');
+    // allgemeine Klassen
+    include_once ('../config/src.php');
 
-$app->get('/countries', function($request, $response, $args) use ($countries){
-    return $response->withJson($countries);
-});
+    /** @var  \App\Test\MyTest */
+    $testContainer = $container[App\Test\MyTest::class];
+    $testContainer->work();
+
+
+
+}catch(\Throwable $e){
+    $test = 123;
+}
+
+
 
 $app->run();
 
