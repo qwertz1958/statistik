@@ -1,0 +1,12 @@
+{
+    "name": "arise/warenwirtschaft-ng",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "dominik",
+            "email": "dom.schmidt1986@gmail.com"
+        }
+    ],
+    "require": {}
+}
