@@ -36,7 +36,8 @@ try{
 
 
     //Routing
-
+    if(strpos($_SERVER['REQUEST_URI'], '/name') == true)
+        $test = 123;
 
     $app->any('/', function ($request, $response, $args)
     {
