@@ -36,8 +36,9 @@ try{
 
 
     //Routing
-    if(strpos($_SERVER['REQUEST_URI'], '/name') == true)
-        $test = 123;
+    if(strpos($_SERVER['REQUEST_URI'], '/name') == false)
+        $_SERVER['REQUEST_URI'] = $container['config']['basisUrl'];
+
 
     $app->any('/', function ($request, $response, $args)
     {
@@ -45,7 +46,6 @@ try{
         $action->work($request, $args);
         return $response;
     });
-
 
     $app->post('/name[/{name}]', function(\Slim\Http\Request $request, \Slim\Http\Response $response,array $args)
     {
