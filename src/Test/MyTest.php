@@ -4,6 +4,8 @@
 namespace App\Test;
 
 
+use Slim\Http\Request;
+
 class MyTest
 {
     protected $config;
@@ -12,8 +14,8 @@ class MyTest
         $this->config = $container['config'];
     }
 
-    public function work(){
-        return 'hallo';
+    public function work(Request $request, array $args){
+        $test = 123;
     }
 
 

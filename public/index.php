@@ -11,9 +11,11 @@
 include_once ('../vendor/autoload.php');
 
 try{
+
     $container = new \Slim\Container();
-    $app = new \Slim\App();
-    // $container = $app->getContainer();
+
+    // Slim Framework
+    $app = new \Slim\App($container);
 
     // Konfiguration Container
     $config = '';
@@ -32,18 +34,58 @@ try{
     // allgemeine Klassen
     include_once ('../config/src.php');
 
-    /** @var  \App\Test\MyTest */
-    $testContainer = $container[App\Test\MyTest::class];
-    $testContainer->work();
+
+    //Routing
+    if(strpos($_SERVER['REQUEST_URI'], '/name') == false)
+        $_SERVER['REQUEST_URI'] = $config['basisUrl'];
 
 
+    $app->post('/name[/{name}]', function(\Slim\Http\Request $request, \Slim\Http\Response $response,array $args)
+    {
+        /** @var  $action \App\Test\MyTest */
+        $action = $this->get(\App\Test\MyTest::class );
+        $action->work($request, $args);
+        return $response;
+    });
 
+    $app->post('/bla/', function ($request, $response, $args)
+    {
+        $action = $this->get(\App\Test\MyTest::class );
+
+        return $response;
+    });
+
+    // Any Route (es ist egal mit welcher Methode übergeben wird)
+    $app->any('/books/[{id}]', function ($request, $response, $args) {
+        $test = 123;
+
+        return $response;
+    });
+
+    $app->map(['GET', 'POST'], '/auto', function ($request, $response, $args) {
+        $test = 123;
+
+        return $response;
+    });
+
+    // Default Route
+    /** @var  $testApp \Slim\Handlers\NotFound */
+    $testApp = new \Slim\Handlers\NotFound($container);
+    $testApp->__invoke(function($request, $response, $args) use ($app){
+        $app->get('/', function ($request, $response, $args){
+            $test = 123;
+        });
+    });
+
+
+    // Slim fange an zu arbeiten
+    $app->run();
 }catch(\Throwable $e){
     $test = 123;
 }
 
 
 
-$app->run();
+
 
 ?>
