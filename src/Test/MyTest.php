@@ -15,6 +15,8 @@ class MyTest
     }
 
     public function work(Request $request, array $args){
+        $params = $request->getParams();
+
         $test = 123;
     }
 

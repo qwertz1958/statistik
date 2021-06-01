@@ -36,8 +36,14 @@ try{
 
 
     //Routing
-    if(strpos($_SERVER['REQUEST_URI'], '/name') == false)
-        $_SERVER['REQUEST_URI'] = $config['basisUrl'];
+
+
+    $app->any('/', function ($request, $response, $args)
+    {
+        $action = $this->get(\App\Test\MyTest::class );
+        $action->work($request, $args);
+        return $response;
+    });
 
 
     $app->post('/name[/{name}]', function(\Slim\Http\Request $request, \Slim\Http\Response $response,array $args)
@@ -68,14 +74,7 @@ try{
         return $response;
     });
 
-    // Default Route
-    /** @var  $testApp \Slim\Handlers\NotFound */
-    $testApp = new \Slim\Handlers\NotFound($container);
-    $testApp->__invoke(function($request, $response, $args) use ($app){
-        $app->get('/', function ($request, $response, $args){
-            $test = 123;
-        });
-    });
+
 
 
     // Slim fange an zu arbeiten
