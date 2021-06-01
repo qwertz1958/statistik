@@ -16,7 +16,8 @@ class MyTest
 
     public function work(Request $request, array $args){
         $params = $request->getParams();
-
+        $uri = $request->getUri();
+        $isDelete = $request->isDelete();
         $test = 123;
     }
 
