@@ -5,6 +5,7 @@ namespace App\Test;
 
 
 use Slim\Http\Request;
+use Webmozart\Assert\Assert;
 
 class MyTest
 {
@@ -15,10 +16,18 @@ class MyTest
     }
 
     public function work(Request $request, array $args){
-        $params = $request->getParams();
-        $uri = $request->getUri();
-        $isDelete = $request->isDelete();
-        $test = 123;
+        try{
+            $args['blub'] = (int)$args['blub'];
+            Assert::string($args['bla'], 'Der Parameter soll nicht vom Typ: %s sein');
+            Assert::length($args['bla'], 3, $message = 'Fehler');
+            Assert::startsWith($args['bla'], "a", $message = 'String is not starting with %s');
+            Assert::notStartsWith($args['bla'], "a", $message = 'String should not start with %s');
+
+            $test = 123;
+        }catch (\Throwable $e){
+            throw $e;
+        }
+
     }
 
 

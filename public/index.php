@@ -36,8 +36,8 @@ try{
 
 
     //Routing
-    if(strpos($_SERVER['REQUEST_URI'], '/name') == false)
-        $_SERVER['REQUEST_URI'] = $container['config']['basisUrl'];
+    // if(strpos($_SERVER['REQUEST_URI'], '/name') == false)
+    //    $_SERVER['REQUEST_URI'] = $container['config']['basisUrl'];
 
 
     $app->any('/', function ($request, $response, $args)
@@ -55,9 +55,11 @@ try{
         return $response;
     });
 
-    $app->post('/bla/', function ($request, $response, $args)
+    $app->post('/bla/{bla}/blub/{blub}', function ($request, $response, $args)
     {
+        /** @var  $action \App\Test\MyTest */
         $action = $this->get(\App\Test\MyTest::class );
+        $action->work($request, $args);
 
         return $response;
     });
