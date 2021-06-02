@@ -13,15 +13,12 @@ include_once ('../vendor/autoload.php');
 try{
 
     $container = new \Slim\Container();
-
     // Slim Framework
     $app = new \Slim\App($container);
-
     // Konfiguration Container
     $config = '';
     include_once ('../config/global.php');
     $container['config'] = $config;
-
     include_once ('../config/test.php');
     // Konfiguration der Tools
     include_once ('../config/tool.php');
@@ -35,10 +32,28 @@ try{
     include_once ('../config/src.php');
 
 
-    //Routing
+    // Routing
+    // Aufrufen der Eingabemaske
+    $app->any('/eingabemaske', function ($request, $response, $args){
+        /** @var  $action \App\Action\AssignManagement */
+        $action = $this->get(\App\Action\AssignManagement::class);
+        $action->eingabemaske();
+        return $response;
+    });
+
+    // Abfrage / Eingabe der ISBN
+    $app->post('/eingeben', function ($request, $response, $args){
+        /** @var  $action \App\Action\AssignManagement */
+        $action = $this->get(\App\Action\AssignManagement::class);
+        $action->bookInput($request, $args);
+        return $response;
+    });
+
+
+
+    // muss aufgeräumt werden
     // if(strpos($_SERVER['REQUEST_URI'], '/name') == false)
     //    $_SERVER['REQUEST_URI'] = $container['config']['basisUrl'];
-
 
     $app->any('/', function ($request, $response, $args)
     {
@@ -55,7 +70,7 @@ try{
         return $response;
     });
 
-    $app->post('/bla/{bla}/blub/{blub}', function ($request, $response, $args)
+    $app->any('/bla/{bla}/blub/{blub}', function ($request, $response, $args)
     {
         /** @var  $action \App\Test\MyTest */
         $action = $this->get(\App\Test\MyTest::class );
