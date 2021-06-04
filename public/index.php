@@ -54,6 +54,16 @@ try{
         return $response;
     });
 
+    // Einpflegen der Metadaten eines neuen Buches in den Datenbestand
+    $app->post('/einpflegen', function ($request, $response, $args){
+        /** @var  $action \App\Action\BookDataInput */
+        $action = $this->get(\App\Action\BookDataInput::class);
+        $action->bookDataInput($request, $args);
+        return $response;
+    });
+
+
+
     // Kundensuche
     $app->any('/kundensucheErststart', function (\Slim\Http\Request $request, \Slim\Http\Response $response, $args){
         $view = $this->view;
