@@ -23,10 +23,15 @@ class IsbnRequest
         $this->grumpyPdo = $container[\GrumpyPdo::class];
     }
 
-    public function dataRequest($isbn)
+    /**
+     * @param $isbn
+     * @return $this
+     * @throws \Throwable
+     */
+    public function dataRequest($data)
     {
         try{
-            $isbn = $isbn['ISBN'];
+            $isbn = $data['ISBN'];
             $this->requestData = $this->grumpyPdo
                 ->run("SELECT warenwirtschaft.artikel.id, warenwirtschaft.artikel.title FROM warenwirtschaft.artikel WHERE artikel.ISBN = :isbn", ["isbn" => "$isbn"])
                 ->fetch();
@@ -34,6 +39,7 @@ class IsbnRequest
                 $this->flag = true;
 
             $this->requestData = [
+                'input' => $data,
                 'export' => $this->requestData,
                 'flag' => $this->flag
             ];

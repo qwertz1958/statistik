@@ -1,6 +1,7 @@
 <?php
 /**
- * Beschreibung:
+ * Action zur Abfrage der ISBN
+ * bei bereits vorhandenen Datenbestand wird ein neues Exemplar in den Bestand aufgenommen
  *
  * 02.06.2021
  * arise
@@ -31,32 +32,30 @@ class AssignManagement
         $this->steuerungApp = $container[SteuerungApplikation::class];
     }
 
-
+    /**
+     * @param Request $request
+     * @param array $args
+     * @throws \Throwable
+     */
     public function bookInput(Request $request, array $args)
     {
         try{
-            $isbn = $request->getParams();
-            Assert::regex($isbn['ISBN'], '/^(9783)([0-9\-]{9,11})$/', 'Es handelt sich nicht um eine deutschsprachige ISBN!');
-            $this->requestData = $this->steuerungApp
-                ->work($isbn)
+            $data = $request->getParams();
+            Assert::regex($data['ISBN'], '/^(9783)([0-9\-]{9,11})$/', 'Es handelt sich nicht um eine deutschsprachige ISBN!');
+            $requestData = $this->steuerungApp
+                ->work($data)
                 ->getRequestData();
 
+            $flag = $this->steuerungApp->getFlag();
 
-            $test = 123;
-        }catch(\Throwable $e){
-            throw $e;
-        }
-    }
-
-    /**
-     * @throws \Throwable
-     */
-    public function eingabemaske()
-    {
-        try{
+            if(($requestData['flag'] == true) AND ($flag == true))
+                $test = 123;
+            else
+                $test = 123;
 
         }catch(\Throwable $e){
             throw $e;
         }
     }
+
 }

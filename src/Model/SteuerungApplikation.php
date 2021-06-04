@@ -9,6 +9,7 @@
 
 
 namespace App\Model;
+use App\Mapper\IsbnInput;
 use App\Mapper\IsbnRequest;
 
 
@@ -16,22 +17,33 @@ class SteuerungApplikation
 {
     /** @var IsbnRequest */
     protected $isbnRequest;
+    /** @var IsbnInput */
+    protected $isbnInput;
     protected $requestData;
+    protected $flag;
 
     public function __construct($container)
     {
         $this->isbnRequest = $container[IsbnRequest::class];
+        $this->isbnInput = $container[IsbnInput::class];
     }
 
-    public function work($isbn)
+    /**
+     * @param array $data
+     * @return $this
+     * @throws \Throwable
+     */
+    public function work(array $data) : self
     {
         try {
             $this->requestData = $this->isbnRequest
-                ->dataRequest($isbn)
+                ->dataRequest($data)
                 ->getRequestData();
 
             if($this->requestData['flag'] == true){
-
+                $this->flag = $this->isbnInput
+                    ->inputData($this->requestData)
+                    ->isFlag();
             }
 
             return $this;
@@ -47,4 +59,14 @@ class SteuerungApplikation
     {
         return $this->requestData;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getFlag()
+    {
+        return $this->flag;
+    }
+
+
 }
