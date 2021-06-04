@@ -25,7 +25,6 @@ class AssignManagement
     protected $container;
     /** @var SteuerungApplikation */
     protected $steuerungApp;
-    protected $requestData;
 
     public function __construct(Container $container){
         $this->config = $container['config'];
