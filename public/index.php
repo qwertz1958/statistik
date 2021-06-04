@@ -47,7 +47,7 @@ try{
     });
 
     // Abfrage / Eingabe der ISBN
-    $app->post('/eingeben', function ($request, $response, $args){
+    $app->any('/eingeben', function (\Slim\Http\Request $request, \Slim\Http\Response $response, $args){
         /** @var  $action \App\Action\AssignManagement */
         $action = $this->get(\App\Action\AssignManagement::class);
         $action->bookInput($request, $args);
@@ -55,7 +55,7 @@ try{
     });
 
     // Einpflegen der Metadaten eines neuen Buches in den Datenbestand
-    $app->post('/einpflegen', function ($request, $response, $args){
+    $app->any('/einpflegen', function (\Slim\Http\Request $request, \Slim\Http\Response $response, $args){
         /** @var  $action \App\Action\BookDataInput */
         $action = $this->get(\App\Action\BookDataInput::class);
         $action->bookDataInput($request, $args);
@@ -74,7 +74,7 @@ try{
     });
 
 
-    $app->post('/kundensuche', function ($request, $response, $args){
+    $app->any('/kundensuche', function (\Slim\Http\Request $request, \Slim\Http\Response $response, $args){
         /** @var  $action \App\Action\BlurredCustomerSearch */
         $action = $this->get(\App\Action\BlurredCustomerSearch::class);
         $action->customerSearch($request, $args);

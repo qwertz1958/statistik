@@ -45,7 +45,8 @@ class AssignManagement
                 ->work($data)
                 ->getRequestData();
 
-            $flag = $this->steuerungApp->getFlag();
+            $flag = $this->steuerungApp
+                ->getFlag();
 
             if(($requestData['flag'] == true) AND ($flag == true))
                 $test = 123;
