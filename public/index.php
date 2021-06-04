@@ -54,6 +54,25 @@ try{
         return $response;
     });
 
+    // Kundensuche
+    $app->any('/kundensucheErststart', function (\Slim\Http\Request $request, \Slim\Http\Response $response, $args){
+        $view = $this->view;
+
+        return $this->view->render($response, 'layout.phtml',  [
+            'basisUrl' => 'localhost/praktikum/warenwirtschaftng/public/'
+        ]);
+    });
+
+
+    $app->post('/kundensuche', function ($request, $response, $args){
+        /** @var  $action \App\Action\BlurredCustomerSearch */
+        $action = $this->get(\App\Action\BlurredCustomerSearch::class);
+        $action->customerSearch($request, $args);
+        return $response;
+    });
+
+
+
 
 
 
