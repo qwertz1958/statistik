@@ -133,15 +133,6 @@ try{
         return $newResponse;
     });
 
-    // Respnse Html
-    $app->get('/html/{name}', function(\Slim\Http\Request $request, \Slim\Http\Response $response, $args)
-    {
-        $view = $this->view;
-
-        return $this->view->render($response, 'html.html',  [
-            'name' => $args['name']
-        ]);
-    });
 
     // primitiver text response
     $app->get('/text', function(\Slim\Http\Request $request, \Slim\Http\Response $response, $args)
