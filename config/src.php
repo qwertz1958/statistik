@@ -22,17 +22,6 @@ $container['GrumpyPdoTaskboard'] = function ($container){
         $container['config']['database_taskboard']['db_database']);
 };
 
-$container[\App\Pimple::class] = function ($container){
-    return new \App\Pimple($container);
-};
-
-$container[\App\Template::class] = function ($container){
-    return new \App\Template($container);
-};
-
-$container[\App\Logger::class] = function ($container){
-    return new \App\Logger($container);
-};
 
 // Array to XML
 $container[\Spatie\ArrayToXml\ArrayToXml::class] = function (){
