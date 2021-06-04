@@ -9,6 +9,7 @@
 
 // Autoloader
 include_once ('../vendor/autoload.php');
+use Spatie\ArrayToXml\ArrayToXml;
 
 try{
 
@@ -51,7 +52,27 @@ try{
         return $response;
     });
 
-    // Respnse Json
+    // Response Json
+    $app->get('/xml/{name}', function(\Slim\Http\Request $request, \Slim\Http\Response $response, $args)
+    {
+        $kunden = [];
+        $kunden[0]['name'] = 'Mustermann';
+        $kunden[1]['name'] = 'Sonnenschein';
+        $kunden[0]['vorname'] = 'Max';
+        $kunden[1]['vorname'] = 'Susi';
+
+        /** @var  $xml ArrayToXml */
+        $xml = ArrayToXml::convert(['kunde' => $kunden], 'doener');
+
+        /** @var  $newResponse \Slim\Http\Response */
+        $newResponse = $response->withHeader('Content-Type', 'text/xml');
+        $body = $newResponse->getBody();
+        $body->write($xml);
+
+        return $newResponse;
+    });
+
+    // Response Json
     $app->get('/json/{name}', function(\Slim\Http\Request $request, \Slim\Http\Response $response, $args)
     {
         $user = [];
