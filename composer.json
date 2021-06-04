@@ -18,6 +18,7 @@
         "slim/twig-view": "^2.5",
         "webmozart/assert": "^1.10",
         "grumpycrouton/grumpypdo": "^1.5",
-        "blogdaren/logger": "^1.1"
+        "blogdaren/logger": "^1.1",
+        "spatie/array-to-xml": "^2.16"
     }
 }

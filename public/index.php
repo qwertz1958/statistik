@@ -49,6 +49,27 @@ try{
         return $response;
     });
 
+    // Respnse Html
+    $app->get('/html/{name}', function(\Slim\Http\Request $request, \Slim\Http\Response $response, $args)
+    {
+        $test = 123;
+
+        $view = $this->view;
+
+        return $this->view->render($response, 'html.html',  [
+            'name' => $args['name']
+        ]);
+    });
+
+    // primitiver text response
+    $app->get('/text', function(\Slim\Http\Request $request, \Slim\Http\Response $response, $args)
+    {
+        $body = $response->getBody();
+        $body->write('Hello');
+
+        return $response;
+    });
+
 
 
 
