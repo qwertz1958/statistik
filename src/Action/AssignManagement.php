@@ -9,16 +9,23 @@
 
 
 namespace App\Action;
+use App\Model\SteuerungApplikation;
+use Slim\Container;
 use Slim\Http\Request;
 use Webmozart\Assert\Assert;
+
+
 
 
 class AssignManagement
 {
     protected $config;
 
-    public function __construct($container){
+    protected $container;
+
+    public function __construct(Container $container){
         $this->config = $container['config'];
+        $this->steuerungApp = $container[SteuerungApplikation::class];
     }
 
 
@@ -27,6 +34,7 @@ class AssignManagement
         try{
             $isbn = $request->getParams();
             Assert::regex($isbn['ISBN_'], '/^(9783)([0-9\-]{9,11})$/', 'Es handelt sich nicht um eine deutschsprachige ISBN!');
+
         }catch(\Throwable $e){
             throw $e;
         }

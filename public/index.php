@@ -13,8 +13,7 @@ include_once ('../vendor/autoload.php');
 try{
 
     $container = new \Slim\Container();
-    // Slim Framework
-    $app = new \Slim\App($container);
+
     // Konfiguration Container
     $config = '';
     include_once ('../config/global.php');
@@ -31,7 +30,8 @@ try{
     // allgemeine Klassen
     include_once ('../config/src.php');
 
-
+    // Slim Framework
+    $app = new \Slim\App($container);
     // Routing
     // Aufrufen der Eingabemaske
     $app->any('/eingabemaske', function ($request, $response, $args){
@@ -49,48 +49,6 @@ try{
         return $response;
     });
 
-
-
-    // muss aufgeräumt werden
-    // if(strpos($_SERVER['REQUEST_URI'], '/name') == false)
-    //    $_SERVER['REQUEST_URI'] = $container['config']['basisUrl'];
-
-    $app->any('/', function ($request, $response, $args)
-    {
-        $action = $this->get(\App\Test\MyTest::class );
-        $action->work($request, $args);
-        return $response;
-    });
-
-    $app->post('/name[/{name}]', function(\Slim\Http\Request $request, \Slim\Http\Response $response,array $args)
-    {
-        /** @var  $action \App\Test\MyTest */
-        $action = $this->get(\App\Test\MyTest::class );
-        $action->work($request, $args);
-        return $response;
-    });
-
-    $app->any('/bla/{bla}/blub/{blub}', function ($request, $response, $args)
-    {
-        /** @var  $action \App\Test\MyTest */
-        $action = $this->get(\App\Test\MyTest::class );
-        $action->work($request, $args);
-
-        return $response;
-    });
-
-    // Any Route (es ist egal mit welcher Methode übergeben wird)
-    $app->any('/books/[{id}]', function ($request, $response, $args) {
-        $test = 123;
-
-        return $response;
-    });
-
-    $app->map(['GET', 'POST'], '/auto', function ($request, $response, $args) {
-        $test = 123;
-
-        return $response;
-    });
 
 
 
