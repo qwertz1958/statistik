@@ -9,6 +9,8 @@
  */
 include_once ("../vendor/autoload.php");
 
+use Spatie\ArrayToXml\ArrayToXml;
+
 
 try{
     //Container
@@ -80,6 +82,26 @@ try{
 
 
         return $newResponse;
+
+    });
+
+    //XML response
+    $app->get('/xml',  function (\Slim\Http\Request $request, Slim\Http\Response $response, array $args)
+    {
+        $kunden = [];
+        $kunden[0]['name'] = 'Mustermann';
+        $kunden[1]['name'] = 'Sonnenschein';
+        $kunden[0]['vorname'] = 'Max';
+        $kunden[1]['vorname'] = 'Susi';
+
+        /** @var  ArrayToXml */
+        $xml = ArrayToXml::convert(['kunde' => $kunden], 'kunden');
+
+        $newresponse = $response->withHeader('Content-type', 'text/xml');
+        $body = $newresponse->getBody();
+        $body->write($xml);
+
+        return $newresponse;
 
     });
 
