@@ -29,6 +29,8 @@ try{
     include_once ('../config/action.php');
     // allgemeine Klassen
     include_once ('../config/src.php');
+    // Konfiguration Twig
+    include_once ('../config/twig.php');
 
     // Slim Framework
     $app = new \Slim\App($container);
