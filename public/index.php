@@ -65,6 +65,24 @@ try{
 
     });
 
+    $app->get('/json[/{name}]',  function (\Slim\Http\Request $request, Slim\Http\Response $response, array $args)
+    {
+
+        $user = [];
+
+        $user[0]['name'] = 'Mustermann';
+        $user[1]['name'] = 'Sonnenschein';
+        $user[2]['vorname'] = 'Max';
+        $user[3]['vorname'] = 'Susi';
+
+
+    $newResponse = $response->withJson($user);
+
+
+        return $newResponse;
+
+    });
+
     //Slim fange an zu arbeiten
     $app->run();
 
