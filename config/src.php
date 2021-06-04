@@ -6,7 +6,13 @@
  * dominik.schmidt
  */
 
-
+$container[GrumpyPdo::class] = function ($container){
+    return new GrumpyPdo(
+        $container['config']['database']['db_server'],
+        $container['config']['database']['db_user'],
+        $container['config']['database']['db_password'],
+        $container['config']['database']['db_database']);
+};
 
 $container['GrumpyPdoTaskboard'] = function ($container){
     return new GrumpyPdo(

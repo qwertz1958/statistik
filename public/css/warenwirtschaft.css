@@ -1,0 +1,16 @@
+.rot{
+    background-color: #ff8169;
+}
+
+.gruen{
+    background-color: #98ff86;
+}
+
+.rand_rot{
+    border: red 1px solid;
+    padding: 10px;
+}
+
+body{
+    background-color: black;
+}

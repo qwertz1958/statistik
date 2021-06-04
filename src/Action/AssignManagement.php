@@ -22,6 +22,9 @@ class AssignManagement
     protected $config;
 
     protected $container;
+    /** @var SteuerungApplikation */
+    protected $steuerungApp;
+    protected $requestData;
 
     public function __construct(Container $container){
         $this->config = $container['config'];
@@ -33,8 +36,13 @@ class AssignManagement
     {
         try{
             $isbn = $request->getParams();
-            Assert::regex($isbn['ISBN_'], '/^(9783)([0-9\-]{9,11})$/', 'Es handelt sich nicht um eine deutschsprachige ISBN!');
+            Assert::regex($isbn['ISBN'], '/^(9783)([0-9\-]{9,11})$/', 'Es handelt sich nicht um eine deutschsprachige ISBN!');
+            $this->requestData = $this->steuerungApp
+                ->work($isbn)
+                ->getRequestData();
 
+
+            $test = 123;
         }catch(\Throwable $e){
             throw $e;
         }

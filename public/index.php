@@ -36,12 +36,14 @@ try{
     // Slim Framework
     $app = new \Slim\App($container);
     // Routing
+
     // Aufrufen der Eingabemaske
-    $app->any('/eingabemaske', function ($request, $response, $args){
-        /** @var  $action \App\Action\AssignManagement */
-        $action = $this->get(\App\Action\AssignManagement::class);
-        $action->eingabemaske();
-        return $response;
+    $app->any('/eingabemaske', function (\Slim\Http\Request $request, \Slim\Http\Response $response, $args){
+        $view = $this->view;
+
+        return $this->view->render($response, 'layout.phtml',  [
+            'basisUrl' => 'localhost/praktikum/warenwirtschaftng/public/'
+        ]);
     });
 
     // Abfrage / Eingabe der ISBN
@@ -51,6 +53,22 @@ try{
         $action->bookInput($request, $args);
         return $response;
     });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     // Response Json
     $app->get('/xml/{name}', function(\Slim\Http\Request $request, \Slim\Http\Response $response, $args)
