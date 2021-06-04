@@ -51,11 +51,23 @@ try{
         return $response;
     });
 
+    // Respnse Json
+    $app->get('/json/{name}', function(\Slim\Http\Request $request, \Slim\Http\Response $response, $args)
+    {
+        $user = [];
+        $user[0]['name'] = 'Mustermann';
+        $user[1]['name'] = 'Sonnenschein';
+        $user[0]['vorname'] = 'Max';
+        $user[1]['vorname'] = 'Susi';
+
+        $newResponse = $response->withJson($user);
+
+        return $newResponse;
+    });
+
     // Respnse Html
     $app->get('/html/{name}', function(\Slim\Http\Request $request, \Slim\Http\Response $response, $args)
     {
-        $test = 123;
-
         $view = $this->view;
 
         return $this->view->render($response, 'html.html',  [
