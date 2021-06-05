@@ -25,6 +25,11 @@ class BookDataInput
         $this->bookDataControl = $container[BookDataControl::class];
     }
 
+    /**
+     * @param Request $request
+     * @param array $args
+     * @throws \Throwable
+     */
     public function bookDataInput(Request $request, array $args)
     {
         try{
