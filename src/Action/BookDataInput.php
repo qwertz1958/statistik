@@ -17,8 +17,12 @@ class BookDataInput
 
     }
 
-    public function bookDataInput()
+    public function bookDataInput($params)
     {
+        try{
 
+        }catch (\Throwable $e){
+            throw $e;
+        }
     }
 }

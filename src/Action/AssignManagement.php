@@ -40,6 +40,7 @@ class AssignManagement
     {
         try{
             $data = $request->getParams();
+            Assert::notEmpty($data['ISBN'], $message = 'Pflichtfelder ausfüllen');
             Assert::regex($data['ISBN'], '/^(9783)([0-9\-]{9,11})$/', 'Es handelt sich nicht um eine deutschsprachige ISBN!');
             $requestData = $this->steuerungApp
                 ->work($data)
