@@ -41,6 +41,9 @@ class AssignManagement
         try{
             $data = $request->getParams();
             Assert::notEmpty($data['ISBN'], $message = 'Pflichtfelder ausfüllen');
+            Assert::notEmpty($data['bereich'], $message = 'Pflichtfelder ausfüllen');
+            Assert::notEmpty($data['box'], $message = 'Pflichtfelder ausfüllen');
+            Assert::notEmpty($data['zustand'], $message = 'Pflichtfelder ausfüllen');
             Assert::regex($data['ISBN'], '/^(9783)([0-9\-]{9,11})$/', 'Es handelt sich nicht um eine deutschsprachige ISBN!');
             $requestData = $this->steuerungApp
                 ->work($data)
@@ -51,8 +54,10 @@ class AssignManagement
 
             if(($requestData['flag'] == true) AND ($flag == true))
                 $test = 123;
+            // Platzhalter für die Optionen für die Templateengine
             else
                 $test = 123;
+            // Platzhalter für die Optionen für die Templateengine
 
         }catch(\Throwable $e){
             throw $e;
