@@ -24,6 +24,7 @@ $container[\App\Model\CustomerSearchControl::class] = function($container)
 {
     return new \App\Model\CustomerSearchControl($container);
 };
+
 $container[\App\Model\FindBookTitle::class] = function ($container){
     return new \App\Model\FindBookTitle($container);
 };
