@@ -1,37 +1,214 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- Bootstrap 4 Tutorial von www.bootstrapworld.de -->
+<!-- ============================================== -->
+<html lang="de">
 <head>
-    <title>Warenwirtschaft</title>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-                <link rel="stylesheet" type="text/css" href="{{basisUrl}}/css/warenwirtschaft.css">
-                </head>
-                <body>
-                <div class="container-fluid">
-                    <div class="row d-none d-md-block">
-                        <div class="col-md-12 rot bg-danger">Kopf</div>
-                    </div>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-                    <div class="row-md-12">
-                        <!-- Navigation -->
-                        <div class="col-md-2 gruen d-none d-md-block bg-danger rand_rot">
-                            <a href='{{basisUrl}}/erststartArtikelSuche'><button type="button" class="btn btn-success">Auslagern</button></a><br>
-                            <a href='{{basisUrl}}/eingabemaske'><button type="button" class="btn btn-success">Einlagern</button></a><br>
-                            <a href='{{basisUrl}}/kundensucheErststart'><button type="button" class="btn btn-success">Kundensuche</button></a><br>
-                            <a href='{{basisUrl}}/buchTitelSucheStart'><button type="button" class="btn btn-success">Buchtitelsuche</button></a><br>
+    <!-- Bootstrap CSS laden -->
+    <link rel="stylesheet" href="source/bootstrap-4.0.0/css/bootstrap.min.css" />
+
+    <!-- eigene CSS - Datei -->
+    <link rel="stylesheet" href="css/projekt.css" />
+
+</head>
+<body>
+
+<!-- HIER bitte deinen HTML-Code einfuegen -->
+<div class="container-fluid bg-dark" >
+    <nav class="navbar navbar-expand-lg navbar-light bg-faded">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#">Titel deiner Seite</a>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Startseite</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">&Uuml;ber mich</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Kontakt</a>
+                </li>
+            </ul>
+            <span class="navbar-text">
+                &copy; 2016
+            </span>
+        </div>
+    </nav>
+    <div class="row">
+        <div class="col-md-12 d-none d-md-block border_red bg-danger">
+            Banner
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 border_red bg-dark text-light">
+            Kopfzeile
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-4 col-md-3 border_red bg-success d-none d-md-block">
+            Navigation
+        </div>
+        <div class="col-xs-4 col-md-9 border_red bg-warning">
+            <div class="col-md-12 col-12 border_green">
+                <div class="card ">
+                    <div class="card-body bg-danger">
+                        <div class="card-header text-center bg-warning">
+                            <h4 class="card-title text-center bg-info">Überschrift</h4>
+                            <h5 class="card-subtitle text-center bg-info">Unterüberschrift</h5>
                         </div>
-                        <!-- Content -->
-                        <div class="col-md-10 rand_rot">{{include('content.phtml')}}</div>
-                    </div>
+                        <div class="card-body bg-success">
+                            <form>
+                                <div class="form-group">
+                                    <label for="input1">Texteingabe</label>
+                                    <input type="text" class="form-control" id="input1"  />
+                                    <small class="form-text">Hilfetext zum Eingabefeld</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="input2">Passwort</label>
+                                    <input type="password" class="form-control" id="input2" placeholder="Platzhaltertext (verschwindet bei Eingabe)">
+                                </div>
+                                <div class="form-group">
+                                    <label for="input3">Auswahlfeld</label>
+                                    <select class="form-control" id="input3">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="input4">Textbereich</label>
+                                    <textarea class="form-control" id="input4" rows="3"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="input5">Dateieingabe</label>
+                                    <input type="file" class="form-control-file" id="input5">
+                                </div>
+                                <fieldset class="form-group">
+                                    <legend>Radio Buttons</legend>
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input type="radio" class="form-check-input" name="option1" value="1" checked>
+                                            Option 1
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input type="radio" class="form-check-input" name="option1" value="2">
+                                            Option 2
+                                        </label>
+                                    </div>
+                                </fieldset>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input" required>
+                                        Checkbox
+                                    </label>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Formular jetzt absenden</button>
+                            </form>
+                            <form class="form-inline">
+                                <label class="sr-only" for="input1">Benutzername</label>
 
-                    <div class="row d-none d-md-block">
-                        <div class="col-md-12 rot bg-danger">Fuss</div>
+                                <input type="text" class="form-control mr-2" id="input1" placeholder="Benutzername">
+
+                                <label class="sr-only" for="input2">Passwort</label>
+                                <input type="text" class="form-control mr-2" id="input2" placeholder="Passwort">
+
+                                <div class="form-check mr-2">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox"> Angemeldet bleiben
+                                    </label>
+                                </div>
+
+                                <button type="submit" class="btn btn-success">Login</button>
+                            </form>
+                        </div>
+                        <div class="card-footer text-center bg-warning">Card Footer</div>
                     </div>
                 </div>
             </div>
-        </body>
-        </html>
+            <div class="col-md-12 col-12 border_green">
+                <div class="card-body bg-danger">
+                    <div class="card-header text-center bg-warning">
+                        <h4 class="card-title text-center bg-info">Tabelle</h4>
+                        <h5 class="card-subtitle text-center bg-info">Unterüberschrift</h5>
+                    </div>
+                    <div class="card-body bg-success">
+                        <div class="col-sm-12">
+                            <table class="table table-bordered dataTable" id="dataTable" role="grid"
+                                   aria-describedby="dataTable_info" style="width: 100%;" width="100%"
+                                   cellspacing="0">
+                                <thead>
+                                <tr role="row">
+                                    <th class="sorting sorting_asc" tabindex="0" aria-controls="dataTable"
+                                        rowspan="1" colspan="1" style="width: 268px;" aria-sort="ascending"
+                                        aria-label="Name: activate to sort column descending">Name
+                                    </th>
+                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1"
+                                        colspan="1" style="width: 400px;"
+                                        aria-label="Position: activate to sort column ascending">Position
+                                    </th>
+                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1"
+                                        colspan="1" style="width: 197px;"
+                                        aria-label="Office: activate to sort column ascending">Office
+                                    </th>
+                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1"
+                                        colspan="1" style="width: 100px;"
+                                        aria-label="Age: activate to sort column ascending">Age
+                                    </th>
+                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1"
+                                        colspan="1" style="width: 187px;"
+                                        aria-label="Start date: activate to sort column ascending">Start date
+                                    </th>
+                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1"
+                                        colspan="1" style="width: 169px;"
+                                        aria-label="Salary: activate to sort column ascending">Salary
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tfoot>
+                                <tr>
+                                    <th rowspan="1" colspan="1">Name</th>
+                                    <th rowspan="1" colspan="1">Position</th>
+                                    <th rowspan="1" colspan="1">Office</th>
+                                    <th rowspan="1" colspan="1">Age</th>
+                                    <th rowspan="1" colspan="1">Start date</th>
+                                    <th rowspan="1" colspan="1">Salary</th>
+                                </tr>
+                                </tfoot>
+                                <tbody>
+                                <tr class="odd">
+                                    <td class="sorting_1">Airi Satou</td>
+                                    <td>Accountant</td>
+                                    <td>Tokyo</td>
+                                    <td>33</td>
+                                    <td>2008/11/28</td>
+                                    <td>$162,700</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="card-footer text-center bg-warning">Card Footer</div>
+                </div>
+            </div>
+            <div class="col-md-4 col-12 border_green">block 3</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 col-3 border_red bg-danger">
+            Fusszeile
+        </div>
+    </div>
+</div>
+
+<script src="source/jquery-3.1.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="source/bootstrap-4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
