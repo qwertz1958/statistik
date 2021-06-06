@@ -1,0 +1,10 @@
+.border_red{
+    border: solid 1px greenyellow;
+}
+
+.border_green{
+    border: groove 1px black;
+    background-color: red;
+}
+
+
