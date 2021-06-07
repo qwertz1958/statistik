@@ -64,8 +64,29 @@ try{
     $app->post('/eingeben', function (\Slim\Http\Request $request, \Slim\Http\Response $response, $args){
         /** @var  $action \App\Action\AssignManagement */
         $action = $this->get(\App\Action\AssignManagement::class);
-        $action->bookInput($request, $args);
-        return $response;
+        $block1 = $action
+            ->bookInput($request, $args)
+            ->getblock();
+
+
+        $config = $this->get('config');
+
+        $templateData = [
+            'basisUrl' => $config['basisUrl'],
+            'templatename' => 'contentBookInput',
+            'ModulName' => 'Buch einlagern',
+            'block1' => $block1['block1'],
+            'title' => $block1['title'],
+            'id' => $block1['id'],
+            'block2' => false,
+            'block3' => false
+        ];
+
+        $view = $this->view;
+
+        return $this->view->render($response, 'bootstrap.html', $templateData);
+
+
     });
 
     // Einpflegen der Metadaten eines neuen Buches in den Datenbestand
@@ -107,6 +128,7 @@ try{
 
         $templateData = [
             'basisUrl' => $config['basisUrl'],
+            'templatename' => 'leer',
             'ModulName' => 'Startseite'
         ];
 

@@ -25,6 +25,7 @@ class AssignManagement
     protected $container;
     /** @var SteuerungApplikation */
     protected $steuerungApp;
+    protected $block;
 
     public function __construct(Container $container){
         $this->config = $container['config'];
@@ -34,6 +35,7 @@ class AssignManagement
     /**
      * @param Request $request
      * @param array $args
+     * @return $this
      * @throws \Throwable
      */
     public function bookInput(Request $request, array $args)
@@ -52,13 +54,17 @@ class AssignManagement
             $flag = $this->steuerungApp
                 ->getFlag();
 
-            if(($requestData['flag'] == true) AND ($flag == true))
-                $test = 123;
-            // Platzhalter für die Optionen für die Templateengine
+            if(($requestData['flag'] == true) AND ($flag == true)){
+                $this->block = [
+                    'block1' => true,
+                    'title' => $requestData['export']['title'],
+                    'id' => $requestData['export']['id']
+                ];
+            }
             else
                 $test = 123;
             // Platzhalter für die Optionen für die Templateengine
-
+            return $this;
         }catch(\Throwable $e){
             throw $e;
         }
@@ -68,5 +74,15 @@ class AssignManagement
     {
         echo 'hello';
     }
+
+    /**
+     * @return mixed
+     */
+    public function getblock()
+    {
+        return $this->block;
+    }
+
+
 
 }
