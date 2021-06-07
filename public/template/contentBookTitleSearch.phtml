@@ -1,6 +1,6 @@
 <!-- Formular -->
 <div class="col-md-6">
-    <form action="{$basisUrl}/buchTitelSuche" method="POST">
+    <form action="{{basisUrl}}/buchTitelSuche" method="POST">
         <div class="form-group">
             <label>Buchtitel : </label>
             <input type="text" class="form-control" name="titel" id="titel" placeholder="Titel des Buches eintragen" >
@@ -12,14 +12,14 @@
 <div class="col-md-6">
 
     <!-- nicht gefunden -->
-    {block1 $block1}
+    {% if block1 %}
     <div class="col-md-12">
         Buch nicht gefunden
     </div>
-    {/block1 $block1}
+    {% endif %}
 
     <!-- gefunden -->
-    {block2 $block2}
+    {% if block2 %}
     <div class="col-md-12">
         <div class="table-responsive">
             <table class="table table-striped table-bordered table-hover">
@@ -31,16 +31,16 @@
                 </tr>
                 </thead>
                 <tbody>
-                {foreach $articleData as $key => $value}
+                {% for article in articleData %}
                 <tr>
-                    <td>{$value['ISBN']}</td>
-                    <td>{$value['title']}</td>
-                    <td>{$value['anzahl']}</td>
+                    <td>{{article.ISBN}}</td>
+                    <td>{{article.title}}</td>
+                    <td>{{article.anzahl}}</td>
                 </tr>
-                {/foreach}
+                {% endfor %}
                 </tbody>
             </table>
         </div>
     </div>
-    {/block2 $block2}
+    {% endif %}
 </div>

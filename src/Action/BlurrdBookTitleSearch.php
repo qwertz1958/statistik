@@ -48,7 +48,8 @@ class BlurrdBookTitleSearch
     public function booklookinput()
     {
         try{
-            $this->convertToHtml();
+            $test=123;
+          //  $this->convertToHtml();
         }
         catch(\Throwable $e)
         {
@@ -57,13 +58,18 @@ class BlurrdBookTitleSearch
 
     }
 
+
     /**
-     * @param $params
+     * @param \Slim\Http\Request $request
+     * @return array
      * @throws \Throwable
      */
-    public function booklook($params)
+    public function booklook(\Slim\Http\Request $request)
     {
         try{
+
+            $params = $request->getParams();
+
             $checkParams = [
                 'titel' => [
                     'mandatory' => true,
@@ -87,13 +93,13 @@ class BlurrdBookTitleSearch
 
             $templateData = [
                 'basisUrl' => $this->config['basisUrl'],
+                'templatename' => 'contentBookTitleSearch',
                 'articleData' => $titleData,
                 'block1' => $block1,
                 'block2' => $block2
             ];
 
-            $this->convertToHtml($templateData, 'contentBookTitleSearch');
-
+            return $templateData;
         }
         catch(\Throwable $e)
         {

@@ -13,7 +13,7 @@ use Spatie\ArrayToXml\ArrayToXml;
 
 
 try{
-//Settings/ einstellungen Slim framework
+//Einstellungen Slim framework
     $configSlim = '';
     include_once ('../config/configSlim.php');
 
@@ -26,19 +26,19 @@ try{
     include_once ('../config/global.php');
     $container['config'] = $config;
     include_once ('../config/test.php');
-    // Konfiguration der Tools
+// Konfiguration der Tools
     include_once ('../config/tool.php');
-    // Konfiguration des Mappers
+// Konfiguration des Mappers
     include_once ('../config/mapper.php');
-    // Konfiguration des Models
+// Konfiguration des Models
     include_once ('../config/model.php');
-    // Konfiguration der Action
+// Konfiguration der Action
     include_once ('../config/action.php');
-    // allgemeine Klassen
+// allgemeine Klassen
     include_once ('../config/src.php');
-    // Konfiguration Twig
+// Konfiguration Twig
     include_once ('../config/twig.php');
-    // Error handling
+// Error handling
     include_once ('../config/error.php');
 
 //slim framework
@@ -106,7 +106,7 @@ try{
 
     });
 
-    //XML response
+//XML response
     $app->get('/xml',  function (\Slim\Http\Request $request, Slim\Http\Response $response, array $args)
     {
         $kunden = [];
@@ -126,6 +126,7 @@ try{
 
     });
 
+
     $app->get('/kundensucheErststart',  function (\Slim\Http\Request $request, Slim\Http\Response $response, array $args)
     {
         $params = $request->getParams();
@@ -141,6 +142,7 @@ try{
 
     });
 
+//Startseite der Artikelsuche
     $app->any('/erststartArtikelSuche',  function (\Slim\Http\Request $request, Slim\Http\Response $response, array $args)
     {
         /** @var  \App\Action\ExistsArticleInStore */
@@ -150,6 +152,7 @@ try{
         return $response;
     });
 
+// Verarbeitung und Ausgabe der Artikelsuche
     $app->any('/abrufen',  function (\Slim\Http\Request $request, Slim\Http\Response $response, array $args)
     {
         /** @var  \App\Action\ExistsArticleInStore */
@@ -160,32 +163,108 @@ try{
     });
 
 
-
-    $app->any('/buchTitelSuche',  function (\Slim\Http\Request $request, Slim\Http\Response $response, array $args)
+//Verarbeitung und Ausgabe der Buchtitelsuche
+    $app->post('/buchTitelSuche',  function (\Slim\Http\Request $request, Slim\Http\Response $response, array $args)
     {
         /** @var  \App\Action\BlurrdBookTitleSearch */
         $action = $this->get(\App\Action\BlurrdBookTitleSearch::class);
-        $action->booklook($request, $args);
+        $templateData = $action->booklook($request);
 
-        return $response;
+        return $this->view->render($response, 'bootstrap.html', $templateData);
     });
 
-    $app->any('/buchTitelSucheStart',  function (\Slim\Http\Request $request, Slim\Http\Response $response, array $args)
+//Startseite der Buchtitelsuche
+    $app->get('/buchTitelSucheStart',  function (\Slim\Http\Request $request, Slim\Http\Response $response, array $args)
     {
         /** @var  \App\Action\BlurrdBookTitleSearch */
-        $action = $this->get(\App\Action\BlurrdBookTitleSearch::class);
-        $action->bookTitleSearchStart($request, $args);
+//        $action = $this->get(\App\Action\BlurrdBookTitleSearch::class);
+//        $action->bookTitleSearchStart($request, $args);
 
-        return $response;
+        $config = $this->get('config');
+
+        $templateData = [
+            'basisUrl' => $config['basisUrl'],
+            'templatename' => 'contentBookTitleSearch',
+            'ModulName' => 'Suche nach Buchtitel:',
+            'block1' => false,
+            'block2' => false
+
+        ];
+
+        return $this->view->render($response, 'bootstrap.html', $templateData);
+
     });
 
+//Errorhandler
     $app->get('/error', function (\Slim\Http\Request $request, Slim\Http\Response $response, array $args)
     {
      throw new Exception('ein Fehler');
     });
 
+// Response Twig-Html Template , Kontrollstrukturen
+    $app->get('/template[/{templatename}]', function (\Slim\Http\Request $request, Slim\Http\Response $response, $args)
+    {
+        $kunde = [];
+        $kunde[0]['name'] = 'Mustermann';
+        $kunde[1]['name'] = 'Sonnenschein';
+        $kunde[0]['vorname'] = 'Max';
+        $kunde[1]['vorname'] = 'Susi';
 
-    //Slim fange an zu arbeiten
+        $config = $this->get('config');
+
+        $template = [
+            'basisUrl' => $config['basisUrl'],
+            'kunde' => $kunde,
+            'templatename' => $args['templatename'],
+            'start' => true,
+            'mini' => true
+        ];
+
+        $view = $this->view;
+
+        return $this->view->render($response, 'bootstrap.html', $template);
+    });
+
+// Response Twig-Html Template , Schleifen
+    $app->get('/template1/loop', function (\Slim\Http\Request $request, Slim\Http\Response $response, $args)
+    {
+        $kunden = [];
+        $kunden[0]['name'] = 'Mustermann';
+        $kunden[1]['name'] = 'Sonnenschein';
+        $kunden[0]['vorname'] = 'Max';
+        $kunden[1]['vorname'] = 'Susi';
+
+        $config = $this->get('config');
+
+        $template = [
+            'basisUrl' => $config['basisUrl'],
+            'templatename' => 'loop',
+            'kunden' => $kunden
+        ];
+
+        $view = $this->view;
+
+        return $this->view->render($response, 'bootstrap.html', $template);
+    });
+
+// Startseite
+    $app->get('/',  function (\Slim\Http\Request $request, Slim\Http\Response $response, array $args)
+    {
+
+        $config = $this->get('config');
+
+        $templateData = [
+            'basisUrl' => $config['basisUrl'],
+            'templatename' => 'leer',
+            'ModulName' => 'Schön, daß Sie da sind!'
+
+        ];
+
+        return $this->view->render($response, 'bootstrap.html', $templateData);
+
+    });
+
+//Slim fange an zu arbeiten
     $app->run();
 }
 catch(\Throwable $e){
