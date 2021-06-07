@@ -105,6 +105,60 @@ try{
 
     });
 
+    $app->get('/kundensucheErststart',  function (\Slim\Http\Request $request, Slim\Http\Response $response, array $args)
+    {
+        $params = $request->getParams();
+
+        /** @var  \App\Test\MyTest */
+        $action = $this->get(Blu);
+        $action->work($args, $params);
+        $templateData = $action->getTemplateData();
+
+        $view = $this->view;
+
+        return $this->view->render($response, 'layout.phtml', $templateData);
+
+    });
+
+    $app->any('/erststartArtikelSuche',  function (\Slim\Http\Request $request, Slim\Http\Response $response, array $args)
+    {
+        /** @var  \App\Action\ExistsArticleInStore */
+        $action = $this->get(\App\Action\ExistsArticleInStore::class);
+        $action->erststart($request, $args);
+
+        return $response;
+    });
+
+    $app->any('/abrufen',  function (\Slim\Http\Request $request, Slim\Http\Response $response, array $args)
+    {
+        /** @var  \App\Action\ExistsArticleInStore */
+        $action = $this->get(\App\Action\ExistsArticleInStore::class);
+        $action->bookOutput($request, $args);
+
+        return $response;
+    });
+
+
+
+    $app->any('/buchTitelSuche',  function (\Slim\Http\Request $request, Slim\Http\Response $response, array $args)
+    {
+        /** @var  \App\Action\BlurrdBookTitleSearch */
+        $action = $this->get(\App\Action\BlurrdBookTitleSearch::class);
+        $action->booklook($request, $args);
+
+        return $response;
+    });
+
+    $app->any('/buchTitelSucheStart',  function (\Slim\Http\Request $request, Slim\Http\Response $response, array $args)
+    {
+        /** @var  \App\Action\BlurrdBookTitleSearch */
+        $action = $this->get(\App\Action\BlurrdBookTitleSearch::class);
+        $action->bookTitleSearchStart($request, $args);
+
+        return $response;
+    });
+
+
     //Slim fange an zu arbeiten
     $app->run();
 

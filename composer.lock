@@ -4,8 +4,57 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "721c334dd6fee53d2ef7c79ed52fc38d",
+    "content-hash": "6da1dcc0ea76cb34c8c0c9bc10d747cf",
     "packages": [
+        {
+            "name": "grumpycrouton/grumpypdo",
+            "version": "1.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/GrumpyCrouton/GrumpyPDO.git",
+                "reference": "e36208b8d7c9e12906c2b42320e255b152d3c0a6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/GrumpyCrouton/GrumpyPDO/zipball/e36208b8d7c9e12906c2b42320e255b152d3c0a6",
+                "reference": "e36208b8d7c9e12906c2b42320e255b152d3c0a6",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "grumpypdo.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Grumpy Crouton",
+                    "email": "grumpyhobby@gmail.com",
+                    "homepage": "https://grumpycrouton.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "GrumpyPDO for PHP",
+            "homepage": "https://github.com/GrumpyCrouton/GrumpyPDO/",
+            "keywords": [
+                "pdo",
+                "php",
+                "prepared statements",
+                "secure"
+            ],
+            "support": {
+                "issues": "https://github.com/GrumpyCrouton/GrumpyPDO/issues",
+                "source": "https://github.com/GrumpyCrouton/GrumpyPDO/tree/1.5"
+            },
+            "time": "2018-08-16T16:30:41+00:00"
+        },
         {
             "name": "nikic/fast-route",
             "version": "v1.3.0",

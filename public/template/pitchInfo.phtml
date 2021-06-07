@@ -1,0 +1,46 @@
+<!-- Formular -->
+<div class="col-md-6">
+    <form action="{$basisUrl}/abrufen" method="POST">
+        <div class="form-group">
+            <label>ISBN : </label>
+            <input type="text" class="form-control" name="isbn" id="isbn" placeholder="9783411720156" required pattern="[0-9]{10,13}">
+        </div>
+        <button type="submit" class="btn btn-primary">abfragen Lagerbestand</button>
+    </form>
+</div>
+<!-- Bloecke -->
+<div class="col-md-6">
+
+    <!-- nicht gefunden -->
+    {block1 $block1}
+    <div class="col-md-12">
+        Artikel nicht gefunden
+    </div>
+    {/block1 $block1}
+
+    <!-- gefunden -->
+    {block2 $block2}
+    <div class="col-md-12">
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered table-hover">
+                <thead>
+                <tr>
+                    <th>Bereich</th>
+                    <th>Box</th>
+                    <th>Titel</th>
+                </tr>
+                </thead>
+                <tbody>
+                {foreach $articleData as $key => $value}
+                <tr>
+                    <td>{$value['bereich']}</td>
+                    <td>{$value['box']}</td>
+                    <td>{$value['title']}</td>
+                </tr>
+                {/foreach}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {/block2 $block2}
+</div>

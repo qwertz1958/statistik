@@ -23,23 +23,21 @@ class BlurrdBookTitleSearch
 
     protected $config;
 
-    protected $appLogger;
 
-    /** @var Template */
-    protected $templateEngine;
-    /** @var Checker */
-    protected $checker;
+
+
+
     /** @var FindBookTitle */
     protected $findBookTitleModel;
 
 
     public function __construct($container)
     {
-        $this->templateEngine = $container[Template::class];
+
         $this->config = $container['config'];
-        $this->checker = $container[Checker::class];
+
         $this->findBookTitleModel = $container[\App\Model\FindBookTitle::class];
-        $this->appLogger = $container[\App\Logger::class];
+
 
 
     }
