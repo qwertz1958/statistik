@@ -100,8 +100,20 @@ try{
         return $response;
     });
 
+    // Startseite des Warenwirtschaftssystem
+    $app->get('/', function (\Slim\Http\Request $request, Slim\Http\Response $response, $args)
+    {
+        $config = $this->get('config');
 
+        $templateData = [
+            'basisUrl' => $config['basisUrl'],
+            'ModulName' => 'Startseite'
+        ];
 
+        $view = $this->view;
+
+        return $this->view->render($response, 'bootstrap.html', $templateData);
+    });
 
 
 
