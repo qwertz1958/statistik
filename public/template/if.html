@@ -1,0 +1,26 @@
+<h3>Kontrollstrukturen in Twig</h3>
+
+<h4>Name Content Template: {{templatename}}</h4>
+
+{% if start %}
+    <div style="border: red 1px solid; padding: 10px;">
+        Startblock Startblock Startblock Startblock Startblock Startblock Startblock Startblock
+        {% if mini %}
+            <div style="border: darkblue solid 5px; padding: 10px; margin: 10px; padding: 10px;">
+                Miniblock Miniblock Miniblock
+            </div>
+        {% endif %}
+    </div>
+{% endif %}
+
+{% if kunde.0 %}
+    <div style="border: darkolivegreen solid 5px; padding: 10px; margin: 10px;">
+        Name: {{kunde.0.name}}
+    </div>
+{% endif %}
+
+{% if not kunde.2 %}
+    <div style="border: darkolivegreen solid 5px; padding: 10px; margin: 10px;">
+        im Else - Zweig
+    </div>
+{% endif %}
