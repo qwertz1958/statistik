@@ -6,12 +6,9 @@
  * dominik.schmidt
  */
 
-$container[\App\Checker::class] = function ($container){
-    return new \App\Checker($container);
-};
 
-$container[\GrumpyPdo::class] = function ($container){
-    return new \GrumpyPdo(
+$container[GrumpyPdo::class] = function ($container){
+    return new GrumpyPdo(
         $container['config']['database']['db_server'],
         $container['config']['database']['db_user'],
         $container['config']['database']['db_password'],
@@ -19,7 +16,7 @@ $container[\GrumpyPdo::class] = function ($container){
 };
 
 $container['GrumpyPdoTaskboard'] = function ($container){
-    return new \GrumpyPdo(
+    return new GrumpyPdo(
         $container['config']['database_taskboard']['db_server'],
         $container['config']['database_taskboard']['db_user'],
         $container['config']['database_taskboard']['db_password'],
@@ -30,9 +27,6 @@ $container[\App\Pimple::class] = function ($container){
     return new \App\Pimple($container);
 };
 
-$container[\App\Template::class] = function ($container){
-    return new \App\Template($container);
-};
 
 $container[\App\Logger::class] = function ($container){
     return new \App\Logger($container);

@@ -15,6 +15,7 @@
         "slim/slim": "3.*",
         "slim/twig-view": "^2.5.1",
         "spatie/array-to-xml": "^2.16",
+        "grumpycrouton/grumpypdo": "^1.5",
         "webmozart/assert": "^1.10"
     }
 }

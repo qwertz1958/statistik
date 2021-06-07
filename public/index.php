@@ -18,6 +18,24 @@ try{
 
     include_once ('../config/test.php');
 
+
+
+    // Konfiguration Container
+    $config = '';
+    include_once ('../config/global.php');
+    $container['config'] = $config;
+    include_once ('../config/test.php');
+    // Konfiguration der Tools
+    include_once ('../config/tool.php');
+    // Konfiguration des Mappers
+    include_once ('../config/mapper.php');
+    // Konfiguration des Models
+    include_once ('../config/model.php');
+    // Konfiguration der Action
+    include_once ('../config/action.php');
+    // allgemeine Klassen
+    include_once ('../config/src.php');
+    // Konfiguration Twig
     include_once ('../config/twig.php');
 
     //slim framework
@@ -161,7 +179,6 @@ try{
 
     //Slim fange an zu arbeiten
     $app->run();
-
 }
 catch(\Throwable $e){
     $test = 123;

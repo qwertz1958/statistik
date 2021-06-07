@@ -15,10 +15,8 @@ class ExistsArticleInStore
     protected $config;
 
     protected $appLogger;
-    /** @var Template  */
-    protected $templateEngine;
-    /** @var Checker  */
-    protected $checker;
+
+
     /** @var FindArticle */
     protected $findArticleModel;
     /** @var ArrayToXml */
@@ -26,11 +24,8 @@ class ExistsArticleInStore
 
 
     public function __construct($container){
-        $this->templateEngine = $container[Template::class];
-        $this->checker= $container[Checker::class];
         $this->findArticleModel = $container[\App\Model\FindArticle::class];
         $this->config = $container['config'];
-        $this->appLogger = $container[\App\Logger::class];
         $this->arrayToXmlModel = $container[\Spatie\ArrayToXml\ArrayToXml::class];
     }
 
