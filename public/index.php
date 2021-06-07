@@ -42,16 +42,25 @@ try{
     // Routing
 
     // Aufrufen der Eingabemaske
-    $app->any('/eingabemaske', function (\Slim\Http\Request $request, \Slim\Http\Response $response, $args){
+    $app->get('/eingabemaske[/{templatename}]', function (\Slim\Http\Request $request, Slim\Http\Response $response, $args)
+    {
+        $config = $this->get('config');
+
+        $template = [
+            'basisUrl' => $config['basisUrl'],
+            'templatename' => $args['templatename'],
+            'block1' => false,
+            'block2' => false,
+            'block3' => false
+        ];
+
         $view = $this->view;
 
-        return $this->view->render($response, 'layout.phtml',  [
-            'basisUrl' => 'localhost/praktikum/warenwirtschaftng/public/'
-        ]);
+        return $this->view->render($response, 'bootstrap.html', $template);
     });
 
     // Abfrage / Eingabe der ISBN
-    $app->any('/eingeben', function (\Slim\Http\Request $request, \Slim\Http\Response $response, $args){
+    $app->post('/eingeben', function (\Slim\Http\Request $request, \Slim\Http\Response $response, $args){
         /** @var  $action \App\Action\AssignManagement */
         $action = $this->get(\App\Action\AssignManagement::class);
         $action->bookInput($request, $args);
@@ -101,24 +110,7 @@ try{
 
 
 
-    // Response Twig-Html Template , Kontrollstrukturen
-    $app->get('/template[/{templatename}]', function (\Slim\Http\Request $request, Slim\Http\Response $response, $args)
-    {
 
-
-        $config = $this->get('config');
-
-        $template = [
-            'basisUrl' => $config['basisUrl'],
-            'templatename' => $args['templatename'],
-            'start' => true,
-            'mini' => true
-        ];
-
-        $view = $this->view;
-
-        return $this->view->render($response, 'bootstrap.html', $template);
-    });
 
 
     // Error Handling

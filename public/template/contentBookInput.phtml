@@ -1,10 +1,10 @@
 <div class ="container">
     <div class="row">
         <div class="col-sm-6">
-            <form action="localhost/praktikum/warenwirtschaft/public/eingeben" method="POST">
+            <form action="{{basisUrl}}/eingeben" method="POST">
                 <div class="form-inline">
                     <label>ISBN : </label>
-                    <input type="text" name="isbn" class="m-5 form-control" id="inlineFormInputName2" placeholder="ISBN" required pattern="[0-9]{10,13}">
+                    <input type="text" name="ISBN" class="m-5 form-control" id="inlineFormInputName2" placeholder="ISBN" required pattern="[0-9]{10,13}">
                 </div>
                 <div class="form-inline">
                     <label>Bereich : </label>
@@ -35,11 +35,12 @@
 
         <div class="col-sm-6">
             <!-- Titel bekannt -->
-            {block1 $block1}
+            {% if block1 %}
             <div class="col-lg-6" style="height: 500px"><p>Das Buch: {$bookData[0]['title']} wurde in den Bestand aufgenommen</p></div>
-            {/block1 $block1}
+            {% endif %}
+
             <!-- wenn Titel unbekannt -->
-            {block2 $block2}
+            {% if block2 %}
             <div class="col-lg-offset-6 col-lg-6">
                 <form action="{basisUrl}/einpflegen" method="POST">
                     <div class="form-inline">
@@ -52,11 +53,12 @@
                     </div>
                 </form>
             </div>
-            {/block2 $block2}
+            {% endif %}
+
             <!-- Stammdaten Erweiterung erfolgreich -->
-            {block3 $block3}
+            {% if block3 %}
             <div class="col-lg-6" style="height: 500px"><p>Die Stammdaten wurden erweitert</p></div>
-            {/block3 $block3}
+            {% endif %}
         </div>
     </div>
 </div>
