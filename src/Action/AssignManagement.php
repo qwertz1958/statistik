@@ -64,4 +64,9 @@ class AssignManagement
         }
     }
 
+    public function myEcho()
+    {
+        echo 'hello';
+    }
+
 }

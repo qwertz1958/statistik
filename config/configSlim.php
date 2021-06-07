@@ -8,7 +8,7 @@
  */
 
 $configSlim = [
-    'setttings' => [
+    'settings' => [
         'displayErrorDetails' => true
     ]
 ];

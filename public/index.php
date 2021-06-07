@@ -34,6 +34,8 @@ try{
     include_once ('../config/src.php');
     // Konfiguration Twig
     include_once ('../config/twig.php');
+    // Konfiguration Error Handler
+    include_once ('../config/error.php');
 
     // Slim Framework
     $app = new \Slim\App($container);
