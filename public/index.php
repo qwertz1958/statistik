@@ -13,14 +13,15 @@ use Spatie\ArrayToXml\ArrayToXml;
 
 
 try{
-    //Container
-    $container = new \Slim\Container();
+//Settings/ einstellungen Slim framework
+    $configSlim = '';
+    include_once ('../config/configSlim.php');
 
-    include_once ('../config/test.php');
+//Slim Framework initialisieren
+    $app = new \Slim\App($configSlim);
+    $container = $app->getContainer();
 
-
-
-    // Konfiguration Container
+// Konfiguration Container
     $config = '';
     include_once ('../config/global.php');
     $container['config'] = $config;
@@ -37,8 +38,10 @@ try{
     include_once ('../config/src.php');
     // Konfiguration Twig
     include_once ('../config/twig.php');
+    // Error handling
+    include_once ('../config/error.php');
 
-    //slim framework
+//slim framework
     $app = new \Slim\App($container);
 
 
@@ -174,6 +177,11 @@ try{
         $action->bookTitleSearchStart($request, $args);
 
         return $response;
+    });
+
+    $app->get('/error', function (\Slim\Http\Request $request, Slim\Http\Response $response, array $args)
+    {
+     throw new Exception('ein Fehler');
     });
 
 

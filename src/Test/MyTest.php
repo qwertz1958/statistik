@@ -29,4 +29,9 @@ class MyTest
             $test = 123;
         }
     }
+
+    public function myEcho()
+    {
+        return 'Hallo';
+    }
 }
