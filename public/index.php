@@ -70,11 +70,16 @@ try{
 
     // Kundensuche
     $app->any('/kundensucheErststart', function (\Slim\Http\Request $request, \Slim\Http\Response $response, $args){
+
+        $config = $this->get('config');
+
+        $template = [
+            'basisUrl' => $config['basisUrl']
+        ];
+
         $view = $this->view;
 
-        return $this->view->render($response, 'layout.phtml',  [
-            'basisUrl' => 'localhost/praktikum/warenwirtschaftng/public/'
-        ]);
+        return $this->view->render($response, 'layout.phtml',  $template);
     });
 
 
@@ -96,6 +101,24 @@ try{
 
 
 
+    // Response Twig-Html Template , Kontrollstrukturen
+    $app->get('/template[/{templatename}]', function (\Slim\Http\Request $request, Slim\Http\Response $response, $args)
+    {
+
+
+        $config = $this->get('config');
+
+        $template = [
+            'basisUrl' => $config['basisUrl'],
+            'templatename' => $args['templatename'],
+            'start' => true,
+            'mini' => true
+        ];
+
+        $view = $this->view;
+
+        return $this->view->render($response, 'bootstrap.html', $template);
+    });
 
 
     // Error Handling
