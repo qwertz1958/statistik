@@ -42,13 +42,13 @@ try{
     // Routing
 
     // Aufrufen der Eingabemaske
-    $app->get('/eingabemaske[/{templatename}]', function (\Slim\Http\Request $request, Slim\Http\Response $response, $args)
+    $app->get('/eingabemaske', function (\Slim\Http\Request $request, Slim\Http\Response $response, $args)
     {
         $config = $this->get('config');
 
-        $template = [
+        $templateData = [
             'basisUrl' => $config['basisUrl'],
-            'templatename' => $args['templatename'],
+            'templatename' => 'contentBookInput',
             'block1' => false,
             'block2' => false,
             'block3' => false
@@ -56,7 +56,7 @@ try{
 
         $view = $this->view;
 
-        return $this->view->render($response, 'bootstrap.html', $template);
+        return $this->view->render($response, 'bootstrap.html', $templateData);
     });
 
     // Abfrage / Eingabe der ISBN
