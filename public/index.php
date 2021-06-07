@@ -49,6 +49,7 @@ try{
         $templateData = [
             'basisUrl' => $config['basisUrl'],
             'templatename' => 'contentBookInput',
+            'ModulName' => 'Buch einlagern',
             'block1' => false,
             'block2' => false,
             'block3' => false

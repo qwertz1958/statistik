@@ -91,7 +91,7 @@
            data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
           <!-- weitere Module der Administration -->
-          <a class="collapse-item active" href="{{basisUrl}}/eingabemaske">Eingabemaske</a>
+          <a class="collapse-item active" href="{{basisUrl}}/eingabemaske">Einlagern</a>
         </div>
       </div>
     </li>
@@ -315,8 +315,8 @@
       <!-- Begin Page Content -->
       <div class="container-fluid">
         <!-- Page Heading -->
-        <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>
-        {% include 'contentBookInput.phtml' %}
+        <h1 class="h3 mb-4 text-gray-800"> {{ModulName}}</h1>
+        {% include templatename ~ '.phtml' %}
       <!-- /.container-fluid -->
     </div>
     <!-- End of Main Content -->
