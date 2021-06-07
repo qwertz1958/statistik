@@ -12,8 +12,10 @@ include_once ('../vendor/autoload.php');
 use Spatie\ArrayToXml\ArrayToXml;
 
 try{
-
-    $container = new \Slim\Container();
+    $configSlim = '';
+    include_once ('../config/configSlim.php');
+    $app = new \Slim\App($configSlim);
+    $container = $app->getContainer();
 
     // Konfiguration Container
     $config = '';
@@ -94,7 +96,10 @@ try{
 
 
 
-
+    // Error Handling
+    $app->get('/error', function (\Slim\Http\Request $request, \Slim\Http\Response $response, $args){
+        throw new Exception('Ein ganz mieser Fehler');
+    });
 
 
 
