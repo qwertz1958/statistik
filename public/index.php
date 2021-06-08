@@ -122,21 +122,42 @@ try{
 
         $config = $this->get('config');
 
-        $template = [
-            'basisUrl' => $config['basisUrl']
+        $templateData = [
+            'basisUrl' => $config['basisUrl'],
+            'templatename' => 'contentCustomerSearch',
+            'ModulName' => 'Kundensuche',
+            'block1' => false,
+            'block2' => false
         ];
 
         $view = $this->view;
 
-        return $this->view->render($response, 'layout.phtml',  $template);
+        return $this->view->render($response, 'bootstrap.html', $templateData);
     });
 
 
     $app->any('/kundensuche', function (\Slim\Http\Request $request, \Slim\Http\Response $response, $args){
         /** @var  $action \App\Action\BlurredCustomerSearch */
         $action = $this->get(\App\Action\BlurredCustomerSearch::class);
-        $action->customerSearch($request, $args);
-        return $response;
+        $block = $action
+            ->customerSearch($request, $args)
+            ->getBlock();
+
+        $config = $this->get('config');
+
+        $templateData = [
+            'basisUrl' => $config['basisUrl'],
+            'templatename' => 'contentCustomerSearch',
+            'ModulName' => 'Kundensuche',
+            'block1' => $block['block1'],
+            'block2' => $block['block2'],
+            'export' => $block['export'],
+            'flag' => $block['flag']
+        ];
+
+        $view = $this->view;
+
+        return $this->view->render($response, 'bootstrap.html', $templateData);
     });
 
     // Startseite des Warenwirtschaftssystem

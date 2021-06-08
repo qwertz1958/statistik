@@ -20,6 +20,7 @@ class BlurredCustomerSearch
     /** @var CustomerSearchControl */
     protected $customerSearchControl;
     protected $dataExport;
+    protected $block;
 
     public function __construct($container)
     {
@@ -42,13 +43,35 @@ class BlurredCustomerSearch
 
 
             if($this->dataExport['flag'] == true)
-                $test = 123;
-            // Platzhalter für die Optionen für die Templateengine
+            {
+                $this->block = [
+                    'export' => $this->dataExport['export'],
+                    'block1' => false,
+                    'block2' => true,
+                    'flag' => $this->dataExport['flag']
+                ];
+            }
             else
-                $test = 123;
-            // Platzhalter für die Optionen für die Templateengine
+                $this->block = [
+                    'export' => $this->dataExport['export'],
+                    'block1' => true,
+                    'block2' => false,
+                    'flag' => $this->dataExport['flag']
+                ];
+
+            return $this;
         }catch(\Throwable $e){
             throw $e;
         }
     }
+
+    /**
+     * @return mixed
+     */
+    public function getBlock()
+    {
+        return $this->block;
+    }
+
+
 }
