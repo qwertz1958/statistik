@@ -24,3 +24,4 @@ Bei einer negativen Überprüfung müssen die Metadaten des Buches in den Datenb
     URL: localhost/praktikum/warenwirtschaftng/public/kundensuche
     
     Pflichtfelder: last_name
+
