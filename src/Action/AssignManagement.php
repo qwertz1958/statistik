@@ -57,13 +57,24 @@ class AssignManagement
             if(($requestData['flag'] == true) AND ($flag == true)){
                 $this->block = [
                     'block1' => true,
+                    'block2' => false,
+                    'block3' => false,
                     'title' => $requestData['export']['title'],
                     'id' => $requestData['export']['id']
                 ];
             }
             else
-                $test = 123;
-            // Platzhalter für die Optionen für die Templateengine
+            {
+                $this->block = [
+                    'block1' => false,
+                    'block2' => true,
+                    'block3' => false,
+                    'title' => $requestData['export']['title'],
+                    'id' => $requestData['export']['id']
+                ];
+            }
+
+
             return $this;
         }catch(\Throwable $e){
             throw $e;

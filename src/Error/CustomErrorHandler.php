@@ -23,8 +23,6 @@ class CustomErrorHandler
 
     public function __invoke($request, $response, $exception){
         try{
-            $test = 123;
-
             $assignManagement = $this->assignManagement;
             $echo = $assignManagement->myEcho();
 

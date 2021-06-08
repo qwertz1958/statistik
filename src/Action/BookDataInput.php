@@ -20,6 +20,7 @@ class BookDataInput
     /** @var BookDataControl */
     protected $bookDataControl;
     protected $flag = false;
+    protected $block;
 
     public function __construct($container){
         $this->bookDataControl = $container[BookDataControl::class];
@@ -44,10 +45,25 @@ class BookDataInput
                 ->isFlag();
 
             if($this->flag == true)
-                $test = 123;
-                // Platzhalter für die Optionen für die Templateengine
+                $this->block = [
+                    'block1' => false,
+                    'block2' => false,
+                    'block3' => true
+                ];
+
+            return $this;
         }catch (\Throwable $e){
             throw $e;
         }
     }
+
+    /**
+     * @return mixed
+     */
+    public function getBlock()
+    {
+        return $this->block;
+    }
+
+
 }

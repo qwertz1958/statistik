@@ -64,7 +64,7 @@ try{
     $app->post('/eingeben', function (\Slim\Http\Request $request, \Slim\Http\Response $response, $args){
         /** @var  $action \App\Action\AssignManagement */
         $action = $this->get(\App\Action\AssignManagement::class);
-        $block1 = $action
+        $block = $action
             ->bookInput($request, $args)
             ->getblock();
 
@@ -75,11 +75,11 @@ try{
             'basisUrl' => $config['basisUrl'],
             'templatename' => 'contentBookInput',
             'ModulName' => 'Buch einlagern',
-            'block1' => $block1['block1'],
-            'title' => $block1['title'],
-            'id' => $block1['id'],
-            'block2' => false,
-            'block3' => false
+            'block1' => $block['block1'],
+            'block2' => $block['block2'],
+            'block3' => $block['block3'],
+            'title' => $block['title'],
+            'id' => $block['id']
         ];
 
         $view = $this->view;
@@ -93,8 +93,26 @@ try{
     $app->any('/einpflegen', function (\Slim\Http\Request $request, \Slim\Http\Response $response, $args){
         /** @var  $action \App\Action\BookDataInput */
         $action = $this->get(\App\Action\BookDataInput::class);
-        $action->bookDataInput($request, $args);
-        return $response;
+        $block = $action
+            ->bookDataInput($request, $args)
+            ->getBlock();
+
+        $config = $this->get('config');
+
+        $templateData = [
+            'basisUrl' => $config['basisUrl'],
+            'templatename' => 'contentBookInput',
+            'ModulName' => 'Buch einlagern',
+            'block1' => $block['block1'],
+            'block2' => $block['block2'],
+            'block3' => $block['block3'],
+            'title' => $block['title'],
+            'id' => $block['id']
+        ];
+
+        $view = $this->view;
+
+        return $this->view->render($response, 'bootstrap.html', $templateData);
     });
 
 
