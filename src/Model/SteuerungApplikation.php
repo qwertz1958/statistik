@@ -1,6 +1,7 @@
 <?php
 /**
- * Beschreibung:
+ * Model zur Überprüfung der ISBN auf vorhandene Metadaten
+ * Bei erfolgreicher Überprüfung wird ein Exemplar des Buches in den Bestand aufgenommen
  *
  * 02.06.2021
  * arise
