@@ -1,25 +1,16 @@
 <?php return array (
   'root' => 
   array (
-    'pretty_version' => 'dev-main',
-    'version' => 'dev-main',
+    'pretty_version' => 'dev-develop',
+    'version' => 'dev-develop',
     'aliases' => 
     array (
     ),
-    'reference' => 'e39de3c5246aee0fef163cee0f0010c102bb1077',
-    'name' => 'arise/warenwirtschaft-ng',
+    'reference' => 'c27d1c27473180990749b18fdf00aa3042587f6a',
+    'name' => 'kalle/warenwirtschaft-ng',
   ),
   'versions' => 
   array (
-    'arise/warenwirtschaft-ng' => 
-    array (
-      'pretty_version' => 'dev-main',
-      'version' => 'dev-main',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'e39de3c5246aee0fef163cee0f0010c102bb1077',
-    ),
     'blogdaren/custom-terminal-color' => 
     array (
       'pretty_version' => '1.0.2',
@@ -46,6 +37,15 @@
       array (
       ),
       'reference' => 'e36208b8d7c9e12906c2b42320e255b152d3c0a6',
+    ),
+    'kalle/warenwirtschaft-ng' => 
+    array (
+      'pretty_version' => 'dev-develop',
+      'version' => 'dev-develop',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'c27d1c27473180990749b18fdf00aa3042587f6a',
     ),
     'nikic/fast-route' => 
     array (

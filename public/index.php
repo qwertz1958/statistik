@@ -48,96 +48,7 @@ try{
 
 
     // Routing
-    $app->map(['GET', 'POST'], '/name/[{name}]', function (\Slim\Http\Request $request, Slim\Http\Response $response, array $args)
-    {
-        $test =123;
-
-        $action = $this->get(\App\Test\MyTest::class);
-        $action->work($request, $args);
-
-        return $response;
-    });
-
-    $app->get('/text',  function (\Slim\Http\Request $request, Slim\Http\Response $response, array $args)
-    {
-
-        //primitiver text response
-
-        $body = $response->getBody();
-        $body->write('Hello');
-
-        return $response;
-
-    });
-
-    $app->get('/html/{name}',  function (\Slim\Http\Request $request, Slim\Http\Response $response, array $args)
-    {
-
-        $test = 123;
-
-        $view = $this->view;
-
-
-
-        return $this->view->render($response, 'html.html', ['name'=> $args['name']]);
-
-    });
-
-    $app->get('/json[/{name}]',  function (\Slim\Http\Request $request, Slim\Http\Response $response, array $args)
-    {
-
-        $user = [];
-
-        $user[0]['name'] = 'Mustermann';
-        $user[1]['name'] = 'Sonnenschein';
-        $user[2]['vorname'] = 'Max';
-        $user[3]['vorname'] = 'Susi';
-
-
-    $newResponse = $response->withJson($user);
-
-
-        return $newResponse;
-
-    });
-
-//XML response
-    $app->get('/xml',  function (\Slim\Http\Request $request, Slim\Http\Response $response, array $args)
-    {
-        $kunden = [];
-        $kunden[0]['name'] = 'Mustermann';
-        $kunden[1]['name'] = 'Sonnenschein';
-        $kunden[0]['vorname'] = 'Max';
-        $kunden[1]['vorname'] = 'Susi';
-
-        /** @var  ArrayToXml */
-        $xml = ArrayToXml::convert(['kunde' => $kunden], 'kunden');
-
-        $newresponse = $response->withHeader('Content-type', 'text/xml');
-        $body = $newresponse->getBody();
-        $body->write($xml);
-
-        return $newresponse;
-
-    });
-
-
-    $app->get('/kundensucheErststart',  function (\Slim\Http\Request $request, Slim\Http\Response $response, array $args)
-    {
-        $params = $request->getParams();
-
-        /** @var  \App\Test\MyTest */
-        $action = $this->get(Blu);
-        $action->work($args, $params);
-        $templateData = $action->getTemplateData();
-
-        $view = $this->view;
-
-        return $this->view->render($response, 'layout.phtml', $templateData);
-
-    });
-
-//Startseite der Artikelsuche
+    //Startseite der Artikelsuche
     $app->get('/erststartArtikelSuche',  function (\Slim\Http\Request $request, Slim\Http\Response $response, array $args)
     {
         $config = $this->get('config');
@@ -154,7 +65,7 @@ try{
         return $this->view->render($response, 'bootstrap.html', $templateData);
     });
 
-// Verarbeitung und Ausgabe der Artikelsuche
+    // Verarbeitung und Ausgabe der Artikelsuche
     $app->post('/abrufen',  function (\Slim\Http\Request $request, Slim\Http\Response $response, array $args)
     {
         /** @var  \App\Action\ExistsArticleInStore */
@@ -169,7 +80,7 @@ try{
     });
 
 
-//Verarbeitung und Ausgabe der Buchtitelsuche
+    //Verarbeitung und Ausgabe der Buchtitelsuche
     $app->post('/buchTitelSuche',  function (\Slim\Http\Request $request, Slim\Http\Response $response, array $args)
     {
         /** @var  \App\Action\BlurrdBookTitleSearch */
@@ -179,13 +90,9 @@ try{
         return $this->view->render($response, 'bootstrap.html', $templateData);
     });
 
-//Startseite der Buchtitelsuche
+    //Startseite der Buchtitelsuche
     $app->get('/buchTitelSucheStart',  function (\Slim\Http\Request $request, Slim\Http\Response $response, array $args)
     {
- //       /** @var  \App\Action\BlurrdBookTitleSearch */
-//        $action = $this->get(\App\Action\BlurrdBookTitleSearch::class);
-//        $action->bookTitleSearchStart($request, $args);
-
         $config = $this->get('config');
 
         $templateData = [
@@ -201,59 +108,8 @@ try{
 
     });
 
-//Errorhandler
-    $app->get('/error', function (\Slim\Http\Request $request, Slim\Http\Response $response, array $args)
-    {
-     throw new Exception('ein Fehler');
-    });
 
-// Response Twig-Html Template , Kontrollstrukturen
-    $app->get('/template[/{templatename}]', function (\Slim\Http\Request $request, Slim\Http\Response $response, $args)
-    {
-        $kunde = [];
-        $kunde[0]['name'] = 'Mustermann';
-        $kunde[1]['name'] = 'Sonnenschein';
-        $kunde[0]['vorname'] = 'Max';
-        $kunde[1]['vorname'] = 'Susi';
-
-        $config = $this->get('config');
-
-        $template = [
-            'basisUrl' => $config['basisUrl'],
-            'kunde' => $kunde,
-            'templatename' => $args['templatename'],
-            'start' => true,
-            'mini' => true
-        ];
-
-        $view = $this->view;
-
-        return $this->view->render($response, 'bootstrap.html', $template);
-    });
-
-// Response Twig-Html Template , Schleifen
-    $app->get('/template1/loop', function (\Slim\Http\Request $request, Slim\Http\Response $response, $args)
-    {
-        $kunden = [];
-        $kunden[0]['name'] = 'Mustermann';
-        $kunden[1]['name'] = 'Sonnenschein';
-        $kunden[0]['vorname'] = 'Max';
-        $kunden[1]['vorname'] = 'Susi';
-
-        $config = $this->get('config');
-
-        $template = [
-            'basisUrl' => $config['basisUrl'],
-            'templatename' => 'loop',
-            'kunden' => $kunden
-        ];
-
-        $view = $this->view;
-
-        return $this->view->render($response, 'bootstrap.html', $template);
-    });
-
-// Startseite
+    // Startseite
     $app->get('/',  function (\Slim\Http\Request $request, Slim\Http\Response $response, array $args)
     {
 
@@ -269,7 +125,6 @@ try{
         return $this->view->render($response, 'bootstrap.html', $templateData);
 
     });
-
 
 
     // Aufrufen der Eingabemaske
