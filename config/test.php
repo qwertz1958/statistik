@@ -1,6 +1,6 @@
 <?php
 /**
- * Beschreibung:
+ * Test des Containers mit und ohne 'factory'
  *
  * 02.06.2021
  * Kalle
@@ -8,7 +8,13 @@
  *
  */
 
-$container[\App\Test\MyTest::class] = function($container)
+//$container[\App\Test\ContainerTest::class] = function($container)
+//{
+//    return new App\Test\ContainerTest($container);
+//};
+
+
+$container[\App\Test\ContainerTest::class] = $container->factory(function($container)
 {
-    return new App\Test\MyTest($container);
-};
+    return new App\Test\ContainerTest($container);
+});

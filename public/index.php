@@ -44,7 +44,21 @@ try{
 //slim framework
     $app = new \Slim\App($container);
 
+//Test (factory) Container
+$testArray = ['bla', 'blub'];
 
+//erster Aufruf
+/** @var  $testKlasse */
+    $testKlasse1 = $container[\App\Test\ContainerTest::class];
+    $werte1 = $testKlasse1
+                ->eingabeWerte($testArray)
+                ->ausgabeWerte();
+
+//zweiter Aufruf
+    /** @var  $testKlasse */
+    $testKlasse2 = $container[\App\Test\ContainerTest::class];
+    $werte2 = $testKlasse2
+        ->ausgabeWerte();
 
 
 
