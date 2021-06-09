@@ -26,14 +26,14 @@ try{
     // Test Container
     $testArray = ['bla', 'blub'];
     /** @var \App\Test\ContainerTest $testKlasse */
-    $testKlasse = $container[App\Test\ContainerTest::class];
-    $werte = $testKlasse
+    $testKlasse1 = $container[App\Test\ContainerTest::class];
+    $werte1 = $testKlasse1
         ->eingabeWerte($testArray)
         ->ausgabeWerte();
 
     /** @var \App\Test\ContainerTest $testKlasse */
-    $testKlasse =$container[App\Test\ContainerTest::class];
-    $werte = $testKlasse->ausgabeWerte();
+    $testKlasse2 =$container[App\Test\ContainerTest::class];
+    $werte2 = $testKlasse2->ausgabeWerte();
 
 
 
