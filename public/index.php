@@ -21,7 +21,22 @@ try{
     $config = '';
     include_once ('../config/global.php');
     $container['config'] = $config;
+
     include_once ('../config/test.php');
+    // Test Container
+    $testArray = ['bla', 'blub'];
+    /** @var \App\Test\ContainerTest $testKlasse */
+    $testKlasse = $container[App\Test\ContainerTest::class];
+    $werte = $testKlasse
+        ->eingabeWerte($testArray)
+        ->ausgabeWerte();
+
+    /** @var \App\Test\ContainerTest $testKlasse */
+    $testKlasse =$container[App\Test\ContainerTest::class];
+    $werte = $testKlasse->ausgabeWerte();
+
+
+
     // Konfiguration der Tools
     include_once ('../config/tool.php');
     // Konfiguration des Mappers
