@@ -22,19 +22,6 @@ try{
     include_once ('../config/global.php');
     $container['config'] = $config;
 
-    include_once ('../config/test.php');
-    // Test Container
-    $testArray = ['bla', 'blub'];
-    /** @var \App\Test\ContainerTest $testKlasse */
-    $testKlasse1 = $container[App\Test\ContainerTest::class];
-    $werte1 = $testKlasse1
-        ->eingabeWerte($testArray)
-        ->ausgabeWerte();
-
-    /** @var \App\Test\ContainerTest $testKlasse */
-    $testKlasse2 =$container[App\Test\ContainerTest::class];
-    $werte2 = $testKlasse2->ausgabeWerte();
-
 
 
     // Konfiguration der Tools
