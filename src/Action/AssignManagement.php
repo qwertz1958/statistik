@@ -3,106 +3,100 @@
  * Action zur Abfrage der ISBN
  * bei bereits vorhandenen Datenbestand wird ein neues Exemplar in den Bestand aufgenommen
  *
- * 18.05.2021
- * dominik.schmidt
+ * 02.06.2021
+ * arise
+ * AssignManagement.php
  */
 
+
 namespace App\Action;
-use App\Checker;
 use App\Model\SteuerungApplikation;
-use App\Template;
-use App\Tool\GenerateResponse;
+use Slim\Container;
+use Slim\Http\Request;
+use Webmozart\Assert\Assert;
+
+
+
 
 class AssignManagement
 {
-    use GenerateResponse;
-
-    /** @var Template  */
-    protected $templateEngine;
-    /** @var Checker  */
-    protected $checker;
-    /** @var SteuerungApplikation */
-    protected $steuerungApp;
-    protected $flag = false;
-    protected $bookData;
     protected $config;
 
+    protected $container;
+    /** @var SteuerungApplikation */
+    protected $steuerungApp;
+    protected $block;
 
-    public function __construct($container){
-        $this->templateEngine = $container[Template::class];
-        $this->checker = $container[Checker::class];
-        $this->steuerungApp = $container[SteuerungApplikation::class];
+    public function __construct(Container $container){
         $this->config = $container['config'];
+        $this->steuerungApp = $container[SteuerungApplikation::class];
     }
 
     /**
-     * @param $params
+     * @param Request $request
+     * @param array $args
+     * @return $this
      * @throws \Throwable
      */
-    public function bookInput($params){
-        try{
-            $checkParams = [
-                'isbn' => [
-                    'mandatory' => true,
-                    'value' => isset($params['isbn']) ? $params['isbn'] : NULL,
-                    'type' => 'isbn'
-                ]
-            ];
-
-            $this->checker
-                ->setParams($checkParams)
-                ->checkParams();
-
-            $this->flag = $this->steuerungApp
-                ->setSetParams($params)
-                ->work()
-                ->getFlagSaveInDatabase();
-
-            if($this->flag == true){
-                $this->bookData = $this->steuerungApp
-                    ->getSetParams();
-
-                $this->block1 = true;
-                $this->block2 = false;
-                $this->block3 = false;
-            }elseif($this->flag == false){
-                $this->block1 = false;
-                $this->block2 = true;
-                $this->block3 = false;
-            }
-
-            $templateData = [
-                'basisUrl' => $this->config['basisUrl'],
-                'block1' => $this->block1,
-                'block2' => $this->block2,
-                'block3' => $this->block3,
-                'bookData' => $this->bookData
-            ];
-
-            $this->convertToHtml($templateData, 'contentBookInput');
-
-
-        }catch(\Throwable $e){
-            throw $e;
-        }
-    }
-
-    /**
-     * @throws \Throwable
-     */
-    public function eingabemaske()
+    public function bookInput(Request $request, array $args)
     {
         try{
-            $templateData = [
-                'basisUrl' => $this->config['basisUrl'],
-                'block1' => false,
-                'block2' => false
-            ];
+            $data = $request->getParams();
+            Assert::notEmpty($data['ISBN'], $message = 'Pflichtfelder ausfüllen');
+            Assert::notEmpty($data['bereich'], $message = 'Pflichtfelder ausfüllen');
+            Assert::notEmpty($data['box'], $message = 'Pflichtfelder ausfüllen');
+            Assert::notEmpty($data['zustand'], $message = 'Pflichtfelder ausfüllen');
+            Assert::regex($data['ISBN'], '/^(9783)([0-9\-]{9,11})$/', 'Es handelt sich nicht um eine deutschsprachige ISBN!');
+            $requestData = $this->steuerungApp
+                ->work($data)
+                ->getRequestData();
 
-            $this->convertToHtml($templateData, 'contentBookInput');
+            $flag = $this->steuerungApp
+                ->getFlag();
+
+            if(($requestData['flag'] == true) AND ($flag == true)){
+                $this->block = [
+                    'block1' => true,
+                    'block2' => false,
+                    'block3' => false,
+                    'title' => $requestData['export']['title'],
+                    'id' => $requestData['export']['id']
+                ];
+            }
+            else
+            {
+                $this->block = [
+                    'block1' => false,
+                    'block2' => true,
+                    'block3' => false,
+                    'title' => $requestData['export']['title'],
+                    'id' => $requestData['export']['id']
+                ];
+            }
+
+
+            return $this;
         }catch(\Throwable $e){
             throw $e;
         }
     }
+
+    /**
+     * Test Methode für den Logger
+     */
+    public function myEcho()
+    {
+        echo 'hello';
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getblock()
+    {
+        return $this->block;
+    }
+
+
 
 }

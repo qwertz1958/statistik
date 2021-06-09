@@ -2,9 +2,11 @@
 /**
  * Steuerung der Buchdatenpflege
  *
- * 18.05.2021
- * dominik.schmidt
+ * 05.06.2021
+ * arise
+ * BookDataControl.php
  */
+
 
 namespace App\Model;
 
@@ -13,43 +15,31 @@ use App\Mapper\MapperBookDataInput;
 
 class BookDataControl
 {
-    protected $inputData;
-    /** @var MapperBookDataInput  */
+    /** @var MapperBookDataInput */
     protected $mapperBookDataInput;
     protected $flag = false;
 
-    public function __construct($container){
+    public function __construct($container)
+    {
         $this->mapperBookDataInput = $container[MapperBookDataInput::class];
     }
 
     /**
+     * @param array $data
      * @return $this
      * @throws \Throwable
      */
-    public function work() : self
+    public function work(array $data) : self
     {
         try{
             $this->flag = $this->mapperBookDataInput
-                ->setInputData($this->inputData)
-                ->inputData()
-                ->isFlagSaveinDatabase();
+                ->work($data)
+                ->isFlag();
 
             return $this;
         }catch(\Throwable $e){
             throw $e;
         }
-    }
-
-
-
-    /**
-     * @param mixed $inputData
-     * @return BookDataControl
-     */
-    public function setInputData($inputData)
-    {
-        $this->inputData = $inputData;
-        return $this;
     }
 
     /**
@@ -59,7 +49,6 @@ class BookDataControl
     {
         return $this->flag;
     }
-
 
 
 }

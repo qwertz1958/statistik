@@ -271,6 +271,130 @@ try{
     });
 
 
+
+    // Aufrufen der Eingabemaske
+    $app->get('/eingabemaske', function (\Slim\Http\Request $request, Slim\Http\Response $response, $args)
+    {
+        $config = $this->get('config');
+
+        $templateData = [
+            'basisUrl' => $config['basisUrl'],
+            'templatename' => 'contentBookInput',
+            'ModulName' => 'Buch einlagern',
+            'block1' => false,
+            'block2' => false,
+            'block3' => false
+        ];
+
+        $view = $this->view;
+
+        return $this->view->render($response, 'bootstrap.html', $templateData);
+    });
+
+    // Abfrage / Eingabe der ISBN
+    $app->post('/eingeben', function (\Slim\Http\Request $request, \Slim\Http\Response $response, $args){
+        /** @var  $action \App\Action\AssignManagement */
+        $action = $this->get(\App\Action\AssignManagement::class);
+        $block = $action
+            ->bookInput($request, $args)
+            ->getblock();
+
+
+        $config = $this->get('config');
+
+        $templateData = [
+            'basisUrl' => $config['basisUrl'],
+            'templatename' => 'contentBookInput',
+            'ModulName' => 'Buch einlagern',
+            'block1' => $block['block1'],
+            'block2' => $block['block2'],
+            'block3' => $block['block3'],
+            'title' => $block['title'],
+            'id' => $block['id']
+        ];
+
+        $view = $this->view;
+
+        return $this->view->render($response, 'bootstrap.html', $templateData);
+
+
+    });
+
+    // Einpflegen der Metadaten eines neuen Buches in den Datenbestand
+    $app->any('/einpflegen', function (\Slim\Http\Request $request, \Slim\Http\Response $response, $args){
+        /** @var  $action \App\Action\BookDataInput */
+        $action = $this->get(\App\Action\BookDataInput::class);
+        $block = $action
+            ->bookDataInput($request, $args)
+            ->getBlock();
+
+        $config = $this->get('config');
+
+        $templateData = [
+            'basisUrl' => $config['basisUrl'],
+            'templatename' => 'contentBookInput',
+            'ModulName' => 'Buch einlagern',
+            'block1' => $block['block1'],
+            'block2' => $block['block2'],
+            'block3' => $block['block3'],
+            'title' => $block['title'],
+            'id' => $block['id']
+        ];
+
+        $view = $this->view;
+
+        return $this->view->render($response, 'bootstrap.html', $templateData);
+    });
+
+
+
+    // Kundensuche
+    $app->any('/kundensucheErststart', function (\Slim\Http\Request $request, \Slim\Http\Response $response, $args){
+
+        $config = $this->get('config');
+
+        $templateData = [
+            'basisUrl' => $config['basisUrl'],
+            'templatename' => 'contentCustomerSearch',
+            'ModulName' => 'Kundensuche',
+            'block1' => false,
+            'block2' => false
+        ];
+
+        $view = $this->view;
+
+        return $this->view->render($response, 'bootstrap.html', $templateData);
+    });
+
+
+
+
+    $app->any('/kundensuche', function (\Slim\Http\Request $request, \Slim\Http\Response $response, $args){
+        /** @var  $action \App\Action\BlurredCustomerSearch */
+        $action = $this->get(\App\Action\BlurredCustomerSearch::class);
+        $block = $action
+            ->customerSearch($request, $args)
+            ->getBlock();
+
+        $config = $this->get('config');
+
+        $templateData = [
+            'basisUrl' => $config['basisUrl'],
+            'templatename' => 'contentCustomerSearch',
+            'ModulName' => 'Kundensuche',
+            'block1' => $block['block1'],
+            'block2' => $block['block2'],
+            'export' => $block['export'],
+            'flag' => $block['flag']
+        ];
+
+        $view = $this->view;
+
+        return $this->view->render($response, 'bootstrap.html', $templateData);
+    });
+
+
+
 //Slim fange an zu arbeiten
     $app->run();
 }
