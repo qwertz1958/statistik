@@ -12,7 +12,7 @@
 //    return new App\Test\ContainerTest($container);
 //};
 
-$container[\App\Test\MyTest::class] = $container->factory(function($container)
+$container[\App\Test\ContainerTest::class] = $container->factory(function($container)
 {
-   return new App\Test\MyTest($container);
+   return new App\Test\ContainerTest($container);
 });
