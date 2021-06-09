@@ -17,7 +17,7 @@ class ExistsArticleInStore
     protected $appLogger;
 
 
-    /** @var FindArticle */
+    /** @var \App\Model\FindArticle */
     protected $findArticleModel;
     /** @var ArrayToXml */
     protected $arrayToXmlModel;
@@ -33,7 +33,6 @@ class ExistsArticleInStore
     public function bookInput(){
         try{
 
-
             $this->convertToHtml();
         }catch(\Throwable $e){
             throw $e;
@@ -44,38 +43,10 @@ class ExistsArticleInStore
      * @param $params
      * @throws \Throwable
      */
-    public function bookOutput($params){
+    public function bookOutput(\Slim\Http\Request $request){
         try{
-            $array = [
-                'Good guy' => [
-                    '_attributes' => ['attr1' => 'value'],
-                    'name' => 'Luke Skywalker',
-                    'weapon' => 'Lightsaber'
-                ],
-                'Bad guy' => [
-                    'name' => 'Sauron',
-                    'weapon' => 'Evil Eye'
-                ],
-                'The survivor' => [
-                    '_attributes' => ['house'=>'Hogwarts'],
-                    '_value' => 'Harry Potter'
-                ]
-            ];
 
-            $result = $this->arrayToXmlModel::convert($array);
-            exit();
-
-
-            $checkParams = [
-                'isbn' => [
-                    'mandatory' => true,
-                    'value' => isset($params['isbn']) ? $params['isbn'] : NULL,
-                    'type' => 'isbn'
-                ]
-            ];
-            $this->checker
-                ->setParams($checkParams)
-                ->checkParams();
+            $params = $request->getParams();
 
             $articleData = $this->findArticleModel
                 ->setRequestParams($params)
@@ -99,7 +70,7 @@ class ExistsArticleInStore
 
 
 
-                $this->convertToHtml($templateData, 'pitchInfo');
+               return $templateData;
 
         }
         catch(\Throwable $e){

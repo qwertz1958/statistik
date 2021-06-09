@@ -143,23 +143,34 @@ try{
     });
 
 //Startseite der Artikelsuche
-    $app->any('/erststartArtikelSuche',  function (\Slim\Http\Request $request, Slim\Http\Response $response, array $args)
+    $app->get('/erststartArtikelSuche',  function (\Slim\Http\Request $request, Slim\Http\Response $response, array $args)
     {
-        /** @var  \App\Action\ExistsArticleInStore */
-        $action = $this->get(\App\Action\ExistsArticleInStore::class);
-        $action->erststart($request, $args);
+        $config = $this->get('config');
 
-        return $response;
+        $templateData = [
+            'basisUrl' => $config['basisUrl'],
+            'templatename' => 'pitchInfo',
+            'ModulName' => 'Suche nach ISBN:',
+            'block1' => false,
+            'block2' => false
+
+        ];
+
+        return $this->view->render($response, 'bootstrap.html', $templateData);
     });
 
 // Verarbeitung und Ausgabe der Artikelsuche
-    $app->any('/abrufen',  function (\Slim\Http\Request $request, Slim\Http\Response $response, array $args)
+    $app->post('/abrufen',  function (\Slim\Http\Request $request, Slim\Http\Response $response, array $args)
     {
         /** @var  \App\Action\ExistsArticleInStore */
         $action = $this->get(\App\Action\ExistsArticleInStore::class);
-        $action->bookOutput($request, $args);
+        $templateData = $action->bookOutput($request);
 
-        return $response;
+
+        $templateData['templatename'] = 'pitchInfo';
+        $templateData['ModulName'] = 'Stellpatzinformation';
+
+        return $this->view->render($response, 'bootstrap.html', $templateData);
     });
 
 
@@ -176,7 +187,7 @@ try{
 //Startseite der Buchtitelsuche
     $app->get('/buchTitelSucheStart',  function (\Slim\Http\Request $request, Slim\Http\Response $response, array $args)
     {
-        /** @var  \App\Action\BlurrdBookTitleSearch */
+ //       /** @var  \App\Action\BlurrdBookTitleSearch */
 //        $action = $this->get(\App\Action\BlurrdBookTitleSearch::class);
 //        $action->bookTitleSearchStart($request, $args);
 
@@ -256,13 +267,14 @@ try{
         $templateData = [
             'basisUrl' => $config['basisUrl'],
             'templatename' => 'leer',
-            'ModulName' => 'Schön, daß Sie da sind!'
+        //    'ModulName' => 'Schön, daß Sie da sind!'
 
         ];
 
         return $this->view->render($response, 'bootstrap.html', $templateData);
 
     });
+
 
 //Slim fange an zu arbeiten
     $app->run();

@@ -31,7 +31,7 @@
   <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{basisUrl}}">
       <div class="sidebar-brand-icon rotate-n-15">
         <i class="fas fa-laugh-wink"></i>
       </div>
@@ -82,17 +82,18 @@
 
     <!-- Administration Module - Pages Collapse Menu -->
     <li class="nav-item active">
-      <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
-         aria-controls="collapsePages">
+      <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages1" aria-expanded="true"
+         aria-controls="collapsePages1">
         <i class="fas fa-fw fa-folder"></i>
         <span>Module</span>
       </a>
-      <div id="collapsePages" class="collapse show" aria-labelledby="headingPages"
+      <div id="collapsePages1" class="collapse show" aria-labelledby="headingPages"
            data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
           <!--  Aufruf BuchTitelSucheStart -->
           <a class="collapse-item active" href="{{basisUrl}}/eingabemaske">Eingabemaske</a>
           <a class="collapse-item active" href="{{basisUrl}}/buchTitelSucheStart">Buchtitelsuche</a>
+          <a class="collapse-item active" href="{{basisUrl}}/erststartArtikelSuche">ISBN Suche</a>
         </div>
       </div>
     </li>
@@ -107,7 +108,7 @@
   <div id="content-wrapper" class="d-flex flex-column">
 
     <!-- Main Content -->
-    <div id="content">
+    <div id="content" style="background-color: #5b80ff">
 
       <!-- Topbar -->
       <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
@@ -225,7 +226,7 @@
               </h6>
               <a class="dropdown-item d-flex align-items-center" href="#">
                 <div class="dropdown-list-image mr-3">
-                  <img class="rounded-circle" src="../img/undraw_profile_1.svg"
+                  <img class="rounded-circle" src="/public/img/undraw_profile_1.svg"
                        alt="...">
                   <div class="status-indicator bg-success"></div>
                 </div>
@@ -237,7 +238,7 @@
               </a>
               <a class="dropdown-item d-flex align-items-center" href="#">
                 <div class="dropdown-list-image mr-3">
-                  <img class="rounded-circle" src="../img/undraw_profile_2.svg"
+                  <img class="rounded-circle" src="../public/img/undraw_profile_2.svg"
                        alt="...">
                   <div class="status-indicator"></div>
                 </div>
@@ -249,7 +250,7 @@
               </a>
               <a class="dropdown-item d-flex align-items-center" href="#">
                 <div class="dropdown-list-image mr-3">
-                  <img class="rounded-circle" src="../img/undraw_profile_3.svg"
+                  <img class="rounded-circle" src="../public/img/undraw_profile_3.svg"
                        alt="...">
                   <div class="status-indicator bg-warning"></div>
                 </div>
@@ -282,8 +283,9 @@
             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <span class="mr-2 d-none d-lg-inline text-gray-600 small">Mediengruppe</span>
-              <img class="img-profile rounded-circle"
-                   src="../public/img/undraw_profile.svg">
+              <img class="img"
+                   src="../public/img/stein_logo.jpeg"
+                   width="50" height="60">
             </a>
             <!-- Dropdown - User Information -->
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -314,10 +316,10 @@
       <!-- End of Topbar -->
 
       <!-- Begin Page Content -->
-      <div class="container-fluid">
+      <div class="container-fluid" >
 
         <!-- Page Heading -->
-        <h1 class="h3 mb-4 text-gray-800">{{ModulName}}</h1>
+        <!-- <h1 class="h3 mb-4 text-gray-800">{{ModulName}}</h1> -->
         {% include templatename ~ '.phtml' %}
 
       </div>
@@ -329,7 +331,7 @@
     <!-- Footer -->
     <footer class="sticky-footer bg-white">
       <div class="container my-auto">
-        <div class="copyright text-center my-auto">
+        <div class="copyright text-center text-dark my-auto">
           <span>Copyright &copy; Mediengruppe Stein 2021</span>
         </div>
       </div>

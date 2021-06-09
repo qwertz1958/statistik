@@ -84,7 +84,7 @@ class BlurrdBookTitleSearch
                 ->getTitleData();
 
             $block1 = true;
-            $block2 = true;
+            $block2 = false;
 
             if(count($titleData)>0){
                 $block1 = false;
