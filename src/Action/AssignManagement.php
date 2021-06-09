@@ -81,6 +81,9 @@ class AssignManagement
         }
     }
 
+    /**
+     * Test Methode für den Logger
+     */
     public function myEcho()
     {
         echo 'hello';
