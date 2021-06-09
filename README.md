@@ -11,8 +11,6 @@ Bei einer negativen Überprüfung müssen die Metadaten des Buches in den Datenb
     
     Pflichtfelder: ISBN, bereich, box, zustand
 
-    gültige Test ISBN: 9783406582066
-    ungültige Test ISBN: 9783000000000
 
 #### Einpflegen der Metadaten eines neuen Buches in den Datenbestand
 ***Die Metadaten werden mit den Informationen über ISBN, Titel und Verlag in den Datenbestand übergeben***
