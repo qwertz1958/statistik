@@ -41,10 +41,6 @@ try{
 // Error handling
     include_once ('../config/error.php');
 
-//slim framework
-    $app = new \Slim\App($container);
-
-
 
 
     // Routing
