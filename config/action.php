@@ -28,18 +28,3 @@
     {
         return new \App\Action\BlurrdBookTitleSearch($container);
     };
-<<<<<<< HEAD
-    // Test von Twig
-    $container[\App\Action\TwigTest::class] = function ($container)
-    {
-=======
-
-    $container[\App\Action\Login::class] = function($container){
-        return new \App\Action\Login($container);
-    };
-
-    //MyTest von Twig
-    $container[\App\Action\TwigTest::class] = function ($container){
->>>>>>> origin/ng-348
-        return new \App\Action\TwigTest($container);
-    };
