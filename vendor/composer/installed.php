@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => 'c27d1c27473180990749b18fdf00aa3042587f6a',
+    'reference' => 'fadec13d4184c26c70fde3709fbe7e52d3ad4d65',
     'name' => 'kalle/warenwirtschaft-ng',
   ),
   'versions' => 
@@ -45,7 +45,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => 'c27d1c27473180990749b18fdf00aa3042587f6a',
+      'reference' => 'fadec13d4184c26c70fde3709fbe7e52d3ad4d65',
     ),
     'nikic/fast-route' => 
     array (

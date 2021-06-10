@@ -70,7 +70,7 @@ class ExistsArticleInStore
 
 
 
-               return $templateData;
+            return $templateData;
 
         }
         catch(\Throwable $e){

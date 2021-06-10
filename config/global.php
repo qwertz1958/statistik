@@ -7,7 +7,7 @@
 $config = [
     'wert1' => 'configWert1',
     'wert2' => 'configWert2',
-    'basisUrl' => 'http://localhost/praktikum/warenwirtschaftng/public/',
+    'basisUrl' => 'http://localhost/warenwirtschaftng/public/',
     'database' => [
         'db_server' => 'localhost',
         'db_database' => 'warenwirtschaft',
@@ -20,15 +20,6 @@ $config = [
         'db_user' => 'db1001733-prakt',
         'db_password' => 'mbzt_4tknu'
     ],
-    'projektDaten' => [
-        'milestone' => 12,
-        'active' => 1,
-        'project' => 'warenwirtschaft',
-        'type' => 'Defect',
-        'state' => 'A',
-        'categoryExtrem' => 'extrem',
-        'titleCritical' => 'CRITICAL'
-    ]
 ];
 
 

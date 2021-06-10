@@ -48,8 +48,7 @@ class BlurrdBookTitleSearch
     public function booklookinput()
     {
         try{
-            $test=123;
-          //  $this->convertToHtml();
+
         }
         catch(\Throwable $e)
         {

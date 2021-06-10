@@ -44,13 +44,7 @@ class BookTitleInfo
                              GROUP BY artikel.ISBN
                              ORDER BY anzahl desc", [$nutzereingabe])
                 ->fetchAll();
-//            if(($this->responseData != NULL) OR !empty($this->responseData)) {
-//                $this->flag = true;
-//                $this->responseData = [
-//                    'export' => $this->responseData,
-//                    'flag' => $this->flag
-//                ];
-//            }
+
             return $this;
 
         }
