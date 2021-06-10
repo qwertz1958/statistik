@@ -3,58 +3,46 @@
  * Mapper zur unscharfen Suche von Kunden
  * zuständig für die Abfrage der Datenbank Parameter
  *
- * 18.05.2021
- * dominik.schmidt
+ * 05.06.2021
+ * arise
+ * MapperCustomerSearch.php
  */
+
 
 namespace App\Mapper;
 
 
-use \GrumpyPdo;
-
 class MapperCustomerSearch
 {
+    /** @var \GrumpyPdo */
+    protected $grumpyPdo;
+    protected $dataExport;
     protected $flag = false;
-    protected $databaseExport;
-    protected $inputSearchData;
-    /** @var GrumpyPdo */
-    protected $grumpyPDO;
 
-
-    public function __construct($container){
-        $this->grumpyPDO = $container[\GrumpyPdo::class];
-    }
-
-    /**
-     * @param mixed $inputSearchData
-     * @return MapperCustomerSearch
-     */
-    public function setInputSearchData($inputSearchData)
+    public function __construct($container)
     {
-        $this->inputSearchData = $inputSearchData;
-        return $this;
+        $this->grumpyPdo = $container[\GrumpyPdo::class];
     }
 
     /**
-     * unscharfe Datenbankabfrage
-     *
+     * @param array $data
      * @return $this
      * @throws \Throwable
      */
-    public function customerDatabasereq() : self
+    public function customerDatabaseReq(array $data) :self
     {
         try{
-            $lastName = '%';
-            $lastName .=  $this->inputSearchData['last_name'] .= '%';
-            $this->databaseExport = $this->grumpyPDO
-                ->run("select * from kunden WHERE last_name like ?", [$lastName])
+            $data = '%' . $data['last_name'] . '%';
+            $this->dataExport = $this->grumpyPdo
+                ->run("select * from kunden WHERE last_name like ?", [$data])
                 ->fetchAll();
-            if(($this->databaseExport != NULL) OR !empty($this->databaseExport))
+
+            if(($this->dataExport != NULL) OR (!empty($this->dataExport)))
                 $this->flag = true;
-                $this->databaseExport = [
-                    'export' => $this->databaseExport,
-                    'flag'  =>  $this->flag
-                ];
+            $this->dataExport = [
+                'export' => $this->dataExport,
+                'flag' => $this->flag
+            ];
 
             return $this;
         }catch(\Throwable $e){
@@ -62,16 +50,13 @@ class MapperCustomerSearch
         }
     }
 
-
     /**
      * @return mixed
      */
-    public function getDatabaseExport()
+    public function getDataExport()
     {
-        return $this->databaseExport;
+        return $this->dataExport;
     }
-
-
 
 
 }

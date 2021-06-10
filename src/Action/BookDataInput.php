@@ -2,90 +2,68 @@
 /**
  * Action zum Einpflegen der Stammdaten des Buches
  *
- * 18.05.2021
- * dominik.schmidt
+ * 04.06.2021
+ * arise
+ * BookDataInput.php
  */
+
 
 namespace App\Action;
 
 
-use App\Checker;
 use App\Model\BookDataControl;
-use App\Template;
-use App\Tool\GenerateResponse;
+use Slim\Http\Request;
+use Webmozart\Assert\Assert;
 
 class BookDataInput
 {
-    use GenerateResponse;
-
-    protected $flag;
-    /** @var Checker */
-    protected $checker;
-    /** @var BookDataControl  */
+    /** @var BookDataControl */
     protected $bookDataControl;
-    /** @var Template  */
-    protected $templateEngine;
-    protected $config;
+    protected $flag = false;
+    protected $block;
 
-    public function __construct($container)
-    {
-        $this->templateEngine = $container[Template::class];
-        $this->checker = $container[Checker::class];
+    public function __construct($container){
         $this->bookDataControl = $container[BookDataControl::class];
-        $this->config = $container['config'];
     }
 
     /**
-     * @param $params
+     * @param Request $request
+     * @param array $args
      * @throws \Throwable
      */
-    public function bookDataInput($params)
+    public function bookDataInput(Request $request, array $args)
     {
         try{
-            $checkParams = [
-                'isbn' => [
-                    'mandatory' => true,
-                    'value' => isset($params['isbn']) ? $params['isbn'] : NULL,
-                    'type' => 'isbn'
-                ],
-                'title' => [
-                    'mandatory' => true,
-                    'value' => isset($params['isbn']) ? $params['isbn'] : NULL,
-                    'type' => 'title'
-                ],
-                'verlag' => [
-                    'mandatory' => true,
-                    'value' => isset($params['isbn']) ? $params['isbn'] : NULL,
-                    'type' => 'verlag'
-                ]
-            ];
-
-            $this->checker
-                ->setParams($checkParams)
-                ->checkParams();
+            $data = $request->getParams();
+            Assert::notEmpty($data['ISBN'], $message = 'Pflichtfelder ausfüllen');
+            Assert::notEmpty($data['title'], $message = 'Pflichtfelder ausfüllen');
+            Assert::notEmpty($data['verlag'], $message = 'Pflichtfelder ausfüllen');
+            Assert::regex($data['ISBN'], '/^(9783)([0-9\-]{9,11})$/', 'Es handelt sich nicht um eine deutschsprachige ISBN!');
 
             $this->flag = $this->bookDataControl
-                ->setInputData($params)
-                ->work()
+                ->work($data)
                 ->isFlag();
 
-            if($this->flag == true){
-                $this->block1 = false;
-                $this->block2 = false;
-                $this->block3 = true;
-            }
+            if($this->flag == true)
+                $this->block = [
+                    'block1' => false,
+                    'block2' => false,
+                    'block3' => true
+                ];
 
-            $templateData = [
-                'basisUrl' => $this->config['basisUrl'],
-                'block1' => $this->block1,
-                'block2' => $this->block2,
-                'block3' => $this->block3,
-            ];
-
-            $this->convertToHtml($templateData, 'contentBookInput');
-
-        }catch(\Throwable $e){
+            return $this;
+        }catch (\Throwable $e){
             throw $e;
         }
     }
+
+    /**
+     * @return mixed
+     */
+    public function getBlock()
+    {
+        return $this->block;
+    }
+
+
 }

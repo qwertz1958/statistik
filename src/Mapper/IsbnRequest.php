@@ -1,57 +1,54 @@
 <?php
 /**
- * Abfrage ob die vom Mitarbeiter eingegebene ISBN schon in der Datenbank vorhanden ist
+ * Mapper zum Abfragen ob sich die eingegebene ISBN im Datenbestand befindet
  *
- * 18.05.2021
- * dominik.schmidt
+ * 02.06.2021
+ * arise
+ * IsbnRequest.php
  */
+
 
 namespace App\Mapper;
 
 
-use \GrumpyPdo;
-
 class IsbnRequest
 {
+    /** @var \GrumpyPdo */
+    protected $grumpyPdo;
     protected $requestData;
-    protected $requestParams;
     protected $flag = false;
 
-    /** @var GrumpyPdo */
-    protected $GrumpyPDO;
-
-    public function __construct($container){
-        $this->GrumpyPDO = $container[\GrumpyPdo::class];
-    }
-
-    /**
-     * @param mixed $requestParams
-     * @return IsbnRequest
-     */
-    public function setRequestParams($requestParams)
+    public function __construct($container)
     {
-        $this->requestParams = $requestParams;
-        return $this;
+        $this->grumpyPdo = $container[\GrumpyPdo::class];
     }
 
     /**
+     * @param $isbn
      * @return $this
      * @throws \Throwable
      */
-    public function dataRequest() : self
+    public function dataRequest($data)
     {
         try{
-            $this->isbn = $this->requestParams['isbn'];
-            $this->requestData = $this->GrumpyPDO
-                ->run("SELECT warenwirtschaft.artikel.id, warenwirtschaft.artikel.title FROM warenwirtschaft.artikel WHERE artikel.ISBN = :isbn", ["isbn" => "$this->isbn"])->fetch();
-            if($this->requestData != false)
+            $isbn = $data['ISBN'];
+            $this->requestData = $this->grumpyPdo
+                ->run("SELECT warenwirtschaft.artikel.id, warenwirtschaft.artikel.title FROM warenwirtschaft.artikel WHERE artikel.ISBN = :isbn", ["isbn" => "$isbn"])
+                ->fetch();
+            if(($this->requestData != NULL) OR !empty($this->requestData))
                 $this->flag = true;
+
+            $this->requestData = [
+                'input' => $data,
+                'export' => $this->requestData,
+                'flag' => $this->flag
+            ];
+
             return $this;
         }catch(\Throwable $e){
             throw $e;
         }
     }
-
 
     /**
      * @return mixed
@@ -60,20 +57,6 @@ class IsbnRequest
     {
         return $this->requestData;
     }
-
-
-
-
-
-    /**
-     * @return bool
-     */
-    public function isFlag(): bool
-    {
-        return $this->flag;
-    }
-
-
 
 
 }

@@ -3,51 +3,41 @@
  * Tritt in Kraft, falls die Daten des Buches schon in der Datenbank vorhanden sind
  * Nimmt ein weiteres Exemplar des Buches mit der eingegebenen ISBN in den Bestand der Datenbank auf
  *
- * 18.05.2021
- * dominik.schmidt
+ * 04.06.2021
+ * arise
+ * IsbnInput.php
  */
+
 
 namespace App\Mapper;
 
 
-use \GrumpyPdo;
-
 class IsbnInput
 {
-    protected $flagSaveInDatabase = false;
-    protected $requestData;
-    /** @var GrumpyPdo  */
+    /** @var \GrumpyPdo */
     protected $grumpyPdo;
-
+    protected $flag = false;
 
     public function __construct($container)
     {
         $this->grumpyPdo = $container[\GrumpyPdo::class];
     }
 
-
     /**
-     * @param mixed $requestData
-     * @return IsbnInput
-     */
-    public function setRequestData($requestData)
-    {
-        $this->requestData = $requestData;
-        return $this;
-    }
-
-    /**
+     * @param array $requestData
      * @return $this
      * @throws \Throwable
      */
-    public function inputData() : self
+    public function inputData(array $requestData) : self
     {
         try{
             $this->grumpyPdo
-                ->run("INSERT INTO bestand (artikel_id, bereich, box, zustand) VALUES(?, ?, ?, ?)",[$this->requestData['0']['id'], $this->requestData['bereich'], $this->requestData['box'], $this->requestData['zustand']]);
-            $this->flagSaveInDatabase = true;
+                ->run("INSERT INTO bestand (artikel_id, bereich, box, zustand) VALUES(?, ?, ?, ?)",[$requestData['export']['id'], $requestData['input']['bereich'], $requestData['input']['box'], $requestData['input']['zustand']]);
+            $this->flag = true;
+
             return $this;
-        }catch(\Throwable $e){
+        }catch (\Throwable $e)
+        {
             throw $e;
         }
     }
@@ -55,12 +45,10 @@ class IsbnInput
     /**
      * @return bool
      */
-    public function isFlagSaveInDatabase(): bool
+    public function isFlag(): bool
     {
-        return $this->flagSaveInDatabase;
+        return $this->flag;
     }
-
-
 
 
 }
