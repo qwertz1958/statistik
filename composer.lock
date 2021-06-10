@@ -4,8 +4,57 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "21a966082ff549afd197e368c4d96ccc",
+    "content-hash": "7dc1831967fcd1e40530b94793e3295c",
     "packages": [
+        {
+            "name": "antoineaugusti/easyphpcharts",
+            "version": "v0.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/AntoineAugusti/EasyPHPCharts.git",
+                "reference": "ce95e3a9fcf9170368f3252a4247de6c593e0134"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/AntoineAugusti/EasyPHPCharts/zipball/ce95e3a9fcf9170368f3252a4247de6c593e0134",
+                "reference": "ce95e3a9fcf9170368f3252a4247de6c593e0134",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Antoineaugusti\\EasyPHPCharts\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Antoine Augusti",
+                    "email": "antoine.augusti@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A PHP class for chartjs.org charts.",
+            "homepage": "https://github.com/AntoineAugusti/EasyPHPCharts",
+            "keywords": [
+                "chart",
+                "chartjs",
+                "charts",
+                "php charts",
+                "visualization"
+            ],
+            "support": {
+                "issues": "https://github.com/AntoineAugusti/EasyPHPCharts/issues",
+                "source": "https://github.com/AntoineAugusti/EasyPHPCharts/tree/master"
+            },
+            "time": "2014-08-02T15:32:56+00:00"
+        },
         {
             "name": "blogdaren/custom-terminal-color",
             "version": "1.0.2",

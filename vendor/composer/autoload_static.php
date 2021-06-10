@@ -116,6 +116,13 @@ class ComposerStaticInitcc8036a1742e94a4ac1b2bdbfa73971c
                 0 => __DIR__ . '/..' . '/pimple/pimple/src',
             ),
         ),
+        'A' => 
+        array (
+            'Antoineaugusti\\EasyPHPCharts\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/antoineaugusti/easyphpcharts/src',
+            ),
+        ),
     );
 
     public static $classMap = array (

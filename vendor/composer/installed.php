@@ -6,11 +6,20 @@
     'aliases' => 
     array (
     ),
-    'reference' => 'fadec13d4184c26c70fde3709fbe7e52d3ad4d65',
+    'reference' => '63a03c71b87bcbcac7706274aabc4a577efb6042',
     'name' => 'kalle/warenwirtschaft-ng',
   ),
   'versions' => 
   array (
+    'antoineaugusti/easyphpcharts' => 
+    array (
+      'pretty_version' => 'v0.1.1',
+      'version' => '0.1.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'ce95e3a9fcf9170368f3252a4247de6c593e0134',
+    ),
     'blogdaren/custom-terminal-color' => 
     array (
       'pretty_version' => '1.0.2',
@@ -45,7 +54,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => 'fadec13d4184c26c70fde3709fbe7e52d3ad4d65',
+      'reference' => '63a03c71b87bcbcac7706274aabc4a577efb6042',
     ),
     'nikic/fast-route' => 
     array (

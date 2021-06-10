@@ -17,6 +17,7 @@
       <path value="$PROJECT_DIR$/vendor/blogdaren/custom-terminal-color" />
       <path value="$PROJECT_DIR$/vendor/blogdaren/logger" />
       <path value="$PROJECT_DIR$/vendor/spatie/array-to-xml" />
+      <path value="$PROJECT_DIR$/vendor/antoineaugusti/easyphpcharts" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.0" />
