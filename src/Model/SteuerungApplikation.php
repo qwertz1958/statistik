@@ -1,26 +1,27 @@
 <?php
 /**
- * Steuerung der App
+ * Model zur Überprüfung der ISBN auf vorhandene Metadaten
+ * Bei erfolgreicher Überprüfung wird ein Exemplar des Buches in den Bestand aufgenommen
  *
- * 18.05.2021
- * dominik.schmidt
+ * 02.06.2021
+ * arise
+ * SteuerungApplikation.php
  */
 
+
 namespace App\Model;
-
-
 use App\Mapper\IsbnInput;
 use App\Mapper\IsbnRequest;
 
+
 class SteuerungApplikation
 {
-    protected $flagSaveInDatabase = false;
-    protected $flag = false;
-    protected $setParams;
     /** @var IsbnRequest */
     protected $isbnRequest;
-    /** @var IsbnInput  */
+    /** @var IsbnInput */
     protected $isbnInput;
+    protected $requestData;
+    protected $flag;
 
     public function __construct($container)
     {
@@ -28,36 +29,23 @@ class SteuerungApplikation
         $this->isbnInput = $container[IsbnInput::class];
     }
 
-
     /**
-     * @param mixed $setParams
-     * @return SteuerungApplikation
+     * @param array $data
+     * @return $this
+     * @throws \Throwable
      */
-    public function setSetParams($setParams)
+    public function work(array $data) : self
     {
-        $this->setParams = $setParams;
-        return $this;
-    }
+        try {
+            $this->requestData = $this->isbnRequest
+                ->dataRequest($data)
+                ->getRequestData();
 
-    public function work() : self
-    {
-        try{
-            $this->flag = $this->isbnRequest
-                ->setRequestParams($this->setParams)
-                ->dataRequest()
-                ->isFlag();
-
-
-
-            if($this->flag == true){
-                $this->setParams[] = $this->isbnRequest->getRequestData();
-
-                $this->flagSaveInDatabase = $this->isbnInput
-                    ->setRequestData($this->setParams)
-                    ->inputData()
-                    ->isFlagSaveInDatabase();
+            if($this->requestData['flag'] == true){
+                $this->flag = $this->isbnInput
+                    ->inputData($this->requestData)
+                    ->isFlag();
             }
-
 
             return $this;
         }catch(\Throwable $e){
@@ -65,25 +53,21 @@ class SteuerungApplikation
         }
     }
 
-
+    /**
+     * @return mixed
+     */
+    public function getRequestData()
+    {
+        return $this->requestData;
+    }
 
     /**
      * @return mixed
      */
-    public function getFlagSaveInDatabase()
+    public function getFlag()
     {
-        return $this->flagSaveInDatabase;
+        return $this->flag;
     }
-
-
-    /**
-     * @return mixed
-     */
-    public function getSetParams()
-    {
-        return $this->setParams;
-    }
-
 
 
 }

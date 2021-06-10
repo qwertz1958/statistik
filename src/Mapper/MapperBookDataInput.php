@@ -2,21 +2,20 @@
 /**
  * Einpflegen der Stamm des Buches
  *
- * 18.05.2021
- * dominik.schmidt
+ * 05.06.2021
+ * arise
+ * MapperBookDataInput.php
  */
+
 
 namespace App\Mapper;
 
 
-use \GrumpyPdo;
-
 class MapperBookDataInput
 {
-    protected $flagSaveinDatabase = false;
-    protected $inputData;
-    /** @var GrumpyPdo  */
+    /** @var \GrumpyPdo */
     protected $grumpyPdo;
+    protected $flag = false;
 
     public function __construct($container)
     {
@@ -24,27 +23,19 @@ class MapperBookDataInput
     }
 
     /**
-     * @param mixed $inputData
-     * @return MapperBookDataInput
-     */
-    public function setInputData($inputData)
-    {
-        $this->inputData = $inputData;
-        return $this;
-    }
-
-    /**
+     * @param array $inputData
      * @return $this
      * @throws \Throwable
      */
-    public function inputData() : self
+    public function work(array $inputData) : self
     {
         try{
             $this->grumpyPdo
-                ->run("INSERT INTO artikel(title, publisher, isbn) VALUES(?, ?, ?)", [$this->inputData['title'], $this->inputData['verlag'], $this->inputData['isbn']]);
-            $this->flagSaveinDatabase = true;
+                ->run("INSERT INTO artikel(title, publisher, isbn) VALUES(?, ?, ?)", [$inputData['title'], $inputData['verlag'], $inputData['ISBN']]);
+            $this->flag = true;
+
             return $this;
-        }catch(\Throwable $e){
+        }catch (\Throwable $e){
             throw $e;
         }
     }
@@ -52,11 +43,10 @@ class MapperBookDataInput
     /**
      * @return bool
      */
-    public function isFlagSaveinDatabase(): bool
+    public function isFlag(): bool
     {
-        return $this->flagSaveinDatabase;
+        return $this->flag;
     }
-
 
 
 }

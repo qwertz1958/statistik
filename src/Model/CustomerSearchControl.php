@@ -2,9 +2,11 @@
 /**
  * Model zur unscharfen Suche von Kunden
  *
- * 18.05.2021
- * dominik.schmidt
+ * 05.06.2021
+ * arise
+ * CustomerSearchControl.php
  */
+
 
 namespace App\Model;
 
@@ -13,10 +15,9 @@ use App\Mapper\MapperCustomerSearch;
 
 class CustomerSearchControl
 {
-    protected $databaseExport;
-    protected $inputSearchData;
-    /** @var MapperCustomerSearch  */
+    /** @var MapperCustomerSearch */
     protected $mapperCustomerSearch;
+    protected $dataExport;
 
     public function __construct($container)
     {
@@ -24,19 +25,16 @@ class CustomerSearchControl
     }
 
     /**
-     * Übergabe der Parameter für die Query
-     * übernahme der Ausgabe der Datenbankabfrage
-     *
+     * @param array $data
      * @return $this
      * @throws \Throwable
      */
-    public function work() : self
+    public function work(array $data) : self
     {
         try{
-            $this->databaseExport = $this->mapperCustomerSearch
-                ->setInputSearchData($this->inputSearchData)
-                ->customerDatabasereq()
-                ->getDatabaseExport();
+            $this->dataExport = $this->mapperCustomerSearch
+                ->customerDatabaseReq($data)
+                ->getDataExport();
 
             return $this;
         }catch(\Throwable $e){
@@ -45,22 +43,11 @@ class CustomerSearchControl
     }
 
     /**
-     * @param mixed $inputSearchData
-     * @return CustomerSearchControl
-     */
-    public function setInputSearchData($inputSearchData)
-    {
-        $this->inputSearchData = $inputSearchData;
-        return $this;
-    }
-
-
-    /**
      * @return mixed
      */
-    public function getDatabaseExport()
+    public function getDataExport()
     {
-        return $this->databaseExport;
+        return $this->dataExport;
     }
 
 }

@@ -2,103 +2,76 @@
 /**
  * Action zur unscharfen Suche von Kunden
  *
- * 18.05.2021
- * dominik.schmidt
+ * 04.06.2021
+ * arise
+ * BlurredCustomerSearch.php
  */
+
 
 namespace App\Action;
 
 
-use App\Checker;
 use App\Model\CustomerSearchControl;
-use App\Template;
-use App\Tool\GenerateResponse;
+use Slim\Http\Request;
+use Webmozart\Assert\Assert;
 
 class BlurredCustomerSearch
 {
-    use GenerateResponse;
-    /** @var Checker  */
-    protected $checker;
-    /** @var Template */
-    protected $templateEngine;
-    /** @var CustomerSearchControl  */
+    /** @var CustomerSearchControl */
     protected $customerSearchControl;
-    protected $databaseExport;
-
-    protected $config;
+    protected $dataExport;
+    protected $block;
 
     public function __construct($container)
     {
-        $this->templateEngine = $container[Template::class];
-        $this->config = $container['config'];
-        $this->checker = $container[Checker::class];
         $this->customerSearchControl = $container[CustomerSearchControl::class];
     }
 
-
-    public function customerSearch($params)
-    {
-        try{
-            $checkParams = [
-                'last_name' => [
-                    'mandatory' => true,
-                    'value' => isset($params['last_name']) ? $params['last_name'] : NULL,
-                    'type' => 'string',
-                    'name' => 'last_name'
-                ]
-            ];
-
-            $this->checker
-                ->setParams($checkParams)
-                ->checkParams();
-
-            $this->databaseExport = $this->customerSearchControl
-                ->setInputSearchData($params)
-                ->work()
-                ->getDatabaseExport();
-
-            if($this->databaseExport['flag'] == false){
-                $templateData = [
-                    'basisUrl' => $this->config['basisUrl'],
-                    'block1' => true,
-                    'databaseExport' => $this->databaseExport
-                ];
-            }elseif($this->databaseExport['flag'] == true){
-                $templateData = [
-                    'basisUrl' => $this->config['basisUrl'],
-                    'block2' => true,
-                    'databaseExport' => $this->databaseExport
-                ];
-            }
-
-
-            $this->convertToHtml($templateData, 'contentCustomerSearch');
-
-        }catch(\Throwable $e)
-        {
-            throw $e;
-        }
-    }
-
-
     /**
-     * Lädt die Eingabemaske der Kundensuche
-     *
+     * @param Request $request
+     * @param array $args
      * @throws \Throwable
      */
-    public function kundensucheErststart()
+    public function customerSearch(Request $request, array $args)
     {
         try{
-            $templateData = [
-                'basisUrl' => $this->config['basisUrl'],
-                'block1' => false,
-                'block2' => false
-            ];
+            $data = $request->getParams();
+            Assert::notEmpty($data['last_name'], $message = 'Pflichtfelder ausfüllen');
+            $this->dataExport = $this->customerSearchControl
+                ->work($data)
+                ->getDataExport();
 
-            $this->convertToHtml($templateData, 'contentCustomerSearch');
+
+            if($this->dataExport['flag'] == true)
+            {
+                $this->block = [
+                    'export' => $this->dataExport['export'],
+                    'block1' => false,
+                    'block2' => true,
+                    'flag' => $this->dataExport['flag']
+                ];
+            }
+            else
+                $this->block = [
+                    'export' => $this->dataExport['export'],
+                    'block1' => true,
+                    'block2' => false,
+                    'flag' => $this->dataExport['flag']
+                ];
+
+            return $this;
         }catch(\Throwable $e){
             throw $e;
         }
     }
+
+    /**
+     * @return mixed
+     */
+    public function getBlock()
+    {
+        return $this->block;
+    }
+
 
 }
