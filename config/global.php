@@ -7,7 +7,7 @@
 $config = [
     'wert1' => 'configWert1',
     'wert2' => 'configWert2',
-    'basisUrl' => 'http://localhost/warenwirtschaftng/public/',
+    'basisUrl' => 'http://localhost/praktikum/warenwirtschaftng/public/',
     'database' => [
         'db_server' => 'localhost',
         'db_database' => 'warenwirtschaft',
