@@ -14,14 +14,6 @@ use Logger\Logger;
 
 
 try{
-    $logPath = __DIR__;
-    $logPath = realpath('./../../log/');
-    $logPath .= DIRECTORY_SEPARATOR . date('Y-m-d') . '.log';
-
-    Logger::setLogFile($logPath);
-    Logger::info('eine Log Info');
-
-    exit();
 
 //Einstellungen Slim framework
     $configSlim = '';
@@ -51,6 +43,9 @@ try{
 // Error handling
     include_once ('../config/error.php');
 
+    /** @var \App\Logger\OwnLogger $logger */
+    $logger = $container[\App\Logger\OwnLogger::class];
+    $logger->error('ein Fehler');
 
 
 

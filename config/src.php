@@ -23,7 +23,14 @@ $container['GrumpyPdoTaskboard'] = function ($container){
         $container['config']['database_taskboard']['db_database']);
 };
 
+// Logger
+$container[\App\Logger\OwnLogger::class] = function ($container){
+    $settings = [];
+    $settings['path'] = realpath('./../../log/');
+    $settings['message_format'] = '[%label%] %date% >> %message%';
 
+    return new \App\Logger\OwnLogger($settings);
+};
 
 //Array to XML
 $container[\Spatie\ArrayToXml\ArrayToXml::class] = function (){
