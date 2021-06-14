@@ -14,10 +14,9 @@
       <path value="$PROJECT_DIR$/vendor/composer" />
       <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
       <path value="$PROJECT_DIR$/vendor/grumpycrouton/grumpypdo" />
-      <path value="$PROJECT_DIR$/vendor/blogdaren/custom-terminal-color" />
-      <path value="$PROJECT_DIR$/vendor/blogdaren/logger" />
       <path value="$PROJECT_DIR$/vendor/spatie/array-to-xml" />
       <path value="$PROJECT_DIR$/vendor/antoineaugusti/easyphpcharts" />
+      <path value="$PROJECT_DIR$/vendor/silalahi/slim-logger" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.0" />

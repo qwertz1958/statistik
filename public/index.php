@@ -10,9 +10,19 @@
 include_once ("../vendor/autoload.php");
 
 use Spatie\ArrayToXml\ArrayToXml;
+use Logger\Logger;
 
 
 try{
+    $logPath = __DIR__;
+    $logPath = realpath('./../../log/');
+    $logPath .= DIRECTORY_SEPARATOR . date('Y-m-d') . '.log';
+
+    Logger::setLogFile($logPath);
+    Logger::info('eine Log Info');
+
+    exit();
+
 //Einstellungen Slim framework
     $configSlim = '';
     include_once ('../config/configSlim.php');
@@ -25,7 +35,7 @@ try{
     $config = '';
     include_once ('../config/global.php');
     $container['config'] = $config;
-    include_once ('../config/test.php');
+
 // Konfiguration der Tools
     include_once ('../config/tool.php');
 // Konfiguration des Mappers

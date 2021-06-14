@@ -29,23 +29,16 @@ class ComposerStaticInitcc8036a1742e94a4ac1b2bdbfa73971c
             'Spatie\\ArrayToXml\\' => 18,
             'Slim\\Views\\' => 11,
             'Slim\\' => 5,
+            'Silalahi\\Slim\\' => 14,
         ),
         'P' => 
         array (
             'Psr\\Http\\Message\\' => 17,
             'Psr\\Container\\' => 14,
         ),
-        'L' => 
-        array (
-            'Logger\\' => 7,
-        ),
         'F' => 
         array (
             'FastRoute\\' => 10,
-        ),
-        'C' => 
-        array (
-            'CustomTerminalColor\\' => 20,
         ),
         'A' => 
         array (
@@ -82,6 +75,10 @@ class ComposerStaticInitcc8036a1742e94a4ac1b2bdbfa73971c
         array (
             0 => __DIR__ . '/..' . '/slim/slim/Slim',
         ),
+        'Silalahi\\Slim\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/silalahi/slim-logger/src',
+        ),
         'Psr\\Http\\Message\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/http-message/src',
@@ -90,17 +87,9 @@ class ComposerStaticInitcc8036a1742e94a4ac1b2bdbfa73971c
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
         ),
-        'Logger\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/blogdaren/logger',
-        ),
         'FastRoute\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/fast-route/src',
-        ),
-        'CustomTerminalColor\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/blogdaren/custom-terminal-color',
         ),
         'App\\' => 
         array (

@@ -13,10 +13,9 @@ return array(
     'Spatie\\ArrayToXml\\' => array($vendorDir . '/spatie/array-to-xml/src'),
     'Slim\\Views\\' => array($vendorDir . '/slim/twig-view/src'),
     'Slim\\' => array($vendorDir . '/slim/slim/Slim'),
+    'Silalahi\\Slim\\' => array($vendorDir . '/silalahi/slim-logger/src'),
     'Psr\\Http\\Message\\' => array($vendorDir . '/psr/http-message/src'),
     'Psr\\Container\\' => array($vendorDir . '/psr/container/src'),
-    'Logger\\' => array($vendorDir . '/blogdaren/logger'),
     'FastRoute\\' => array($vendorDir . '/nikic/fast-route/src'),
-    'CustomTerminalColor\\' => array($vendorDir . '/blogdaren/custom-terminal-color'),
     'App\\' => array($baseDir . '/src'),
 );

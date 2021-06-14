@@ -17,10 +17,9 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/webmozart/assert" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/grumpycrouton/grumpypdo" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/blogdaren/custom-terminal-color" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/blogdaren/logger" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/spatie/array-to-xml" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/antoineaugusti/easyphpcharts" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/silalahi/slim-logger" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

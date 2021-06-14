@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '63a03c71b87bcbcac7706274aabc4a577efb6042',
+    'reference' => 'd9dc555fa1f59fa5cec00f9b0a4a3acd65e6757f',
     'name' => 'kalle/warenwirtschaft-ng',
   ),
   'versions' => 
@@ -19,24 +19,6 @@
       array (
       ),
       'reference' => 'ce95e3a9fcf9170368f3252a4247de6c593e0134',
-    ),
-    'blogdaren/custom-terminal-color' => 
-    array (
-      'pretty_version' => '1.0.2',
-      'version' => '1.0.2.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '6e399475c55f001d05ce758f5816b8a722c5d813',
-    ),
-    'blogdaren/logger' => 
-    array (
-      'pretty_version' => 'v1.1.2',
-      'version' => '1.1.2.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'b7afca8bdfa7e95871420eaf8019494d47786981',
     ),
     'grumpycrouton/grumpypdo' => 
     array (
@@ -54,7 +36,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '63a03c71b87bcbcac7706274aabc4a577efb6042',
+      'reference' => 'd9dc555fa1f59fa5cec00f9b0a4a3acd65e6757f',
     ),
     'nikic/fast-route' => 
     array (
@@ -98,6 +80,16 @@
       array (
         0 => '1.0',
       ),
+    ),
+    'silalahi/slim-logger' => 
+    array (
+      'pretty_version' => 'dev-master',
+      'version' => 'dev-master',
+      'aliases' => 
+      array (
+        0 => '9999999-dev',
+      ),
+      'reference' => 'a5275d4696e04c9a316c5cc269a22adde82acb59',
     ),
     'slim/slim' => 
     array (

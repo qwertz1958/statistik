@@ -16,7 +16,7 @@
         "slim/twig-view": "^2.5",
         "webmozart/assert": "^1.10",
         "grumpycrouton/grumpypdo": "^1.5",
-        "blogdaren/logger": "^1.1",
+        "silalahi/slim-logger": "dev-master",
         "spatie/array-to-xml": "^2.16",
         "antoineaugusti/easyphpcharts": "^0.1.1"
     }
