@@ -43,9 +43,7 @@ try{
 // Error handling
     include_once ('../config/error.php');
 
-    /** @var \App\Logger\OwnLogger $logger */
-    $logger = $container[\App\Logger\OwnLogger::class];
-    $logger->error('ein Fehler');
+
 
 
 
@@ -118,6 +116,8 @@ try{
     {
 
         $config = $this->get('config');
+
+        throw new Exception('Ein fieser Fehler');
 
         $templateData = [
             'basisUrl' => $config['basisUrl'],

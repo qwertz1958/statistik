@@ -10,6 +10,7 @@
 
 
 namespace App\Action;
+use App\Logger\OwnLogger;
 use App\Model\SteuerungApplikation;
 use Slim\Container;
 use Slim\Http\Request;
@@ -27,9 +28,12 @@ class AssignManagement
     protected $steuerungApp;
     protected $block;
 
+    protected $logger;
+
     public function __construct(Container $container){
         $this->config = $container['config'];
         $this->steuerungApp = $container[SteuerungApplikation::class];
+        $this->logger = $container[OwnLogger::class];
     }
 
     /**
