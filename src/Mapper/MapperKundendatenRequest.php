@@ -4,7 +4,7 @@
  *
  * 16.06.2021
  * arise
- * MapperMockarooRequest.php
+ * MapperKundendatenRequest.php
  */
 
 
@@ -15,7 +15,7 @@ use App\Error\CustomErrorHandler;
 use App\Logger\OwnLogger;
 
 
-class MapperMockarooRequest
+class MapperKundendatenRequest
 {
     /** @var OwnLogger */
     protected $logger;

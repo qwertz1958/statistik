@@ -28,6 +28,6 @@ $container[\App\Model\FindBookTitle::class] = function ($container){
     return new \App\Model\FindBookTitle($container);
 };
 
-$container[\App\Model\ModelMockarooRequest::class] = function ($container){
-    return new \App\Model\ModelMockarooRequest($container);
+$container[\App\Model\ModelKundendatenRequest::class] = function ($container){
+    return new \App\Model\ModelKundendatenRequest($container);
 };

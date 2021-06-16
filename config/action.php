@@ -29,7 +29,7 @@
         return new \App\Action\BlurrdBookTitleSearch($container);
     };
 
-    $container[\App\Action\MockarooRequest::class] = function ($container)
+    $container[\App\Action\KundendatenRequest::class] = function ($container)
     {
-        return new \App\Action\MockarooRequest($container);
+        return new \App\Action\KundendatenRequest($container);
     };

@@ -4,28 +4,28 @@
  *
  * 16.06.2021
  * arise
- * ModelMockarooRequest.php
+ * ModelKundendatenRequest.php
  */
 
 
 namespace App\Model;
 use App\Logger\OwnLogger;
-use App\Mapper\MapperMockarooRequest;
+use App\Mapper\MapperKundendatenRequest;
 use App\Tool\XmlConvert;
 
-class ModelMockarooRequest
+class ModelKundendatenRequest
 {
     use XmlConvert;
     /** @var OwnLogger */
     protected $logger;
-    /** @var MapperMockarooRequest */
-    protected $mapperMockarooRequest;
-    protected $mockarooOutputData;
+    /** @var MapperKundendatenRequest */
+    protected $mapperKundendatenRequest;
+    protected $outputData;
 
     public function __construct($container)
     {
         $this->logger = $container[OwnLogger::class];
-        $this->mapperMockarooRequest = $container[MapperMockarooRequest::class];
+        $this->mapperKundendatenRequest = $container[MapperKundendatenRequest::class];
     }
 
     /**
@@ -35,7 +35,7 @@ class ModelMockarooRequest
     public function work()
     {
         try{
-            $this->mockarooOutputData = $this->mapperMockarooRequest
+            $this->outputData = $this->mapperKundendatenRequest
                 ->work()
                 ->getData();
 
@@ -48,9 +48,9 @@ class ModelMockarooRequest
     /**
      * @return mixed
      */
-    public function getMockarooOutputData()
+    public function getOutputData()
     {
-        return $this->mockarooOutputData;
+        return $this->outputData;
     }
 
 

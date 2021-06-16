@@ -6,19 +6,16 @@ namespace App\Tool;
 
 trait XmlConvert
 {
-    public function convert($mockarooOutputData)
+    public function convert($outputData)
     {
         try{
-            $handle = fopen("..\src\xml\mockarooOutputData.xml", "w");
-            fwrite($handle, $mockarooOutputData);
-            fclose($handle);
 
-            $mockarooOutputData = simplexml_load_file("..\src\xml\mockarooOutputData.xml");
+            $outputData = simplexml_load_string($outputData);
 
-            $mockarooOutputData = json_encode($mockarooOutputData);
-            $mockarooOutputData = json_decode($mockarooOutputData, true);
+            $outputData = json_encode($outputData);
+            $outputData = json_decode($outputData, true);
 
-            return $mockarooOutputData;
+            return $outputData;
         }catch (\Throwable $e){
             throw $e;
         }

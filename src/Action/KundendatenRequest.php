@@ -4,27 +4,27 @@
  *
  * 16.06.2021
  * arise
- * MockarooRequest.php
+ * KundendatenRequest.php
  */
 
 
 namespace App\Action;
 use App\Error\CustomErrorHandler;
 use App\Logger\OwnLogger;
-use App\Model\ModelMockarooRequest;
+use App\Model\ModelKundendatenRequest;
 
-class MockarooRequest
+class KundendatenRequest
 {
     /** @var OwnLogger */
     protected $logger;
-    /** @var ModelMockarooRequest */
-    protected $modelMockarooRequest;
-    protected $mockarooOutputData;
+    /** @var ModelKundendatenRequest */
+    protected $modelKundendatenRequest;
+    protected $outputData;
 
     public function __construct($container)
     {
         $this->logger = $container[OwnLogger::class];
-        $this->modelMockarooRequest = $container[ModelMockarooRequest::class];
+        $this->modelKundendatenRequest = $container[ModelKundendatenRequest::class];
     }
 
     /**
@@ -34,12 +34,12 @@ class MockarooRequest
     public function work()
     {
         try{
-            $this->mockarooOutputData = $this->modelMockarooRequest
+            $this->outputData = $this->modelKundendatenRequest
                 ->work()
-                ->getMockarooOutputData();
+                ->getOutputData();
 
-            $this->mockarooOutputData = $this->modelMockarooRequest
-                ->convert($this->mockarooOutputData);
+            $this->outputData = $this->modelKundendatenRequest
+                ->convert($this->outputData);
 
             return $this;
         }catch(\Throwable $e){
@@ -50,8 +50,8 @@ class MockarooRequest
     /**
      * @return mixed
      */
-    public function getMockarooOutputData()
+    public function getOutputData()
     {
-        return $this->mockarooOutputData;
+        return $this->outputData;
     }
 }

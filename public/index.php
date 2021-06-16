@@ -284,18 +284,18 @@ try{
 
     /** Route zur Abfrage von Mockaroo */
     $app->get('/mockarooRequest', function (\Slim\Http\Request $request, \Slim\Http\Response $response, $args){
-        /** @var  $action \App\Action\MockarooRequest */
-        $action = $this->get(\App\Action\MockarooRequest::class);
-        $mockarooOutputData = $action
+        /** @var  $action \App\Action\KundendatenRequest */
+        $action = $this->get(\App\Action\KundendatenRequest::class);
+        $outputData = $action
             ->work()
-            ->getMockarooOutputData();
+            ->getOutputData();
 
         $config = $this->get('config');
 
         $templateData = [
             'basisUrl' => $config['basisUrl'],
             'templatename' => 'contentMockaroo',
-            'mockarooOutputData' => $mockarooOutputData['user']
+            'outputData' => $outputData['user']
         ];
 
         $view = $this->view;

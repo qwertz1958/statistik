@@ -29,6 +29,6 @@ $container[\App\Mapper\BookTitleInfo::class] = function($container){
     return new \App\Mapper\BookTitleInfo($container);
 };
 
-$container[\App\Mapper\MapperMockarooRequest::class] = function ($container){
-    return new \App\Mapper\MapperMockarooRequest($container);
+$container[\App\Mapper\MapperKundendatenRequest::class] = function ($container){
+    return new \App\Mapper\MapperKundendatenRequest($container);
 };
