@@ -27,3 +27,7 @@ $container[\App\Model\CustomerSearchControl::class] = function($container)
 $container[\App\Model\FindBookTitle::class] = function ($container){
     return new \App\Model\FindBookTitle($container);
 };
+
+$container[\App\Model\ModelMockarooRequest::class] = function ($container){
+    return new \App\Model\ModelMockarooRequest($container);
+};

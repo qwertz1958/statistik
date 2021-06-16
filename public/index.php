@@ -284,8 +284,13 @@ try{
         return $response;
     });
 
-
-
+    /** Route zur Abfrage von Mockaroo */
+    $app->get('/curlUpload', function (\Slim\Http\Request $request, \Slim\Http\Response $response, $args){
+        /** @var  $action \App\Action\MockarooRequest */
+        $action = $this->get(\App\Action\MockarooRequest::class);
+        $action
+            ->work();
+    });
 
 //Slim fange an zu arbeiten
     $app->run();
