@@ -253,6 +253,15 @@ try{
     });
 
 
+    $app->post('curlPost[/]', function (\Slim\Http\Request $request, \Slim\Http\Response $response, $args){
+        $params = $request->getParams();
+
+        $body = $response->getBody();
+        $body->write(var_dump($params));
+
+        return $response;
+    });
+
 
 //Slim fange an zu arbeiten
     $app->run();
