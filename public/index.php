@@ -294,8 +294,8 @@ try{
 
         $templateData = [
             'basisUrl' => $config['basisUrl'],
-            'templatename' => 'contentCustomerSearch',
-            'mockarooOutputData' => $mockarooOutputData
+            'templatename' => 'contentMockaroo',
+            'mockarooOutputData' => $mockarooOutputData['user']
         ];
 
         $view = $this->view;
