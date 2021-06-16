@@ -5,9 +5,8 @@
  */
 
 $config = [
-    'wert1' => 'configWert1',
-    'wert2' => 'configWert2',
     'basisUrl' => 'http://localhost/praktikum/warenwirtschaftng/public/',
+    'mockaroo' => 'https://api.mockaroo.com/api/26d91340?count=10&key=e8d004d0',
     'database' => [
         'db_server' => 'localhost',
         'db_database' => 'warenwirtschaft',
