@@ -29,7 +29,7 @@ class CustomErrorHandler
     {
         try{
             $errorMessage = $exception->getFile() . ' : ' . $exception->getLine() . "\n >>" . $exception->getMessage() . ' : ' . $exception->getCode() . "\n" . $exception->getTraceAsString();
-            $test = 123;
+
 
             $this->logger
                 ->error($errorMessage);

@@ -7,4 +7,6 @@
  */
 
 
-
+$container[\App\Tool\XmlConvert::class] = function ($container){
+    return new XmlConvert($container);
+};

@@ -9,30 +9,49 @@
 
 
 namespace App\Model;
-
-
-use App\Error\CustomErrorHandler;
 use App\Logger\OwnLogger;
+use App\Mapper\MapperMockarooRequest;
+use App\Tool\XmlConvert;
 
 class ModelMockarooRequest
 {
+    use XmlConvert;
     /** @var OwnLogger */
     protected $logger;
-    /** @var CustomErrorHandler */
-    protected $errorHandler;
+    /** @var MapperMockarooRequest */
+    protected $mapperMockarooRequest;
+    protected $mockarooOutputData;
 
     public function __construct($container)
     {
         $this->logger = $container[OwnLogger::class];
-        $this->errorHandler = $container[CustomErrorHandler::class];
+        $this->mapperMockarooRequest = $container[MapperMockarooRequest::class];
     }
 
+    /**
+     * @return $this
+     * @throws \Throwable
+     */
     public function work()
     {
         try{
+            $this->mockarooOutputData = $this->mapperMockarooRequest
+                ->work()
+                ->getData();
 
+            return $this;
         }catch (\Throwable $e){
             throw $e;
         }
     }
+
+    /**
+     * @return mixed
+     */
+    public function getMockarooOutputData()
+    {
+        return $this->mockarooOutputData;
+    }
+
+
 }

@@ -117,8 +117,6 @@ try{
 
         $config = $this->get('config');
 
-        throw new Exception('Ein fieser Fehler');
-
         $templateData = [
             'basisUrl' => $config['basisUrl'],
             'templatename' => 'leer',
@@ -285,11 +283,24 @@ try{
     });
 
     /** Route zur Abfrage von Mockaroo */
-    $app->get('/curlUpload', function (\Slim\Http\Request $request, \Slim\Http\Response $response, $args){
+    $app->get('/mockarooRequest', function (\Slim\Http\Request $request, \Slim\Http\Response $response, $args){
         /** @var  $action \App\Action\MockarooRequest */
         $action = $this->get(\App\Action\MockarooRequest::class);
-        $action
-            ->work();
+        $mockarooOutputData = $action
+            ->work()
+            ->getMockarooOutputData();
+
+        $config = $this->get('config');
+
+        $templateData = [
+            'basisUrl' => $config['basisUrl'],
+            'templatename' => 'contentCustomerSearch',
+            'mockarooOutputData' => $mockarooOutputData
+        ];
+
+        $view = $this->view;
+
+        return $this->view->render($response, 'bootstrap.html', $templateData);
     });
 
 //Slim fange an zu arbeiten
