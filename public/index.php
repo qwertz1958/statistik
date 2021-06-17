@@ -282,8 +282,8 @@ try{
         return $response;
     });
 
-    /** Route zur Abfrage von Mockaroo */
-    $app->get('/mockarooRequest', function (\Slim\Http\Request $request, \Slim\Http\Response $response, $args){
+    /** Route zur Abfrage von Kundendaten */
+    $app->get('/kundendatenabfrage', function (\Slim\Http\Request $request, \Slim\Http\Response $response, $args){
         /** @var  $action \App\Action\KundendatenRequest */
         $action = $this->get(\App\Action\KundendatenRequest::class);
         $outputData = $action
@@ -294,7 +294,7 @@ try{
 
         $templateData = [
             'basisUrl' => $config['basisUrl'],
-            'templatename' => 'contentMockaroo',
+            'templatename' => 'contentKundendatenabfrage',
             'outputData' => $outputData['user']
         ];
 
