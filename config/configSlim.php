@@ -9,6 +9,7 @@
  */
 $configSlim = [
     'settings' => [
-        'displayErrorDetails' => true
+        'displayErrorDetails' => true,
+        'determineRouteBeforeAppMiddleware' => true
     ]
 ];
