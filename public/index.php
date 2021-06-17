@@ -53,7 +53,7 @@ try{
     // Die Url wird zerlegt und darauf geprüft ob sich das wort login darin befindet
     // Falls sich das Wort login darin befindet soll man auf die login seite weitergeleitet werden
     // Falls sich das Wort login nicht darin befindet soll der LoginChecker anspringen úm zu überprüfen
-
+session_destroy();
     $test = explode('/', $_SESSION['url']);
     if(!in_array('login', $test))
         $app->add($container[\App\Middleware\CheckLogin::class]);
