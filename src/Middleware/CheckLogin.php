@@ -10,59 +10,72 @@
 
 
 namespace App\Middleware;
-
+use App\Logger\OwnLogger;
+use Slim\Http\Request;
+use Slim\Http\Response;
 
 class CheckLogin
 {
-    protected $flagLogin;
     protected $basisUrl;
+    /** @var \GrumpyPdo */
+    protected $grumpyPdo;
+
+    protected $kundenId;
+    /** @var OwnLogger  */
+    protected $logger;
 
     public function __construct($container){
         $this->basisUrl = $container['config']['basisUrl'];
+        $this->grumpyPdo = $container[\GrumpyPdo::class];
+        $this->logger = $container[OwnLogger::class];
     }
 
     /**
-     * @param mixed $flagLogin
-     * @return CheckLogin
-     */
-    public function setFlagLogin($flagLogin)
-    {
-        $this->flagLogin = $flagLogin;
-        return $this;
-    }
-
-    /**
-     * kontrolliert den Flag ogin und ändert notfalls die Route
+     * Kontrolle Login
      *
-     * @return $this
-     * @throws \Throwable
+     * @param  \Psr\Http\Message\ServerRequestInterface $request  PSR7 request
+     * @param  \Psr\Http\Message\ResponseInterface      $response PSR7 response
+     * @param  callable                                 $next     Next middleware
+     *
+     * @return \Psr\Http\Message\ResponseInterface
      */
-    public function work() : self
+    public function __invoke(Request $request, Response $response, $next)
     {
-        try{
-            $test =123;
+        // Todo: $request->getParams; Kontrolle ob Benutzername und Passwort vorhanden ist
+        // schaue in Datenbank nach, neue Methode
+        // gibt KundenID zurück, $_SESSION['kundenId'] gespeichert
+        // oder gibt false zurück, dann Redirect auf Login - Seite und Logging
 
-            if($this->flagLogin == false) {
-                //GrumpyPDO schaue in Tabelle User ob der Benutzer existiert
-                    // Benutzer exitiert
-                        // neue Methode die abfragtob es den Benutzer gibtb und ob er einmalig ist
-                        // Antwort ist die Rolle
 
-                        // neue Methode (abfragen welche Routen für die Rolle zulässig sind)??
+        $daten = [
+            'loginname' => $_REQUEST['loginname'],
+            'password' => $_REQUEST['password']
+        ];
 
-                    // Benutzer existiert nicht
+        $this->kundenId = $this->grumpyPdo
+            ->run("SELECT id FROM kunden WHERE first_name = ? AND password = ?", [$daten['loginname'], $daten['password']])
+            ->fetchAll();
 
-                $_SERVER['REQUEST_URI'] = $this->basisUrl . '/login';
-            }
-            else{
-                // abrufen der Benutzergruppe des User
-                // grumpyPDO ->
-            }
+        if(($this->kundenId != NULL) AND (!empty($this->kundenId)))
+            $_SESSION['kundenId'] = $this->kundenId;
 
-            return $this;
+
+
+
+
+
+        // Todo: Kontrolle ob $_SESSION['kundenID'] vorhanden ist
+        if(($_SESSION['kundenId'] == false))
+        {
+            $response = $response->withRedirect($this->basisUrl . 'login');
         }
-        catch(\Throwable $e){
-            throw $e;
+        else
+        {
+            $response = $next($request, $response);
         }
+
+
+
+        return $response;
     }
 }

@@ -7,6 +7,9 @@
  * index.php
  *
  */
+
+session_start();
+
 include_once ("../vendor/autoload.php");
 
 use Spatie\ArrayToXml\ArrayToXml;
@@ -42,12 +45,17 @@ try{
     include_once ('../config/twig.php');
 // Error handling
     include_once ('../config/error.php');
+    // Middleware handling
+    include_once ('../config/middleware.php');
 
 
+    // Todo: Middleware , $_SESSION['kundenId'] = 25;
+    $app->add($container[\App\Middleware\CheckLogin::class]);
 
-
-
-
+    // Show the login page
+    $app->get('/login', function (Slim\Http\Request $request, \Slim\Http\Response $response, $args) {
+        $test = 123;
+    })->setName('login');
 
     // Routing
     //Startseite der Artikelsuche
