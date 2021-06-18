@@ -11,6 +11,7 @@
 
 namespace App\Middleware;
 use App\Logger\OwnLogger;
+use Silalahi\Slim\Logger;
 use Slim\Http\Request;
 use Slim\Http\Response;
 
@@ -23,6 +24,8 @@ class CheckLogin
     protected $kundenId;
     /** @var OwnLogger  */
     protected $logger;
+
+    protected $navigation;
 
     public function __construct($container){
         $this->basisUrl = $container['config']['basisUrl'];
@@ -42,44 +45,62 @@ class CheckLogin
     public function __invoke(Request $request, Response $response, $next)
     {
         // Todo: $request->getParams; Kontrolle ob Benutzername und Passwort vorhanden ist
-        // schaue in Datenbank nach, neue Methode
-        // gibt KundenID zurück, $_SESSION['kundenId'] gespeichert
-        // oder gibt false zurück, dann Redirect auf Login - Seite und Logging
-
-
-        $daten = [
-            'loginname' => $_REQUEST['loginname'],
-            'password' => $_REQUEST['password']
-        ];
-
-        $this->kundenId = $this->grumpyPdo
-            ->run("SELECT id FROM kunden WHERE first_name = ? AND password = ?", [$daten['loginname'], $daten['password']])
-            ->fetchAll();
-
-        if(($this->kundenId != NULL) AND (!empty($this->kundenId)))
-            $_SESSION['kundenId'] = $this->kundenId;
-
-
-
-
-
-
-        // Todo: Kontrolle ob $_SESSION['kundenID'] vorhanden ist
-        // Es wird über "kundenId" überprüft ob der login erfolgreich war
-        // falls nicht soll man auf die login url weitergeleitet werden
-        // falls ja soll man auf die eingegebene/aufgerufene gelangen
-        if(($_SESSION['kundenId'] == false))
+        if(!$_SESSION['kundenID'] or $_SESSION['kundenID'] == NULL)
         {
-            $_SESSION['url'] = $this->basisUrl . 'login';
-            $response = $response->withRedirect($_SESSION['url']);
-        }
-        else
-        {
-            $response = $next($request, $response);
-        }
+            $params = $request->getParams();
 
+            if(isset($params['user']) AND ($params['user'] != NULL) AND isset($params['password']) AND ($params['password'] != NULL))
+            {
+                $loginResult = $this->checkUserPassword($params['user'], $params['password']);
 
+                if($loginResult == false)
+                {
+                    $this->logger->write('Fehlgeschlagener Login' , Logger::INFO);
+                    $response = $response->withRedirect($this->basisUrl . 'login');
+                }
+            }else{
+                $this->logger->write('Fehlgeschlagener Login' , Logger::INFO);
+                $response = $response->withRedirect($this->basisUrl . 'login');
+            }
+        }
 
         return $response;
+    }
+
+    /**
+     * Abfrage MySQL nach Benutzer und Passwort
+     * mögliche Reaktionen auf die Abfrage:
+     * + kein bekannter Benutzer = false;
+     * + Benutzer bekannt = KundenId;
+     *
+     * @param string $user
+     * @param string $password
+     * @return int|bool
+     * @throws \Throwable
+     */
+    protected function checkUserPassword(string $user, string $password) : int|bool
+    {
+        try{
+            $loginResult = false;
+            $result = $this->grumpyPdo
+                ->run("SELECT id FROM kunden WHERE email = ? AND password = ?", [$user, $password])
+                ->fetchAll();
+
+            if(count($result) === 1)
+                $loginResult = $result['0']['id'];
+
+
+            return $loginResult;
+        }catch (\Throwable $e){
+            throw $e;
+        }
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getNavigation()
+    {
+        return $this->navigation;
     }
 }
