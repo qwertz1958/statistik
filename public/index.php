@@ -58,7 +58,7 @@ try{
         $app->add(\App\Middleware\CheckLogin::class);
 
     // Routing
-    $app->get('/login',  function (\Slim\Http\Request $request, Slim\Http\Response $response, array $args)
+    $app->any('/login',  function (\Slim\Http\Request $request, Slim\Http\Response $response, array $args)
     {
         $config = $this->get('config');
 

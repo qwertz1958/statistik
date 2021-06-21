@@ -51,18 +51,24 @@ class CheckLogin
 
             if(isset($params['user']) AND ($params['user'] != NULL) AND isset($params['password']) AND ($params['password'] != NULL))
             {
-                $loginResult = $this->checkUserPassword($params['user'], $params['password']);
+                $loginResult = $this
+                    ->checkUserPassword($params['user'], $params['password']);
 
                 if($loginResult == false)
                 {
                     $this->logger->write('Fehlgeschlagener Login' , Logger::INFO);
                     $response = $response->withRedirect($this->basisUrl . 'login');
+                }else{
+                    $_SESSION['kundenID'] = $loginResult;
                 }
             }else{
                 $this->logger->write('Fehlgeschlagener Login' , Logger::INFO);
                 $response = $response->withRedirect($this->basisUrl . 'login');
             }
+        }else{
+            $response = $next($request, $response);
         }
+
 
         return $response;
     }
