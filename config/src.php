@@ -15,14 +15,6 @@ $container[GrumpyPdo::class] = function ($container){
         $container['config']['database']['db_database']);
 };
 
-$container['GrumpyPdoTaskboard'] = function ($container){
-    return new GrumpyPdo(
-        $container['config']['database_taskboard']['db_server'],
-        $container['config']['database_taskboard']['db_user'],
-        $container['config']['database_taskboard']['db_password'],
-        $container['config']['database_taskboard']['db_database']);
-};
-
 // Logger
 $container[\App\Logger\OwnLogger::class] = function ($container){
     $settings = [];
