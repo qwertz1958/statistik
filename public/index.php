@@ -53,9 +53,15 @@ try{
     // Die Url wird zerlegt und darauf geprüft ob sich das wort login darin befindet
     // Falls sich das Wort login darin befindet soll man auf die login seite weitergeleitet werden
     // Falls sich das Wort login nicht darin befindet soll der LoginChecker anspringen úm zu überprüfen
-    $test = explode('/', $_SERVER['REDIRECT_URL']);
-    if(!in_array('login', $test))
-        $app->add(\App\Middleware\CheckLogin::class);
+
+//    $test = explode('/', $_SESSION['url']);
+//    if(!in_array('login', $test))
+//        $app->add($container[\App\Middleware\CheckLogin::class]);
+
+    // Show the login page
+    $app->get('/login', function (Slim\Http\Request $request, \Slim\Http\Response $response, $args) {
+        $test = 123;
+    })->setName('login');
 
     // Routing
     $app->any('/login',  function (\Slim\Http\Request $request, Slim\Http\Response $response, array $args)
@@ -132,7 +138,7 @@ try{
 
 
     // Startseite
-    $app->any('/',  function (\Slim\Http\Request $request, Slim\Http\Response $response, array $args)
+    $app->get('/',  function (\Slim\Http\Request $request, Slim\Http\Response $response, array $args)
     {
 
         $config = $this->get('config');

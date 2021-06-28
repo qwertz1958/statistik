@@ -7,5 +7,6 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Pimple' => array($vendorDir . '/pimple/pimple/src'),
+    'Hal\\' => array($vendorDir . '/phpmetrics/phpmetrics/src'),
     'Antoineaugusti\\EasyPHPCharts\\' => array($vendorDir . '/antoineaugusti/easyphpcharts/src'),
 );

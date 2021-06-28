@@ -11,6 +11,7 @@ class ComposerStaticInitcc8036a1742e94a4ac1b2bdbfa73971c
         '253c157292f75eb38082b5acb06f3f01' => __DIR__ . '/..' . '/nikic/fast-route/src/functions.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         'ff9f96cb8cf1d154dd3a4e0db7e714b6' => __DIR__ . '/..' . '/grumpycrouton/grumpypdo/grumpypdo.php',
+        '5f0e95b8df5acf4a92c896dc3ac4bb6e' => __DIR__ . '/..' . '/phpmetrics/phpmetrics/src/functions.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -35,6 +36,7 @@ class ComposerStaticInitcc8036a1742e94a4ac1b2bdbfa73971c
         array (
             'Psr\\Http\\Message\\' => 17,
             'Psr\\Container\\' => 14,
+            'PhpParser\\' => 10,
         ),
         'F' => 
         array (
@@ -87,6 +89,10 @@ class ComposerStaticInitcc8036a1742e94a4ac1b2bdbfa73971c
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
         ),
+        'PhpParser\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
+        ),
         'FastRoute\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/fast-route/src',
@@ -103,6 +109,13 @@ class ComposerStaticInitcc8036a1742e94a4ac1b2bdbfa73971c
             'Pimple' => 
             array (
                 0 => __DIR__ . '/..' . '/pimple/pimple/src',
+            ),
+        ),
+        'H' => 
+        array (
+            'Hal\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/phpmetrics/phpmetrics/src',
             ),
         ),
         'A' => 
