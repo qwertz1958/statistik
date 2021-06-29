@@ -18,7 +18,8 @@
         "grumpycrouton/grumpypdo": "^1.5",
         "silalahi/slim-logger": "dev-master",
         "spatie/array-to-xml": "^2.16",
-        "antoineaugusti/easyphpcharts": "^0.1.1"
+        "antoineaugusti/easyphpcharts": "^0.1.1",
+        "vlucas/phpdotenv": "v2.4.0"
     },
     "require-dev": {
         "phpmetrics/phpmetrics": "^2.7"
