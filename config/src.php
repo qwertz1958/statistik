@@ -6,7 +6,6 @@
  * dominik.schmidt
  */
 
-
 $container[GrumpyPdo::class] = function ($container){
     return new GrumpyPdo(
         $container['config']['database']['db_server'],
@@ -43,4 +42,9 @@ $container[\Twig\Environment::class] = function ($container)
     ]);
 
     return $twig;
+};
+
+$container[\App\Swagger::class] = function($container)
+{
+    return new App\Swagger();
 };
