@@ -16,10 +16,10 @@ class Swagger
     /**
      * @return string
      */
-    public function get(\Slim\Psr7\Response $response) : \Slim\Psr7\Response
+    public function get( $response)
     {
         try{
-            $swaggerPath = realpath(dirname(__DIR__) . "/../");
+            $swaggerPath = realpath('./../');
             $swaggerPath .= "/swagger/swagger.json";
 
             $swaggerFile = file_get_contents($swaggerPath);

@@ -1,17 +1,26 @@
 <?php
 
-$app->get('swagger[/]', function ($request, $response, $params)
+// Standard - Routen
+
+$app->get('/swagger[/]', function ($request, $response, $args)
 {
-    /** @var $action \App\Swagger */
-    $action = $container->get(\App\Swagger::class);
-    $response = $action->get($response);
+    /** @var $swagger App\Swagger */
+    $swagger = $this->get(\App\Swagger::class);
+    $response = $swagger->get($response);
 
     return $response->withHeader('Content-Type', 'application/json');
 });
 
-//$app->get('/users', 'getUsers'); // Using Get HTTP Method and process getUsers function
-//$app->get('/users/{id}',    'getUser'); // Using Get HTTP Method and process getUser function
-//$app->get('/users/search/{query}', 'findByName'); // Using Get HTTP Method and process findByName function
-//$app->post('/users', 'addUser'); // Using Post HTTP Method and process addUser function
-//$app->put('/users/{id}', 'updateUser'); // Using Put HTTP Method and process updateUser function
-//$app->delete('/users/{id}',    'deleteUser'); // Using Delete HTTP Method and process deleteUser function
+$app->get('/errors[/]', function ($request, $response, $args)
+{
+    /** @var $errorCodes App\ErrorCodes */
+    $errorCodes = $this->get(\App\ErrorCodes::class);
+    $errors = $errorCodes->getAllErrorCodeAsJson();
+
+    $response->getBody()->write($errors);
+
+    return $response->withHeader('Content-Type', 'application/json');;
+});
+
+// Test Route
+$app->get('/test/{bla}', \App\Action\Test::class);

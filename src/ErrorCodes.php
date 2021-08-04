@@ -71,7 +71,9 @@ class ErrorCodes
             self::$_instance = new self;
         }
 
-        return self::$_instance->getErrorCode($errorCodeName);
+        $errorCode = self::$_instance->getErrorCode($errorCodeName);
+
+        return $errorCode;
     }
 
     /**
@@ -105,7 +107,7 @@ class ErrorCodes
         $errorCodes = [];
 
         foreach ( $this->errors as $key => $error) {
-            $errorCodes[$key] = $error[0];
+            $errorCodes[$key] = $error[0] . " -> " .$error[1];
         }
 
         return $errorCodes;
@@ -154,5 +156,29 @@ class ErrorCodes
         }
 
         return $httpStatusCode;
+    }
+
+    public static function getErrorStatusStatic($errorCode)
+    {
+        if (null === self::$_instance) {
+            self::$_instance = new self;
+        }
+
+        $errorStatus = self::$_instance->getErrorStatus($errorCode);
+
+        return $errorStatus;
+    }
+
+    protected function getErrorStatus($errorCode)
+    {
+        $errorStatus = 500;
+
+        foreach($this->errors as $key => $value){
+            if($value[0] == $errorCode){
+                $errorStatus = $value[1];
+            }
+        }
+
+        return $errorStatus;
     }
 }

@@ -65,5 +65,5 @@ try{
     $app->run();
 }
 catch(\Throwable $e){
-    $test = 123;
+    throw $e;
 }

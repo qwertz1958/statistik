@@ -11,9 +11,8 @@
 
 namespace App\Error;
 
-
 use App\Logger\OwnLogger;
-use App\Test\MyTest;
+use App\ErrorCodes;
 
 class CustomErrorHandler
 {
@@ -25,19 +24,20 @@ class CustomErrorHandler
         $this->logger = $container[OwnLogger::class];
     }
 
-    public function __invoke($request, $response, $exception)
+    public function __invoke($request, $response,\Throwable $exception)
     {
         try{
-            $errorMessage = $exception->getFile() . ' : ' . $exception->getLine() . "\n >>" . $exception->getMessage() . ' : ' . $exception->getCode() . "\n" . $exception->getTraceAsString();
-
+            $completeErrorMessage = $exception->getFile() . ' : ' . $exception->getLine() . "\n >>" . $exception->getMessage() . ' : ' . $exception->getCode() . "\n" . $exception->getTraceAsString();
 
             $this->logger
-                ->error($errorMessage);
+                ->error($completeErrorMessage);
+
+            $errorStatus = ErrorCodes::getErrorStatusStatic($exception->getCode());
 
             return $response
-                ->withStatus(500)
+                ->withStatus($errorStatus)
                 ->withHeader('Content-Type', 'text/html')
-                ->write('Ein fehler ist augetreten !');
+                ->write('Error: ' . $exception->getMessage());
         }
         catch(\Throwable $e){
             throw $e;

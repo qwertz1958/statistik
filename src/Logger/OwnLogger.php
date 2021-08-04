@@ -16,7 +16,7 @@ use Silalahi\Slim\Logger;
 class OwnLogger extends Logger
 {
     /**
-     * Write to log
+     * Write to log, $level kann String oder Int sein
      *
      * @param mixed $object Object
      * @param int   $level  Level
@@ -25,21 +25,24 @@ class OwnLogger extends Logger
      */
     public function write($object, $level)
     {
+        $label = 'DEBUG';
+
         // Determine label
-        $label = "DEBUG";
-        switch($level) {
-            case self::CRITICAL:
-                $label = 'CRITICAL';
-                break;
-            case self::ERROR:
-                $label = 'ERROR';
-                break;
-            case self::WARN:
-                $label = 'WARN';
-                break;
-            case self::INFO:
-                $label = 'INFO';
-                break;
+        if(is_int($level)){
+            switch($level) {
+                case self::CRITICAL:
+                    $label = 'CRITICAL';
+                    break;
+                case self::ERROR:
+                    $label = 'ERROR';
+                    break;
+                case self::WARN:
+                    $label = 'WARN';
+                    break;
+                case self::INFO:
+                    $label = 'INFO';
+                    break;
+            }
         }
 
         // Get formatted log message

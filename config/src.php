@@ -44,7 +44,14 @@ $container[\Twig\Environment::class] = function ($container)
     return $twig;
 };
 
+// Swagger Standard Route
 $container[\App\Swagger::class] = function($container)
 {
     return new App\Swagger();
+};
+
+// Standard Route Errors
+$container[\App\ErrorCodes::class] = function()
+{
+    return new App\ErrorCodes();
 };
