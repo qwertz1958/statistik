@@ -1,9 +1,9 @@
 <?php
 /**
- * Bootstrap Datei WarenwirtschaftNG
+ * Bootstrap Datei Map
  *
- * 02.06.2021
- * Kalle
+ * 17.01.2022
+ * Stephan Krauss
  * index.php
  *
  */
@@ -12,8 +12,8 @@ session_start();
 
 include_once ("../vendor/autoload.php");
 
-use Spatie\ArrayToXml\ArrayToXml;
-use Logger\Logger;
+// use Spatie\ArrayToXml\ArrayToXml;
+// use Logger\Logger;
 
 
 try{

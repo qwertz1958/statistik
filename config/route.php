@@ -39,9 +39,12 @@ $app->any('/api[/{params:.*}]', function(Slim\Http\Request $request,Slim\Http\Re
 
 $app->get('/view/{template}', function($request, $response, array $args)
 {
-    $response->getBody()->write('Template!');
+    $templateData = [
+        'bla' => 'bla',
+        'blub' => 'blub'
+    ];
 
-    return $response;
+    return $this->view->render($response, 'layout.tpl', $templateData);
 }); 
  
 // darstellen der bekannten Fehler

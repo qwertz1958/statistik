@@ -11,17 +11,17 @@
 
 namespace App\Error;
 
-use App\Logger\OwnLogger;
+// use App\Logger\OwnLogger;
 use App\ErrorCodes;
 
 class CustomErrorHandler
 {
     /** @var OwnLogger */
-    protected $logger;
+    // protected $logger;
 
     public function __construct($container)
     {
-        $this->logger = $container[OwnLogger::class];
+        // $this->logger = $container[OwnLogger::class];
     }
 
     public function __invoke($request, $response,\Throwable $exception)
@@ -29,8 +29,8 @@ class CustomErrorHandler
         try{
             $completeErrorMessage = $exception->getFile() . ' : ' . $exception->getLine() . "\n >>" . $exception->getMessage() . ' : ' . $exception->getCode() . "\n" . $exception->getTraceAsString();
 
-            $this->logger
-                ->error($completeErrorMessage);
+            // $this->logger
+            //     ->error($completeErrorMessage);
 
             $errorStatus = ErrorCodes::getErrorStatusStatic($exception->getCode());
 

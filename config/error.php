@@ -2,8 +2,8 @@
 /**
  * Beschreibung:
  *
- * 07.06.2021
- * Kalle
+ * 16.01.2022
+ * Stephan Krauss
  * error.php
  *
  */
