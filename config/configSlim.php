@@ -3,7 +3,7 @@
  * Beschreibung:
  *
  * 07.06.2021
- * Kalle
+ * Stephan Krauss
  * configSlim.php
  *
  */

@@ -2,8 +2,8 @@
     "name": "kalle/warenwirtschaft-ng",
     "authors": [
         {
-            "name": "Alexander Roehr",
-            "email": "alexander.roehr@gmx.net"
+            "name": "Stephan Krauß",
+            "email": "info@stephankrauss.de"
         }
     ],
     "autoload": {
@@ -19,7 +19,8 @@
         "silalahi/slim-logger": "dev-master",
         "spatie/array-to-xml": "^2.16",
         "antoineaugusti/easyphpcharts": "^0.1.1",
-        "vlucas/phpdotenv": "v2.4.0"
+        "vlucas/phpdotenv": "^v2.4.0",
+        "mevdschee/php-crud-api": "^2.13.1"
     },
     "require-dev": {
         "phpmetrics/phpmetrics": "^2.7"

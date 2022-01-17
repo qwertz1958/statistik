@@ -8,6 +8,6 @@
  *
  */
 
-$container[App\Middleware\CheckLogin::class] = function ($container){
-    return new App\Middleware\CheckLogin($container);
-};
+// $container[App\Middleware\CheckLogin::class] = function ($container){
+//     return new App\Middleware\CheckLogin($container);
+// };
