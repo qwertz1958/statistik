@@ -12,3 +12,4 @@ https://github.com/zemian/php-crud-api/blob/zemian_my-examples/my-examples/my-cu
 | --- | --- |
 | 0.1 | Slim 3 mit Mevdschee |
 | 0.2 | Interation Twig Template |
+| 0.3 | Statistik Klasse eingebaut |
