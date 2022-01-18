@@ -6,7 +6,7 @@ namespace App\Action;
 
 use Slim\App;
 use App\ErrorCodes;
-use App\Logger\OwnLogger;
+// use App\Logger\OwnLogger;
 
 class Test
 {

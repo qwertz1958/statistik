@@ -27,7 +27,8 @@ $app->any('/api[/{params:.*}]', function(Slim\Http\Request $request,Slim\Http\Re
         'debug' => $_ENV['PHP_CRUD_API_DEBUG'],
         'driver' => $_ENV['PHP_CRUD_API_DRIVER'],
         'address' => $_ENV['PHP_CRUD_API_ADDRESS'],
-        'port' => $_ENV['PHP_CRUD_API_PORT']
+        'port' => $_ENV['PHP_CRUD_API_PORT'],
+        'customControllers' => 'App\Action\Zusatz'
     ]);
 
     $api = new Api($config);
