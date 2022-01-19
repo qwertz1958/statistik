@@ -1,7 +1,7 @@
 <?php
-namespace Oefenweb\Statistics;
+namespace App\Tool;
 
-use Oefenweb\Statistics\StatisticsError;
+use App\Tool\StatisticsError;
 
 /**
  * Statistics Library.

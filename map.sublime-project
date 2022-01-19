@@ -1,0 +1,15 @@
+{
+	"folders":
+	[
+		{
+			"path": ".",
+		}
+	],
+	"settings": {
+		"xdebug": {
+			"url": "map.local",
+			"port": 9000,
+			"ide_key": "sublime_xdebug"
+		}
+	}
+}

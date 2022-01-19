@@ -8,6 +8,10 @@
  *
  */
 
+// xdebug_info();
+// exit();
+
+
 session_start();
 
 include_once ("../vendor/autoload.php");

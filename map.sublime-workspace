@@ -1,0 +1,438 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Stat",
+				"Statistics"
+			],
+			[
+				"Sta",
+				"StatisticsError"
+			],
+			[
+				"ret",
+				"return"
+			],
+			[
+				"re",
+				"reflection"
+			],
+			[
+				"d",
+				"db"
+			],
+			[
+				"ro",
+				"router"
+			],
+			[
+				"Slim",
+				"Slim\\Http\\Response"
+			],
+			[
+				"co",
+				"container"
+			],
+			[
+				"bl",
+				"blub"
+			],
+			[
+				"ab",
+				"abs()"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: List Packages"
+			],
+			[
+				"lint",
+				"SublimeLinter: Lint This View"
+			],
+			[
+				"Package Control: remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"pci",
+				"Package Control: Install Package"
+			],
+			[
+				"fin",
+				"FindKeyConflicts: Overlap Conflicts"
+			],
+			[
+				"xdebig stop",
+				"Xdebug: Stop Debugging"
+			],
+			[
+				" xdebug wat",
+				"Xdebug: Set Watch Expression"
+			],
+			[
+				"xdebug",
+				"Xdebug: Clear Watch Expressions"
+			],
+			[
+				"xde",
+				"Xdebug: Set Watch Expression"
+			],
+			[
+				"xdeb",
+				"Xdebug: Clear All Breakpoints"
+			],
+			[
+				"Mark",
+				"MarkdownLivePreview: Open Preview"
+			],
+			[
+				"markdo",
+				"MarkdownLivePreview: Open Preview"
+			],
+			[
+				"bookma",
+				"Bookmarks: Select All"
+			],
+			[
+				"fold",
+				"Code Folding: Fold"
+			],
+			[
+				"filebr",
+				"View: Toggle Open Files in Side Bar"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/opt/lampp/htdocs/map"
+	],
+	"file_history":
+	[
+		"/opt/lampp/htdocs/map/.env",
+		"/opt/lampp/htdocs/map/config/route.php",
+		"/opt/lampp/htdocs/map/vendor/mevdschee/php-crud-api/src/Tqdev/PhpCrudApi/Api.php",
+		"/opt/lampp/htdocs/map/public/index.php",
+		"/opt/lampp/htdocs/map/vendor/composer/ClassLoader.php",
+		"/opt/lampp/htdocs/map/map.sublime-project",
+		"/opt/lampp/etc/php.ini",
+		"/opt/lampp/htdocs/log/xdebug.log",
+		"/home/stephan/.config/sublime-text/Packages/User/Xdebug.sublime-settings",
+		"/home/stephan/.config/sublime-text/Packages/Xdebug Client/Xdebug.sublime-settings",
+		"/tmp/cachegrind.out.bla",
+		"/opt/lampp/htdocs/php-crud-api/composer.json",
+		"/opt/lampp/htdocs/php-crud-api/README.md",
+		"/opt/lampp/htdocs/map/public/template/index.tpl",
+		"/opt/lampp/htdocs/map/public/assets/img/portfolio-1.jpg",
+		"/opt/lampp/htdocs/map/public/index.html",
+		"/opt/lampp/htdocs/map/src/Tool/Statistics.php",
+		"/opt/lampp/htdocs/map/src/Action/Zusatz.php",
+		"/opt/lampp/htdocs/map/README.md",
+		"/opt/lampp/htdocs/map/config/tool.php",
+		"/opt/lampp/htdocs/map/src/Error/CustomErrorHandler.php",
+		"/opt/lampp/htdocs/map/config/action.php",
+		"/opt/lampp/htdocs/map/public/.htaccess",
+		"/opt/lampp/htdocs/map/.git/hooks/prepare-commit-msg",
+		"/opt/lampp/htdocs/test/.git/hooks/prepare-commit-msg",
+		"/opt/lampp/htdocs/map/vendor/mevdschee/php-crud-api/src/Tqdev/PhpCrudApi/Controller/Responder.php",
+		"/opt/lampp/htdocs/map/vendor/mevdschee/php-crud-api/src/Tqdev/PhpCrudApi/Middleware/Router/SimpleRouter.php",
+		"/opt/lampp/htdocs/map/vendor/mevdschee/php-crud-api/src/Tqdev/PhpCrudApi/Middleware/CorsMiddleware.php",
+		"/opt/lampp/htdocs/map/vendor/slim/slim/Slim/Route.php",
+		"/opt/lampp/htdocs/map/src/Action/Test.php",
+		"/opt/lampp/htdocs/map/Amiga (dark).tmTheme",
+		"/home/stephan/.config/sublime-text/Packages/BoundKeys/Default (Linux).sublime-keymap",
+		"/opt/lampp/htdocs/test/index.php",
+		"/opt/lampp/htdocs/test/.git/hooks/pre-commit",
+		"/opt/lampp/htdocs/test/.git/hooks/prepare-commit-msg.sample",
+		"/home/stephan/.bashrc",
+		"/opt/lampp/htdocs/map/public/template/layout.tpl",
+		"/home/stephan/.gitconfig",
+		"/opt/lampp/htdocs/map/config/configSlim.php",
+		"/opt/lampp/htdocs/map/config/error.php",
+		"/opt/lampp/htdocs/map/config/src.php",
+		"/opt/lampp/htdocs/map/config/twig.php",
+		"/opt/lampp/htdocs/map/vendor/slim/slim/Slim/Container.php",
+		"/opt/lampp/htdocs/map/vendor/pimple/pimple/src/Pimple/Container.php",
+		"/opt/lampp/htdocs/map/vendor/slim/twig-view/src/Twig.php",
+		"/opt/lampp/htdocs/map/vendor/slim/slim/Slim/App.php",
+		"/opt/lampp/htdocs/map/composer.json",
+		"/opt/lampp/htdocs/map/.gitignore",
+		"/opt/lampp/htdocs/map/config/global.php",
+		"/opt/lampp/htdocs/map/vendor/nikic/fast-route/src/DataGenerator/RegexBasedAbstract.php",
+		"/opt/lampp/htdocs/map1/app/routes.php",
+		"/opt/lampp/htdocs/map/config/middleware.php",
+		"/opt/lampp/htdocs/map/config/model.php",
+		"/opt/lampp/htdocs/map/config/mapper.php",
+		"/opt/lampp/htdocs/map/src/Swagger.php",
+		"/opt/lampp/htdocs/map/app/middleware.php",
+		"/opt/lampp/htdocs/map/app/dependencies.php",
+		"/opt/lampp/htdocs/map/app/settings.php",
+		"/opt/lampp/htdocs/map/app/routes.php",
+		"/opt/lampp/htdocs/map/app/twigView.php",
+		"/media/stephan/Elements/Stephan/2022-01-16 Frostglas Beitrag/Lyrik/Lyrik zum Thema Frost.txt",
+		"/media/stephan/Elements/Stephan/2022-01-16 Schule Wettbewerbe/Mathematikolympiade – Schulstufe.txt",
+		"/media/stephan/Elements/Stephan/2022-01-16 Frostglas Beitrag/musik/Quelle Musik",
+		"/media/stephan/Elements/Stephan/2022-01-16 Schule Wettbewerbe/Vorlesewettbewerb.txt",
+		"/media/stephan/Elements/Stephan/450 Euro Job/adressen.txt",
+		"/opt/lampp/phpmyadmin/config.inc.php",
+		"/opt/lampp/htdocs/php-crud-api/examples/clients/leaflet/geojson-layer.js",
+		"/opt/lampp/htdocs/php-crud-api/examples/clients/leaflet/geojson-tile-layer.js",
+		"/opt/lampp/htdocs/php-crud-api/examples/clients/leaflet/vanilla.html",
+		"/opt/lampp/htdocs/php-crud-api/api.php",
+		"/opt/lampp/htdocs/php-crud-api/examples/index.html",
+		"/media/stephan/Elements/Stephan/450 Euro Job/mailtext.txt",
+		"/opt/lampp/etc/extra/httpd-vhosts.conf",
+		"/opt/lampp/htdocs/php-crud-api/test1.php",
+		"/opt/lampp/htdocs/map/_database/kataster1.sql",
+		"/opt/lampp/htdocs/map/_database/kataster2.sql",
+		"/opt/lampp/htdocs/map/_database/kataster3.sql",
+		"/opt/lampp/htdocs/map/_database/kataster4.sql",
+		"/opt/lampp/htdocs/map/_database/kataster5.sql",
+		"/opt/lampp/htdocs/map/_database/kataster.sql",
+		"/etc/hosts",
+		"/opt/lampp/htdocs/php-crud-api/_htaccess",
+		"/home/stephan/.config/sublime-text/Packages/User/AdvancedNewFile.sublime-settings",
+		"/home/stephan/.config/sublime-text/Packages/User/PHP Companion.sublime-settings",
+		"/home/stephan/.config/sublime-text/Packages/AdvancedNewFile/Default (Linux).sublime-keymap",
+		"/home/stephan/.config/sublime-text/Packages/PHPSimpleRefactor/PHPSimpleRefactor.sublime-settings",
+		"/home/stephan/.config/sublime-text/Packages/User/PHPSimpleRefactor.sublime-commands",
+		"/opt/lampp/htdocs/php-crud-api/test.php",
+		"/opt/lampp/htdocs/test2/index.html",
+		"/opt/lampp/htdocs/map_layout/index.html",
+		"/opt/lampp/htdocs/map_layout/_bilder/travel.jpg",
+		"/opt/lampp/htdocs/map_layout/css/styles.css",
+		"/opt/lampp/htdocs/slim-crud-api/composer.json",
+		"/opt/lampp/htdocs/test/test.sublime-project",
+		"/run/user/1000/doc/dc96028f/20-xdebug.ini",
+		"/run/user/1000/doc/2cb2c4c3/index.php",
+		"/run/user/1000/doc/6c3bc195/php.ini",
+		"/run/user/1000/doc/e5e9ca1c/php.ini",
+		"/var/www/html/test",
+		"/run/user/1000/doc/6e740be5/xdebug.ini",
+		"/run/user/1000/doc/db0bda7c/config-err-YQXYig",
+		"/run/user/1000/doc/1958ddbb/index.php",
+		"/home/stephan/.var/app/com.sublimetext.three/config/sublime-text-3/Packages/Xdebug Client/Xdebug.sublime-settings",
+		"/run/user/1000/doc/263e6dda/xdebug.log",
+		"/home/stephan/.var/app/com.sublimetext.three/config/sublime-text-3/Packages/User/Xdebug.sublime-settings",
+		"/opt/lampp/etc/httpd.conf",
+		"/run/user/1000/doc/d9541e65/hosts",
+		"/opt/lampp/htdocs/test/index.php-tmp"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 38.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.SublimeLinter":
+	{
+		"height": 0.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
+	"output.xdebug":
+	{
+		"height": 242.0
+	},
+	"pinned_build_system": "",
+	"project": "map.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": false,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+		"xdebug":
+		{
+			"hide_conflict": false,
+			"restore_index":
+			{
+				"28":
+				{
+					"group": 0,
+					"index": 0
+				},
+				"29":
+				{
+					"group": 0,
+					"index": 1
+				},
+				"30":
+				{
+					"group": 0,
+					"index": 2
+				}
+			},
+			"restore_layout":
+			{
+				"cells":
+				[
+					[
+						0,
+						0,
+						1,
+						1
+					]
+				],
+				"cols":
+				[
+					0.0,
+					1.0
+				],
+				"rows":
+				[
+					0.0,
+					1.0
+				]
+			}
+		}
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 346.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
