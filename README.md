@@ -14,3 +14,4 @@ https://github.com/zemian/php-crud-api/blob/zemian_my-examples/my-examples/my-cu
 | 0.2 | Interation Twig Template |
 | 0.3 | Statistik Klasse eingebaut |
 | 0.4 | Realisierung der Subtemplate in Twig |
+| 0.5 | Übernahme des Response in Form einer Tabelle |

@@ -13,7 +13,7 @@ $app->get('/', function(Slim\Http\Request $request,Slim\Http\Response $response,
         'subTemplate' => 'home'
     ];
 
-    return $this->view->render($response, 'layout.tpl', $templateData);
+    return $this->view->render($response, 'layout.html', $templateData);
 });
 
 // Views
@@ -21,14 +21,14 @@ $app->get('/view/{template}', function($request, $response, array $args)
 {
     $subTemplate = $args["template"];
 
-    if(!file_exists('./template/' . $subTemplate . '.tpl'))
+    if(!file_exists('./template/' . $subTemplate . '.html'))
         $subTemplate = 'home';
 
     $templateData = [
         'subTemplate' => $subTemplate
     ];
 
-    return $this->view->render($response, 'layout.tpl', $templateData);
+    return $this->view->render($response, 'layout.html', $templateData);
 });
 
 // API mevdschee

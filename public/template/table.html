@@ -1,0 +1,74 @@
+<!-- Beschreibung / Video -->
+<section  id="detailDescription">
+    <div class="row content-section text-center">
+
+        <div class="content-section-heading">
+            <h2 class="mb-5">Beschreibung</h2>
+        </div>
+
+        <div class="col-lg-1"></div>
+        <div class="col-lg-3 clo-lg-push-1 col-md-4 col-sm-6 col-xs-12 mb-5 mb-lg-0">
+            Bereich 1a
+        </div>
+        <div class="col-lg-4 col-md-4  col-sm-6 col-xs-12 mb-5 mb-lg-0">
+            Bereich 2a
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mb-5 mb-lg-0">
+            Bereich 3a
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+</section>
+
+<!-- Beispiel -->
+<section  id="example">
+    <div class="row content-section text-center">
+
+        <div class="content-section-heading">
+            <h2 class="mb-5">Beispiel</h2>
+        </div>
+
+        <div class="col-lg-1"></div>
+        
+        <div class="col-lg-10 col-md-12  col-sm-12 col-xs-12 mb-5 mb-lg-0">
+        
+            <table id="table">
+              <thead>
+                <tr>
+                  <th data-field="id">ID</th>
+                  <th data-field="lat">Lat</th>
+                  <th data-field="lon">Lon</th>
+                  <th data-field="bla">Bla</th>
+                </tr>
+              </thead>
+            </table>
+
+           <script>
+
+                $( document ).ready(function()
+                {
+
+                    $.ajax({
+                        url: "/api/records/baumkataster?filter=id,lt,101&include=id,lat,lon",
+                        dataType: "json",
+                        success: function(response)
+                        {
+                            var $table = $('#table');
+
+                            $table.bootstrapTable({data: response.records});
+                        },
+                        error: function(response) {
+                            alert('Javascript Error');
+                        }
+                    });
+                });
+
+                
+
+            </script>
+            
+        </div>
+
+        <div class="col-lg-1"></div>
+    </div>
+</section>
