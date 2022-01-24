@@ -148,10 +148,14 @@
 	},
 	"expanded_folders":
 	[
+		"/opt/lampp/htdocs/map"
 	],
 	"file_history":
 	[
+		"/media/stephan/Elements/Stephan/2022-01-16 Frostglas Beitrag/musik/Quelle Musik",
+		"/media/stephan/Elements/Stephan/2022-01-16 Frostglas Beitrag/Video/Video Youtube.txt",
 		"/opt/lampp/htdocs/map/.git/hooks/prepare-commit-msg",
+		"/opt/lampp/htdocs/map/prepare-commit-msg.md",
 		"/opt/lampp/htdocs/map/test.txt",
 		"/opt/lampp/htdocs/map/.git/hooks/pre-commit.sample",
 		"/opt/lampp/htdocs/map/xdebug-keys.md",
@@ -231,7 +235,6 @@
 		"/opt/lampp/htdocs/map/app/twigView.php",
 		"/media/stephan/Elements/Stephan/2022-01-16 Frostglas Beitrag/Lyrik/Lyrik zum Thema Frost.txt",
 		"/media/stephan/Elements/Stephan/2022-01-16 Schule Wettbewerbe/Mathematikolympiade – Schulstufe.txt",
-		"/media/stephan/Elements/Stephan/2022-01-16 Frostglas Beitrag/musik/Quelle Musik",
 		"/media/stephan/Elements/Stephan/2022-01-16 Schule Wettbewerbe/Vorlesewettbewerb.txt",
 		"/media/stephan/Elements/Stephan/450 Euro Job/adressen.txt",
 		"/opt/lampp/phpmyadmin/config.inc.php",
