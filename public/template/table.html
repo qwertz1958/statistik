@@ -32,13 +32,23 @@
         
         <div class="col-lg-10 col-md-12  col-sm-12 col-xs-12 mb-5 mb-lg-0">
         
-            <table id="table">
+            <table
+              id="table"
+              data-toolbar=".toolbar"
+              data-height="400"
+              data-virtual-scroll="true"
+              data-search="true"
+              data-strict-search="true"
+              data-show-columns="true">
               <thead>
                 <tr>
-                  <th data-field="id">ID</th>
+                  <th data-field="baumnummer">Baumnummer</th>
+                  <th data-field="messung">Messung</th>
                   <th data-field="lat">Lat</th>
                   <th data-field="lon">Lon</th>
-                  <th data-field="bla">Bla</th>
+                  <th data-field="zustand">Zustand</th>
+                  <th data-field="name">Gattung</th>
+                  <th data-field="datum">Datum</th>
                 </tr>
               </thead>
             </table>
@@ -49,7 +59,7 @@
                 {
 
                     $.ajax({
-                        url: "/api/records/baumkataster?filter=id,lt,101&include=id,lat,lon",
+                        url: "/api/records/baumkataster?include=baumnummer,lat,lon,zustand,name,datum,messung",
                         dataType: "json",
                         success: function(response)
                         {
