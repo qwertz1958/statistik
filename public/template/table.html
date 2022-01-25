@@ -28,9 +28,14 @@
             <h2 class="mb-5">Beispiel</h2>
         </div>
 
-        <div class="col-lg-1"></div>
+        <div class="col-lg-2"></div>
         
-        <div class="col-lg-10 col-md-12  col-sm-12 col-xs-12 mb-5 mb-lg-0">
+        <div class="col-lg-8 col-md-12  col-sm-12 col-xs-12 mb-5 mb-lg-0">
+
+            <div id="toolbar">
+                <button id="ausblenden" class="btn btn-secondary">Datum ausblenden</button>
+                <button id="einblenden" class="btn btn-secondary">Datum einblenden</button>
+            </div>
         
             <table
               id="table"
@@ -38,8 +43,7 @@
               data-height="400"
               data-virtual-scroll="true"
               data-search="true"
-              data-strict-search="true"
-              data-show-columns="true">
+              data-show-columns-search="true">
               <thead>
                 <tr>
                   <th data-field="baumnummer">Baumnummer</th>
@@ -53,24 +57,39 @@
               </thead>
             </table>
 
+            <button id="button">Button</button>
+
            <script>
 
                 $( document ).ready(function()
                 {
+                    var table = $('#table');
 
                     $.ajax({
                         url: "/api/records/baumkataster?include=baumnummer,lat,lon,zustand,name,datum,messung",
                         dataType: "json",
                         success: function(response)
                         {
-                            var $table = $('#table');
 
-                            $table.bootstrapTable({data: response.records});
+                            for(var i = 1; i < response.records.length; i++ ){
+                                // console.log(response.records[i].zustand);
+                                var test 
+                                if(response.records[i].zustand == '2')
+                                     // response.records[i].zustand = '<b>SCHLECHT</b>';
+                                     response.records[i].zustand = '<button type="button" class="glyphicon glyphicon-star" aria-label="Left Align">';
+                            }
+
+                            table.bootstrapTable({data: response.records});
                         },
                         error: function(response) {
                             alert('Javascript Error');
                         }
                     });
+
+                    $("#ausblenden").on('click', function(){
+                        table.bootstrapTable('hideColumn', 'datum');
+                    });
+
                 });
 
                 
@@ -79,6 +98,6 @@
             
         </div>
 
-        <div class="col-lg-1"></div>
+        <div class="col-lg-2"></div>
     </div>
 </section>
