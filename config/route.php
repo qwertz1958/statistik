@@ -3,6 +3,7 @@
 // mevdschee
 use Tqdev\PhpCrudApi\Api;
 use Tqdev\PhpCrudApi\Config;
+use Tqdev\PhpCrudApi\ResponseFactory;
 
 /*** Standard - Routen ***/
 
@@ -34,25 +35,48 @@ $app->get('/view/{template}', function($request, $response, array $args)
 // API mevdschee
 $app->any('/api[/{params:.*}]', function(Slim\Http\Request $request,Slim\Http\Response $response, array $args)
 {
-    $config = new Config([
-        'username' => $_ENV['PHP_CRUD_API_USERNAME'],
-        'password' => $_ENV['PHP_CRUD_API_PASSWORD'],
-        'database' => $_ENV['PHP_CRUD_API_DATABASE'],
-        'basePath' => '/api',
-        'debug' => $_ENV['PHP_CRUD_API_DEBUG'],
-        'driver' => $_ENV['PHP_CRUD_API_DRIVER'],
-        'address' => $_ENV['PHP_CRUD_API_ADDRESS'],
-        'port' => $_ENV['PHP_CRUD_API_PORT'],
-        'customControllers' => 'App\Action\Zusatz',
-        'tables' => 'baumkataster,kataster'
-    ]);
+    if(strstr($args['params'], 'records')){
+        $config = new Config([
+            'username' => $_ENV['PHP_CRUD_API_USERNAME'],
+            'password' => $_ENV['PHP_CRUD_API_PASSWORD'],
+            'database' => $_ENV['PHP_CRUD_API_DATABASE'],
+            'basePath' => '/api',
+            'debug' => $_ENV['PHP_CRUD_API_DEBUG'],
+            'driver' => $_ENV['PHP_CRUD_API_DRIVER'],
+            'address' => $_ENV['PHP_CRUD_API_ADDRESS'],
+            'port' => $_ENV['PHP_CRUD_API_PORT'],
+            'customControllers' => 'App\Action\Zusatz',
+            'tables' => 'baumkataster,kataster',
+            'middlewares' => 'customization',
+            'customization.afterHandler' => function ($operation, $tableName, $response, $environment) {
+                $json = json_decode($response->getBody()->getContents());
 
+                return ResponseFactory::fromObject(200, $json->records);
+            },
+        ]);
+    }
+    else
+    {
+
+        $config = new Config([
+            'username' => $_ENV['PHP_CRUD_API_USERNAME'],
+            'password' => $_ENV['PHP_CRUD_API_PASSWORD'],
+            'database' => $_ENV['PHP_CRUD_API_DATABASE'],
+            'basePath' => '/api',
+            'debug' => $_ENV['PHP_CRUD_API_DEBUG'],
+            'driver' => $_ENV['PHP_CRUD_API_DRIVER'],
+            'address' => $_ENV['PHP_CRUD_API_ADDRESS'],
+            'port' => $_ENV['PHP_CRUD_API_PORT'],
+            'customControllers' => 'App\Action\Zusatz',
+            'tables' => 'baumkataster,kataster',
+        ]);
+    }
+    
     $api = new Api($config);
     $response = $api->handle($request);
 
     return $response;
 });
-
 
 // darstellen der bekannten Fehler
 $app->get('/errors[/]', function ($request, $response, $args)

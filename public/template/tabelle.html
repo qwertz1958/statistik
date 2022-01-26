@@ -1,0 +1,71 @@
+<!-- Beschreibung / Video -->
+<section  id="detailDescription">
+    <div class="row text-center">
+
+        <div class="content-section-heading">
+            <h2 class="mb-5">Beschreibung der Darstellung von Tabellen</h2>
+        </div>
+
+        <div class="col-lg-1"></div>
+        <div class="col-lg-3 clo-lg-push-1 col-md-4 col-sm-6 col-xs-12 mb-5 mb-lg-0">
+            
+        </div>
+        <div class="col-lg-4 col-md-4  col-sm-6 col-xs-12 mb-5 mb-lg-0">
+            Beschreibung und Video
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mb-5 mb-lg-0">
+            
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+</section>
+
+<!-- Beispiel -->
+<section  id="example">
+    <div class="row text-center">
+
+        <div class="content-section-heading">
+            <h2 class="mb-5">Auszug aus dem Baumkataster</h2>
+        </div>
+
+        <div class="col-lg-1"></div>
+        
+        <div class="col-lg-10 col-md-12  col-sm-12 col-xs-12 mb-5 mb-lg-0">
+        
+             <div id="example-table"></div>
+              
+            <script>
+                $(document).ready(function()
+                {
+
+                    var table = new Tabulator("#example-table", {
+                        // height:"311px",
+                        ajaxURL:"http://map.local/api/records/baumkataster?filter=messung,lt,100", //ajax URL 
+                        // layout:"fitDataFill", // streckt über gesamte Breite
+                        layout:"fitDataTable", // Tabelle mit Mindestbreite 
+                        // responsiveLayout:"hide",
+                        pagination:"local",
+                        paginationSize:6,
+                        paginationSizeSelector:[3, 6, 8, 10],
+                        movableColumns:true,  
+                        columns:[
+                            {title:"Messung", field:"messung"},
+                            {title:"Baumnummer", field:"baumnummer"},
+                            {title:"Lat", field:"lat"},
+                            {title:"Lon", field:"lon"},
+                            {title:"Typ", field:"typ"},
+                            {title:"Zustand", field:"zustand"},
+                            {title:"Name", field:"name"},
+                            {title:"Information", field:"link"},
+                            {title:"Datum", field:"datum"},
+                        ],
+                    });
+                    
+                });
+            </script> 
+            
+        </div>
+
+        <div class="col-lg-1"></div>
+    </div>
+</section>

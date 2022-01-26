@@ -51,6 +51,360 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "public/template/tabelle.html",
+			"settings":
+			{
+				"buffer_size": 2556,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			},
+			"undo_stack":
+			[
+				[
+					30,
+					1,
+					"left_delete",
+					null,
+					"AQAAAIQBAAAAAAAAhAEAAAAAAAAKAAAAQmVyZWljaCAxYQ",
+					"AQAAAAAAAAABAAAAhAEAAAAAAACOAQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					36,
+					10,
+					"left_delete",
+					null,
+					"CgAAAGACAAAAAAAAYAIAAAAAAAABAAAAYV8CAAAAAAAAXwIAAAAAAAABAAAAM14CAAAAAAAAXgIAAAAAAAABAAAAIF0CAAAAAAAAXQIAAAAAAAABAAAAaFwCAAAAAAAAXAIAAAAAAAABAAAAY1sCAAAAAAAAWwIAAAAAAAABAAAAaVoCAAAAAAAAWgIAAAAAAAABAAAAZVkCAAAAAAAAWQIAAAAAAAABAAAAclgCAAAAAAAAWAIAAAAAAAABAAAAZVcCAAAAAAAAVwIAAAAAAAABAAAAQg",
+					"AQAAAAAAAAABAAAAYQIAAAAAAABhAgAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					41,
+					8,
+					"left_delete",
+					null,
+					"CAAAAPIBAAAAAAAA8gEAAAAAAAABAAAAYfEBAAAAAAAA8QEAAAAAAAABAAAAMvABAAAAAAAA8AEAAAAAAAABAAAAIO8BAAAAAAAA7wEAAAAAAAABAAAAaO4BAAAAAAAA7gEAAAAAAAABAAAAY+0BAAAAAAAA7QEAAAAAAAABAAAAaewBAAAAAAAA7AEAAAAAAAABAAAAZesBAAAAAAAA6wEAAAAAAAABAAAAcg",
+					"AQAAAAAAAAABAAAA8wEAAAAAAADzAQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					42,
+					1,
+					"insert",
+					{
+						"characters": "schre"
+					},
+					"BQAAAOsBAAAAAAAA7AEAAAAAAAAAAAAA7AEAAAAAAADtAQAAAAAAAAAAAADtAQAAAAAAAO4BAAAAAAAAAAAAAO4BAAAAAAAA7wEAAAAAAAAAAAAA7wEAAAAAAADwAQAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAA6wEAAAAAAADrAQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					43,
+					1,
+					"insert",
+					{
+						"characters": "ibung"
+					},
+					"BQAAAPABAAAAAAAA8QEAAAAAAAAAAAAA8QEAAAAAAADyAQAAAAAAAAAAAADyAQAAAAAAAPMBAAAAAAAAAAAAAPMBAAAAAAAA9AEAAAAAAAAAAAAA9AEAAAAAAAD1AQAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAA8AEAAAAAAADwAQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					44,
+					1,
+					"insert",
+					{
+						"characters": " und"
+					},
+					"BAAAAPUBAAAAAAAA9gEAAAAAAAAAAAAA9gEAAAAAAAD3AQAAAAAAAAAAAAD3AQAAAAAAAPgBAAAAAAAAAAAAAPgBAAAAAAAA+QEAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAA9QEAAAAAAAD1AQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					45,
+					1,
+					"insert",
+					{
+						"characters": " Video"
+					},
+					"BgAAAPkBAAAAAAAA+gEAAAAAAAAAAAAA+gEAAAAAAAD7AQAAAAAAAAAAAAD7AQAAAAAAAPwBAAAAAAAAAAAAAPwBAAAAAAAA/QEAAAAAAAAAAAAA/QEAAAAAAAD+AQAAAAAAAAAAAAD+AQAAAAAAAP8BAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAA+QEAAAAAAAD5AQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					61,
+					1,
+					"left_delete",
+					null,
+					"AQAAAFMAAAAAAAAAUwAAAAAAAAAQAAAAIGNvbnRlbnQtc2VjdGlvbg",
+					"AQAAAAAAAAABAAAAUwAAAAAAAABjAAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					68,
+					1,
+					"left_delete",
+					null,
+					"AQAAANwCAAAAAAAA3AIAAAAAAAAQAAAAIGNvbnRlbnQtc2VjdGlvbg",
+					"AQAAAAAAAAABAAAA3AIAAAAAAADsAgAAAAAAAAAAAAAAAPC/"
+				]
+			]
+		},
+		{
+			"file": "public/template/layout.html",
+			"settings":
+			{
+				"buffer_size": 4055,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			},
+			"undo_stack":
+			[
+				[
+					6,
+					1,
+					"left_delete",
+					null,
+					"AQAAAHMKAAAAAAAAcwoAAAAAAAABAAAAdA",
+					"AQAAAAAAAAABAAAAdAoAAAAAAAB0CgAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					8,
+					1,
+					"left_delete",
+					null,
+					"AQAAAHIKAAAAAAAAcgoAAAAAAAABAAAAcw",
+					"AQAAAAAAAAABAAAAcwoAAAAAAABzCgAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					10,
+					1,
+					"left_delete",
+					null,
+					"AQAAAHEKAAAAAAAAcQoAAAAAAAABAAAAZQ",
+					"AQAAAAAAAAABAAAAcgoAAAAAAAByCgAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					12,
+					1,
+					"insert",
+					{
+						"characters": "a"
+					},
+					"AQAAAHEKAAAAAAAAcgoAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAcQoAAAAAAABxCgAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					14,
+					1,
+					"insert",
+					{
+						"characters": "b"
+					},
+					"AQAAAHIKAAAAAAAAcwoAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAcgoAAAAAAAByCgAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					16,
+					1,
+					"insert",
+					{
+						"characters": "e"
+					},
+					"AQAAAHMKAAAAAAAAdAoAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAcwoAAAAAAABzCgAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					18,
+					1,
+					"insert",
+					{
+						"characters": "lle"
+					},
+					"AwAAAHQKAAAAAAAAdQoAAAAAAAAAAAAAdQoAAAAAAAB2CgAAAAAAAAAAAAB2CgAAAAAAAHcKAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAdAoAAAAAAAB0CgAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					32,
+					1,
+					"left_delete",
+					null,
+					"AQAAAMAHAAAAAAAAwAcAAAAAAAADAAAALS0+",
+					"AQAAAAAAAAABAAAAwAcAAAAAAADDBwAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					35,
+					1,
+					"left_delete",
+					null,
+					"AQAAAL8HAAAAAAAAvwcAAAAAAAABAAAAIA",
+					"AQAAAAAAAAABAAAAwAcAAAAAAADABwAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					40,
+					1,
+					"insert",
+					{
+						"characters": "\n"
+					},
+					"AgAAAPYIAAAAAAAA9wgAAAAAAAAAAAAA9wgAAAAAAAD/CAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAA9ggAAAAAAAD2CAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					43,
+					1,
+					"insert",
+					{
+						"characters": "-->"
+					},
+					"BQAAAP8IAAAAAAAAAAkAAAAAAAAAAAAAAAkAAAAAAAABCQAAAAAAAAAAAAABCQAAAAAAAAIJAAAAAAAAAAAAAPcIAAAAAAAA9wgAAAAAAAAIAAAAICAgICAgICD3CAAAAAAAAPsIAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAA/wgAAAAAAAD/CAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					46,
+					1,
+					"insert",
+					{
+						"characters": "\t"
+					},
+					"AQAAAPsIAAAAAAAA/wgAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAA+wgAAAAAAAD7CAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					60,
+					1,
+					"cut",
+					null,
+					"AQAAANMPAAAAAAAA0w8AAAAAAAABAAAACg",
+					"AQAAAAAAAAABAAAA0w8AAAAAAADTDwAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					63,
+					1,
+					"cut",
+					null,
+					"AQAAANMPAAAAAAAA0w8AAAAAAAAJAAAAICAgICAgICAK",
+					"AQAAAAAAAAABAAAA0w8AAAAAAADTDwAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					74,
+					1,
+					"left_delete",
+					null,
+					"AQAAAKkNAAAAAAAAqQ0AAAAAAAAQAAAAY29udGVudC1zZWN0aW9uIA",
+					"AQAAAAAAAAABAAAAqQ0AAAAAAAC5DQAAAAAAAAAAAAAAAPC/"
+				]
+			]
+		},
+		{
+			"contents": "",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix",
+				"name": "Xdebug Context",
+				"read_only": true,
+				"scratch": true
+			}
+		},
+		{
+			"contents": "",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix",
+				"name": "Xdebug Watch",
+				"read_only": true,
+				"scratch": true
+			},
+			"undo_stack":
+			[
+				[
+					1,
+					1,
+					"xdebug_view_update",
+					{
+						"data": "",
+						"readonly": true
+					},
+					"AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+					"AwAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvw"
+				],
+				[
+					3,
+					1,
+					"xdebug_view_update",
+					{
+						"data": "",
+						"readonly": true
+					},
+					"AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+					"AwAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvw"
+				],
+				[
+					5,
+					1,
+					"xdebug_view_update",
+					{
+						"data": "",
+						"readonly": true
+					},
+					"AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+					"AwAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvw"
+				],
+				[
+					1,
+					1,
+					"xdebug_view_update",
+					{
+						"data": "",
+						"readonly": true
+					},
+					"AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8"
+				]
+			]
+		},
+		{
+			"contents": "",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix",
+				"name": "Xdebug Stack",
+				"read_only": true,
+				"scratch": true
+			}
+		},
+		{
+			"contents": "",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix",
+				"name": "Xdebug Breakpoint",
+				"read_only": true,
+				"scratch": true
+			},
+			"undo_stack":
+			[
+				[
+					1,
+					1,
+					"xdebug_view_update",
+					{
+						"data": "",
+						"readonly": true
+					},
+					"AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+					"AwAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvw"
+				],
+				[
+					1,
+					1,
+					"xdebug_view_update",
+					{
+						"data": "",
+						"readonly": true
+					},
+					"AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8"
+				]
+			]
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -157,19 +511,26 @@
 	"expanded_folders":
 	[
 		"/opt/lampp/htdocs/map",
-		"/opt/lampp/htdocs/map/_tabelle_kataster",
 		"/opt/lampp/htdocs/map/public",
 		"/opt/lampp/htdocs/map/public/template"
 	],
 	"file_history":
 	[
-		"/media/stephan/Elements/Stephan/2022-01-16 Frostglas Beitrag/Video/Video Youtube.txt",
-		"/opt/lampp/htdocs/wp-config.php",
+		"/opt/lampp/htdocs/map/public/template/test.html",
 		"/opt/lampp/htdocs/map/public/template/layout.html",
 		"/opt/lampp/htdocs/map/public/template/table.html",
+		"/opt/lampp/htdocs/map/vendor/mevdschee/php-crud-api/src/Tqdev/PhpCrudApi/Config.php",
+		"/opt/lampp/htdocs/map/config/route.php",
+		"/opt/lampp/htdocs/map/vendor/mevdschee/php-crud-api/src/Tqdev/PhpCrudApi/ResponseFactory.php",
+		"/opt/lampp/htdocs/map/vendor/mevdschee/php-crud-api/src/Tqdev/PhpCrudApi/Api.php",
+		"/opt/lampp/htdocs/map/vendor/slim/slim/Slim/Http/Request.php",
+		"/opt/lampp/htdocs/map/public/css/styles.css",
+		"/home/stephan/Schreibtisch/2022-01-25 Anmeldung/Wie melde ich mein Kind an der Oberschule Bergstad.txt",
+		"/home/stephan/Schreibtisch/2022-01-25 Anmeldung/Information zum Schüleraufnahmeverfahren Schuljahr.txt",
+		"/media/stephan/Elements/Stephan/2022-01-16 Frostglas Beitrag/Video/Video Youtube.txt",
+		"/opt/lampp/htdocs/wp-config.php",
 		"/opt/lampp/htdocs/map/public/img/undraw_posting_photo.svg",
 		"/opt/lampp/htdocs/map/public/index.php",
-		"/opt/lampp/htdocs/map/config/route.php",
 		"/home/stephan/.config/sublime-text/Packages/User/Xdebug.sublime-settings",
 		"/home/stephan/.cache/.fr-NNrX6E/Default.sublime-commands",
 		"/home/stephan/.cache/.fr-gGwKE9/Default.sublime-commands",
@@ -195,8 +556,6 @@
 		"/home/stephan/.config/sublime-text/Packages/User/Xdebug.breakpoints",
 		"/opt/lampp/htdocs/map/README.md",
 		"/opt/lampp/htdocs/map/public/template/index.html",
-		"/opt/lampp/htdocs/map/public/css/styles.css",
-		"/opt/lampp/htdocs/map/public/template/test.html",
 		"/opt/lampp/htdocs/map/.env",
 		"/opt/lampp/htdocs/map/public/template/home.html",
 		"/opt/lampp/htdocs/map/public/bootstrap/js/bootstrap.bundle.js",
@@ -205,7 +564,6 @@
 		"/opt/lampp/htdocs/map/config/global.php",
 		"/opt/lampp/htdocs/map/public/template/home.tpl",
 		"/opt/lampp/htdocs/map/public/template/table.tpl",
-		"/opt/lampp/htdocs/map/vendor/mevdschee/php-crud-api/src/Tqdev/PhpCrudApi/Api.php",
 		"/opt/lampp/htdocs/map/vendor/composer/ClassLoader.php",
 		"/opt/lampp/etc/php.ini",
 		"/opt/lampp/htdocs/log/xdebug.log",
@@ -285,12 +643,7 @@
 		"/opt/lampp/htdocs/map_layout/index.html",
 		"/opt/lampp/htdocs/map_layout/_bilder/travel.jpg",
 		"/opt/lampp/htdocs/map_layout/css/styles.css",
-		"/opt/lampp/htdocs/slim-crud-api/composer.json",
-		"/opt/lampp/htdocs/test/test.sublime-project",
-		"/run/user/1000/doc/dc96028f/20-xdebug.ini",
-		"/run/user/1000/doc/2cb2c4c3/index.php",
-		"/run/user/1000/doc/6c3bc195/php.ini",
-		"/run/user/1000/doc/e5e9ca1c/php.ini"
+		"/opt/lampp/htdocs/slim-crud-api/composer.json"
 	],
 	"find":
 	{
@@ -308,6 +661,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"purify",
 			"Gattung",
 			"xdebug",
 			"th",
@@ -343,6 +697,456 @@
 		{
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "public/template/tabelle.html",
+					"selected": true,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2556,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								732,
+								732
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										744,
+										745
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/double_quote.png",
+										"region.greenish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										728,
+										729
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"function_name_status_row": 24,
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "public/template/layout.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4055,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3497,
+								3497
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										3518,
+										3519
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/double_quote.png",
+										"region.greenish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										3496,
+										3497
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"function_name_status_row": 92,
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1173.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"stack_multiselect": false,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"sheets":
+			[
+				{
+					"buffer": 2,
+					"selected": true,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": false,
+							"syntax": "Packages/Xdebug Client/Xdebug.tmLanguage",
+							"word_wrap": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"function_name_status_row": 0,
+							"syntax": "Packages/Xdebug Client/Xdebug.tmLanguage",
+							"word_wrap": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"stack_multiselect": false,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"sheets":
+			[
+				{
+					"buffer": 4,
+					"selected": true,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": false,
+							"syntax": "Packages/Xdebug Client/Xdebug.tmLanguage",
+							"word_wrap": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Xdebug Client/Xdebug.tmLanguage",
+							"word_wrap": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"stack_multiselect": false,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -361,18 +1165,32 @@
 			[
 				0,
 				0,
-				1,
+				2,
 				1
+			],
+			[
+				0,
+				1,
+				1,
+				2
+			],
+			[
+				1,
+				1,
+				2,
+				2
 			]
 		],
 		"cols":
 		[
 			0.0,
+			0.5,
 			1.0
 		],
 		"rows":
 		[
 			0.0,
+			0.7,
 			1.0
 		]
 	},
@@ -435,15 +1253,20 @@
 			"hide_conflict": false,
 			"restore_index":
 			{
-				"104":
+				"12":
+				{
+					"group": 0,
+					"index": 0
+				},
+				"13":
 				{
 					"group": 0,
 					"index": 1
 				},
-				"14":
+				"67":
 				{
 					"group": 0,
-					"index": 0
+					"index": 2
 				}
 			},
 			"restore_layout":
