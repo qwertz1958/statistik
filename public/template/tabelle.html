@@ -77,7 +77,7 @@
                       var filterVal = fieldEl.options[fieldEl.selectedIndex].value;
                       var typeVal = typeEl.options[typeEl.selectedIndex].value;
 
-                      var filter = filterVal == "function" ? customFilter : filterVal;
+                      var filter = filterVal;
 
                       if(filterVal == "function" )
                       {
@@ -117,22 +117,19 @@
                         pagination:"local",
                         paginationSize:5,
                         paginationSizeSelector:[5, 10, 20],
-                        movableColumns:true,  
+                        movableColumns:true,
                         columns:[
                             {title:"Messung", field:"messung"},
                             {title:"Baumnummer", field:"baumnummer"},
                             {title:"Lat", field:"lat"},
                             {title:"Lon", field:"lon"},
                             {title:"Typ", field:"typ"},
-                            {title:"Zustand", field:"zustand"},
+                            {title:"Zustand", field:"zustand", formatter:"star", formatterParams:{stars:5}, hozAlign:"center", width:120},
                             {title:"Name", field:"name"},
-                            {title:"Information", field:"link"},
+                            {title:"Information", field:"link" },
                             {title:"Datum", field:"datum"},
                         ],
                     });
-
-                    
-                    
                 });
             </script> 
             
