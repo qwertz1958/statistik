@@ -115,8 +115,8 @@
                         layout:"fitDataTable", // Tabelle mit Mindestbreite 
                         // responsiveLayout:"hide",
                         pagination:"local",
-                        paginationSize:5,
-                        paginationSizeSelector:[5, 10, 20],
+                        paginationSize:10,
+                        paginationSizeSelector:[10, 25, 50],
                         movableColumns:true,
                         columns:[
                             {title:"Messung", field:"messung"},
@@ -126,7 +126,10 @@
                             {title:"Typ", field:"typ"},
                             {title:"Zustand", field:"zustand", formatter:"star", formatterParams:{stars:5}, hozAlign:"center", width:120},
                             {title:"Name", field:"name"},
-                            {title:"Information", field:"link" },
+                            {title:"Information", field:"link", formatter:"link", formatterParams:{
+                                labelField:"link",
+                                target:"_blank",
+                            }},
                             {title:"Datum", field:"datum"},
                         ],
                     });
