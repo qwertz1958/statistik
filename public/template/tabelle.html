@@ -32,21 +32,91 @@
         
         <div class="col-lg-10 col-md-12  col-sm-12 col-xs-12 mb-5 mb-lg-0">
         
-             <div id="example-table"></div>
+            <!-- -->
+            <div>
+              <select id="filter-field">
+                <option></option>
+                <option value="name">Name</option>
+                <option value="zustand">Zustand</option>
+                <option value="datum">Datum</option>
+              </select>
+
+              <select id="filter-type">
+                <option value="=">=</option>
+                <option value="<"><</option>
+                <option value="<="><=</option>
+                <option value=">">></option>
+                <option value=">=">>=</option>
+                <option value="!=">!=</option>
+                <option value="like">like</option>
+              </select>
+
+                <input id="filter-value" type="text" placeholder="value to filter">
+
+                <button id="filter-clear">Filter löschen</button>
+            </div>
+
+            <div id="example-table"></div>
               
             <script>
                 $(document).ready(function()
                 {
+                    // Define variables for input elements
+                    var fieldEl = document.getElementById("filter-field");
+                    var typeEl = document.getElementById("filter-type");
+                    var valueEl = document.getElementById("filter-value");
+
+                    // Custom filter example
+                    function customFilter(data){
+                        return data.car && data.rating < 3;
+                    }
+
+                    // Trigger setFilter function with correct parameters
+                    function updateFilter()
+                    {
+                      var filterVal = fieldEl.options[fieldEl.selectedIndex].value;
+                      var typeVal = typeEl.options[typeEl.selectedIndex].value;
+
+                      var filter = filterVal == "function" ? customFilter : filterVal;
+
+                      if(filterVal == "function" )
+                      {
+                        typeEl.disabled = true;
+                        valueEl.disabled = true;
+                      }
+                      else{
+                        typeEl.disabled = false;
+                        valueEl.disabled = false;
+                      }
+
+                      if(filterVal){
+                        table.setFilter(filter,typeVal, valueEl.value);
+                      }
+                    }
+
+                    // Update filters on value change
+                    document.getElementById("filter-field").addEventListener("change", updateFilter);
+                    document.getElementById("filter-type").addEventListener("change", updateFilter);
+                    document.getElementById("filter-value").addEventListener("keyup", updateFilter);
+
+                    // Clear filters on "Clear Filters" button click
+                    document.getElementById("filter-clear").addEventListener("click", function(){
+                      fieldEl.value = "";
+                      typeEl.value = "=";
+                      valueEl.value = "";
+
+                      table.clearFilter();
+                    });
 
                     var table = new Tabulator("#example-table", {
                         // height:"311px",
-                        ajaxURL:"http://map.local/api/records/baumkataster?filter=messung,lt,100", //ajax URL 
+                        ajaxURL:"http://map.local/api/records/baumkataster", //ajax URL 
                         // layout:"fitDataFill", // streckt über gesamte Breite
                         layout:"fitDataTable", // Tabelle mit Mindestbreite 
                         // responsiveLayout:"hide",
                         pagination:"local",
-                        paginationSize:6,
-                        paginationSizeSelector:[3, 6, 8, 10],
+                        paginationSize:5,
+                        paginationSizeSelector:[5, 10, 20],
                         movableColumns:true,  
                         columns:[
                             {title:"Messung", field:"messung"},
@@ -60,6 +130,8 @@
                             {title:"Datum", field:"datum"},
                         ],
                     });
+
+                    
                     
                 });
             </script> 
