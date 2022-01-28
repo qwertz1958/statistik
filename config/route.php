@@ -35,7 +35,8 @@ $app->get('/view/{template}', function($request, $response, array $args)
 // API mevdschee
 $app->any('/api[/{params:.*}]', function(Slim\Http\Request $request,Slim\Http\Response $response, array $args)
 {
-    if(strstr($args['params'], 'records')){
+    if(strstr($args['params'], 'records'))
+    {
         $config = new Config([
             'username' => $_ENV['PHP_CRUD_API_USERNAME'],
             'password' => $_ENV['PHP_CRUD_API_PASSWORD'],
@@ -46,12 +47,19 @@ $app->any('/api[/{params:.*}]', function(Slim\Http\Request $request,Slim\Http\Re
             'address' => $_ENV['PHP_CRUD_API_ADDRESS'],
             'port' => $_ENV['PHP_CRUD_API_PORT'],
             'customControllers' => 'App\Action\Zusatz',
-            'tables' => 'baumkataster,kataster',
-            'middlewares' => 'customization',
+            'tables' => 'baumkataster',
+            'middlewares' => 'customization,authorization',
             'customization.afterHandler' => function ($operation, $tableName, $response, $environment) {
                 $json = json_decode($response->getBody()->getContents());
 
                 return ResponseFactory::fromObject(200, $json->records);
+            },
+            'authorization.tableHandler' => function ($operation, $tableName)
+            {
+                if($operation != 'list')
+                    return false;
+                else
+                    return true;
             },
         ]);
     }
@@ -68,7 +76,7 @@ $app->any('/api[/{params:.*}]', function(Slim\Http\Request $request,Slim\Http\Re
             'address' => $_ENV['PHP_CRUD_API_ADDRESS'],
             'port' => $_ENV['PHP_CRUD_API_PORT'],
             'customControllers' => 'App\Action\Zusatz',
-            'tables' => 'baumkataster,kataster',
+            'tables' => 'baumkataster',
         ]);
     }
     
