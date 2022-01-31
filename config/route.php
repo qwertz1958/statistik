@@ -10,14 +10,7 @@ use Tqdev\PhpCrudApi\ResponseFactory;
 // Start Template
 $app->get('/', function(Slim\Http\Request $request,Slim\Http\Response $response, array $args)
 {
-    $templateData = [
-        'subTemplate' => 'home',
-        'navigation' => $this->get('navigation')
-    ];
-
-    $test = 123;
-
-    return $this->view->render($response, 'layout.html', $templateData);
+    return $this->response->withStatus(301)->withHeader('Location', '/view/home');
 });
 
 // Views
@@ -52,7 +45,7 @@ $app->any('/api[/{params:.*}]', function(Slim\Http\Request $request,Slim\Http\Re
             'port' => $_ENV['PHP_CRUD_API_PORT'],
             'customControllers' => 'App\Action\Zusatz',
             'tables' => 'baumkataster',
-            'middlewares' => 'customization,authorization',
+            'middlewares' => 'customization,authorization,apiKeyDbAuth',
             'customization.afterHandler' => function ($operation, $tableName, $response, $environment) {
                 $json = json_decode($response->getBody()->getContents());
 
