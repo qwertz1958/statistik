@@ -11,8 +11,11 @@ use Tqdev\PhpCrudApi\ResponseFactory;
 $app->get('/', function(Slim\Http\Request $request,Slim\Http\Response $response, array $args)
 {
     $templateData = [
-        'subTemplate' => 'home'
+        'subTemplate' => 'home',
+        'navigation' => $this->get('navigation')
     ];
+
+    $test = 123;
 
     return $this->view->render($response, 'layout.html', $templateData);
 });
@@ -26,7 +29,8 @@ $app->get('/view/{template}', function($request, $response, array $args)
         $subTemplate = 'home';
 
     $templateData = [
-        'subTemplate' => $subTemplate
+        'subTemplate' => $subTemplate,
+        'navigation' => $this->get('navigation')
     ];
 
     return $this->view->render($response, 'layout.html', $templateData);

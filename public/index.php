@@ -50,6 +50,9 @@ try{
 // Middleware handling
     include_once ('../config/middleware.php');
 
+// Navigation
+include_once('../config/navigation.php');     
+
 
 // Todo: Middleware , $_SESSION['kundenId'] = 25;
 // Die Url wird zerlegt und darauf geprüft ob sich das wort login darin befindet
