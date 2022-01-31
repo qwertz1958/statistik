@@ -32,88 +32,44 @@
         
         <div class="col-lg-10 col-md-12  col-sm-12 col-xs-12 mb-5 mb-lg-0">
         
-            <!-- -->
-            <div>
-              <select id="filter-field">
-                <option></option>
+            <!-- Filter -->
+            <div id="filter">
+              <select id="filter-field1">
                 <option value="name">Name</option>
                 <option value="zustand">Zustand</option>
                 <option value="datum">Datum</option>
               </select>
 
-              <select id="filter-type">
-                <option value="=">=</option>
-                <option value="<"><</option>
-                <option value="<="><=</option>
-                <option value=">">></option>
-                <option value=">=">>=</option>
-                <option value="!=">!=</option>
-                <option value="like">like</option>
+              <select id="filter-type1">
+                <option value="eq">=</option>
+                <option value="lt"><</option>
+                <option value="le"><=</option>
+                <option value="gt">></option>
+                <option value="ge">>=</option>
+                <option value="n">!=</option>
               </select>
 
-                <input id="filter-value" type="text" placeholder="value to filter">
+              <input id="filter-value1" type="text" placeholder="Filterwert">
 
-                <button id="filter-clear">Filter löschen</button>
+              <button id="filter-set">Filter setzen</button>
+              <button id="filter-clear">Filter löschen</button>
             </div>
 
-            <div id="example-table"></div>
+
+            <div id="result"></div>
               
             <script>
+
+                var table;
+
+                // URL für Tbelle
+                var tableURL = "/api/records/baumkataster"; 
+
                 $(document).ready(function()
                 {
-                    // Define variables for input elements
-                    var fieldEl = document.getElementById("filter-field");
-                    var typeEl = document.getElementById("filter-type");
-                    var valueEl = document.getElementById("filter-value");
-
-                    // Custom filter example
-                    function customFilter(data){
-                        return data.car && data.rating < 3;
-                    }
-
-                    // Trigger setFilter function with correct parameters
-                    function updateFilter()
-                    {
-                      var filterVal = fieldEl.options[fieldEl.selectedIndex].value;
-                      var typeVal = typeEl.options[typeEl.selectedIndex].value;
-
-                      var filter = filterVal;
-
-                      if(filterVal == "function" )
-                      {
-                        typeEl.disabled = true;
-                        valueEl.disabled = true;
-                      }
-                      else{
-                        typeEl.disabled = false;
-                        valueEl.disabled = false;
-                      }
-
-                      if(filterVal){
-                        table.setFilter(filter,typeVal, valueEl.value);
-                      }
-                    }
-
-                    // Update filters on value change
-                    document.getElementById("filter-field").addEventListener("change", updateFilter);
-                    document.getElementById("filter-type").addEventListener("change", updateFilter);
-                    document.getElementById("filter-value").addEventListener("keyup", updateFilter);
-
-                    // Clear filters on "Clear Filters" button click
-                    document.getElementById("filter-clear").addEventListener("click", function(){
-                      fieldEl.value = "";
-                      typeEl.value = "=";
-                      valueEl.value = "";
-
-                      table.clearFilter();
-                    });
-
-                    var table = new Tabulator("#example-table", {
-                        // height:"311px",
-                        ajaxURL:"http://map.local/api/records/baumkataster", //ajax URL 
-                        // layout:"fitDataFill", // streckt über gesamte Breite
+                    table = new Tabulator("#result", {
+                        ajaxURL:tableURL, //ajax URL 
                         layout:"fitDataTable", // Tabelle mit Mindestbreite 
-                        // responsiveLayout:"hide",
                         pagination:"local",
                         paginationSize:10,
                         paginationSizeSelector:[10, 25, 50],
@@ -133,6 +89,34 @@
                             {title:"Datum", field:"datum"},
                         ],
                     });
+
+                    $("#filter-set").on('click',function()
+                    {
+                        var resetURL = "/api/records/baumkataster?filter=";
+
+                        var filterField1 = $("#filter-field1").val();
+                        resetURL = resetURL + filterField1 + ",";
+
+                        var filterTyp1 = $("#filter-type1").val();
+                        resetURL = resetURL + filterTyp1 + ",";
+
+                        var filterValue1 = $("#filter-value1").val();
+                        resetURL = resetURL + filterValue1;
+
+                        // alert(resetURL);                          
+                         
+                        $.get( resetURL, function( data ) {
+                          table.clearData();
+                          table.setData(resetURL); 
+                        }); 
+                    });
+
+                    $("#filter-clear").on('click',function()
+                    {
+                      table.clearData();
+                      table.setData(tableURL);
+                    });
+
                 });
             </script> 
             

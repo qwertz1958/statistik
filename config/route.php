@@ -44,8 +44,8 @@ $app->any('/api[/{params:.*}]', function(Slim\Http\Request $request,Slim\Http\Re
             'address' => $_ENV['PHP_CRUD_API_ADDRESS'],
             'port' => $_ENV['PHP_CRUD_API_PORT'],
             'customControllers' => 'App\Action\Zusatz',
-            'tables' => 'baumkataster',
-            'middlewares' => 'customization,authorization,apiKeyDbAuth',
+            'tables' => 'baumkataster, kataster',
+            'middlewares' => 'customization,authorization',
             'customization.afterHandler' => function ($operation, $tableName, $response, $environment) {
                 $json = json_decode($response->getBody()->getContents());
 
@@ -62,7 +62,6 @@ $app->any('/api[/{params:.*}]', function(Slim\Http\Request $request,Slim\Http\Re
     }
     else
     {
-
         $config = new Config([
             'username' => $_ENV['PHP_CRUD_API_USERNAME'],
             'password' => $_ENV['PHP_CRUD_API_PASSWORD'],
@@ -73,7 +72,7 @@ $app->any('/api[/{params:.*}]', function(Slim\Http\Request $request,Slim\Http\Re
             'address' => $_ENV['PHP_CRUD_API_ADDRESS'],
             'port' => $_ENV['PHP_CRUD_API_PORT'],
             'customControllers' => 'App\Action\Zusatz',
-            'tables' => 'baumkataster',
+            'tables' => 'baumkataster, kataster',
         ]);
     }
     
