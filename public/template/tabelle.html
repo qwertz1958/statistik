@@ -33,14 +33,18 @@
         <div class="col-lg-10 col-md-12  col-sm-12 col-xs-12 mb-5 mb-lg-0">
         
             <!-- Filter -->
-            <div id="filter">
-              <select id="filter-field1">
+            <div class="filter">
+
+              <button class="filter-add">+</button>
+              <button class="filter-sub">-</button>
+                
+              <select class="filter-field">
                 <option value="name">Name</option>
                 <option value="zustand">Zustand</option>
                 <option value="datum">Datum</option>
               </select>
 
-              <select id="filter-type1">
+              <select class="filter-type">
                 <option value="eq">=</option>
                 <option value="lt"><</option>
                 <option value="le"><=</option>
@@ -49,10 +53,10 @@
                 <option value="n">!=</option>
               </select>
 
-              <input id="filter-value1" type="text" placeholder="Filterwert">
+              <input class="filter-value" type="text" placeholder="Filterwert">
 
-              <button id="filter-set">Filter setzen</button>
-              <button id="filter-clear">Filter löschen</button>
+              <button class="filter-set">Filter setzen</button>
+              <button class="filter-clear">Filter löschen</button>
             </div>
 
 
@@ -90,28 +94,41 @@
                         ],
                     });
 
-                    $("#filter-set").on('click',function()
+                   
+
+                    $(".filter-set").on('click',function()
                     {
-                        var resetURL = "/api/records/baumkataster?filter=";
+                        var appendix = 'filter=';
+                        var filter = '';
+                        var i = 0;
+                        var append = false;
 
-                        var filterField1 = $("#filter-field1").val();
-                        resetURL = resetURL + filterField1 + ",";
+                        $(".filter > select, .filter-value").each(function()
+                        {
+                            if(this.value && i < 2)
+                                filter += this.value + ',';
+                            else if(this.value && i == 2){
+                                filter += this.value;
+                                append = true;
+                            }
 
-                        var filterTyp1 = $("#filter-type1").val();
-                        resetURL = resetURL + filterTyp1 + ",";
+                            i++;
+                        });
+                    
+                        // alert(filter);
+                        
+                        if(append){
+                            table.clearData();
+                            table.setData(tableURL + '?' + appendix + filter);
 
-                        var filterValue1 = $("#filter-value1").val();
-                        resetURL = resetURL + filterValue1;
-
-                        // alert(resetURL);                          
-                         
-                        $.get( resetURL, function( data ) {
-                          table.clearData();
-                          table.setData(resetURL); 
-                        }); 
+                            append = false;
+                        }
+                        
+                        i = 0;
+                        filter = '';
                     });
 
-                    $("#filter-clear").on('click',function()
+                    $(".filter-clear").on('click',function()
                     {
                       table.clearData();
                       table.setData(tableURL);
