@@ -3,7 +3,7 @@
     <div class="row content-section text-center">
 
         <div class="content-section-heading">
-            <h2 class="mb-5">Test Chart</h2>
+            <h2 class="mb-5">Test1 - Chart</h2>
         </div>
 
         <div class="col-lg-3 col-md-2 col-sm-1"></div>
@@ -27,7 +27,7 @@
                   var labels = [];
 
                   var scoreData = {
-                    label: 'Mid-Term Exam 1',
+                    label: 'individuelle Farben',
                     data: [],
                     backgroundColor: [],
                     borderColor: [],
@@ -40,13 +40,11 @@
                     scoreData.data.push(randomScalingFactor());
                     labels.push("Score " + (i + 1));
 
-                    if (i % 2 === 0) {
-                      scoreData.backgroundColor.push(evenBackgroundColor);
-                      scoreData.borderColor.push(evenBorderColor);
-                    } else {
-                      scoreData.backgroundColor.push(oddBackgroundColor);
-                      scoreData.borderColor.push(oddBorderColor);
-                    }
+                    var o = Math.round, r = Math.random, s = 255;
+                    var farbWert = 'rgb(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',1.0)';
+
+                    scoreData.backgroundColor.push(farbWert);
+                    scoreData.borderColor.push(farbWert);
                   }
 
                   return {
