@@ -1,0 +1,52 @@
+<!-- Startbereich -->
+<section>
+    <div class="row content-section text-center">
+
+        <div class="content-section-heading">
+            <h2 class="mb-5">Darstellung Datenbankabfrage in Textform</h2>
+            
+        </div>
+
+        <div class="col-lg-3 col-md-2 col-sm-1"></div>
+
+        <div class="col-lg-6 col-md-8 col-sm-10 col-xs-12">
+            
+        </div>
+
+        <div class="col-lg-3 col-md-2 col-sm-1">
+    </div>
+</section>
+
+<!-- Beispiel -->
+<section>
+    <div class="row content-section text-center">
+
+        <div class="col-lg-3 col-md-2 col-sm-1">
+            
+            <script type="text/javascript">
+                $("#document").ready(function()
+                {
+                    var url = "/api/records/kataster?filter=id,eq,10&include=id,lat,lon,typ";
+
+                    $("#query").html(url);
+
+                    $.get({url:url, dataType:"json"}).done(function(response){
+                        $("#list").view(response);
+                    });
+                });
+            </script>
+        </div>
+
+        <div class="col-lg-6 col-md-8 col-sm-10 col-xs-12"  align="left">
+            <code id="query"></code>
+            <ul id="list">
+                <li>ID: <span id="id"></span></li>
+                <li>Lat: <span id="lat"></span></li>
+                <li>Lon: <span id="lon"></span></li>
+                <li>Typ: <span id="typ"></span></li>
+            </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-2 col-sm-1">
+    </div>
+</section>
