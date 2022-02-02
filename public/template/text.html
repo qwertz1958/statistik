@@ -26,25 +26,58 @@
             <script type="text/javascript">
                 $("#document").ready(function()
                 {
-                    var url = "/api/records/kataster?filter=id,eq,10&include=id,lat,lon,typ";
-
-                    $("#query").html(url);
+                    // Erststart
+                    var url = "/api/records/kataster?filter=id,eq,10";
 
                     $.get({url:url, dataType:"json"}).done(function(response){
                         $("#list").view(response);
                     });
+
+                    $("#query").html(url);
+                    
+                    // Button
+                    $("#add").on('click', function()
+                    {
+                        var appendix = $("#includes").val();
+
+                        if(appendix.trim()) {
+                            var url_neu = '';
+                            url_neu = url + "&include=" + appendix;
+                        }
+                        else
+                            url_neu = url;
+
+                        $.get({url:url_neu, dataType:"json"}).done(function(response){
+                            $("#list").view(response);
+                        });
+
+                        $("#query").html(url_neu);
+                    });
+
+                    
+
+                    
                 });
             </script>
         </div>
 
         <div class="col-lg-6 col-md-8 col-sm-10 col-xs-12"  align="left">
-            <code id="query"></code>
-            <ul id="list">
-                <li>ID: <span id="id"></span></li>
-                <li>Lat: <span id="lat"></span></li>
-                <li>Lon: <span id="lon"></span></li>
-                <li>Typ: <span id="typ"></span></li>
-            </ul>
+            <p>
+                <code id="query"></code>
+            </p>
+            
+            <br>Spalten der Abfrage: <input type="text" id='includes'  placeholder="Spalte1, Spalte2, ..."> <button id="add">senden</button><br>
+
+            <p>
+                <ul id="list">
+                    <li>id: <span id="id"></span></li>
+                    <li>lat: <span id="lat"></span></li>
+                    <li>lon: <span id="lon"></span></li>
+                    <li>point: <span id="point"></span></li>
+                    <li>typ: <span id="typ"></span></li>
+                </ul>
+            </p>
+            
         </div>
 
         <div class="col-lg-3 col-md-2 col-sm-1">
