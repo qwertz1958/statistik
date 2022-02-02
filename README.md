@@ -13,11 +13,10 @@
 
 ## Installation
 
-## Anleitungen
+## Projektbeschreibung und Anleitungen
 
-## Server
-+ Lokal: map.local
-+ Public: map.stephankrauss.de
+## Demo
++ Public: http://map.stephankrauss.de
 
 ## Github Account
 + https://github.com/qwertz1958/map
