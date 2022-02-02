@@ -1,3 +1,20 @@
+# Darstellung unternehmenskritischer Daten in Echtzeit
++ Darstellungsformen:
+	+ Text
+	+ Tabelle
+	+ Diagramme
+	+ Kartenmaterial
++ Vorteile:
+	+ kostengünstig
+	+ geringer personeller Aufwand
+	+ Daten verlassen nicht die Firma
+	+ Abbildung im Intranet der Firma	
+
+
+## Installation
+
+## Anleitungen
+
 ## Server
 + Lokal: map.local
 + Public: map.stephankrauss.de
