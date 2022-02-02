@@ -1,0 +1,151 @@
+<!-- Startbereich -->
+<section>
+    <div class="row content-section text-center">
+
+        <div class="content-section-heading">
+            <h2 class="mb-5">Test 2</h2>
+        </div>
+
+        <div class="col-lg-3 col-md-2 col-sm-1"></div>
+
+        <div class="col-lg-6 col-md-8 col-sm-10 col-xs-12">
+            Verwendung; https://jsfiddle.net/jW68r/
+        </div>
+
+        <div class="col-lg-3 col-md-2 col-sm-1">
+    </div>
+</section>
+
+<!-- Beispiel -->
+<section>
+    <div class="row content-section text-center">
+
+        <div class="col-lg-3 col-md-2 col-sm-1"></div>
+
+        <div class="col-lg-6 col-md-8 col-sm-10 col-xs-12">
+
+            <canvas id="myChart"></canvas>
+
+
+            <script type="text/javascript">
+
+                var url = '/api/records/anzahlBaeume';
+
+                var label = [];
+                var anzahl = [];
+                var color = [];
+
+                var ctx = $('#myChart');
+
+                function getRandomInt(max)
+                {
+
+                  return Math.floor(Math.random() * max);
+                }
+
+                function auswertung(data)
+                {
+                    var j = data.length;
+
+                    for(var i = 0; i < j; i++){
+                        
+                        label.push(data[i].label);
+                        anzahl.push(data[i].anzahl);
+                    }
+
+                    // console.dir(color);
+                    myChart.data.labels = label;
+                    myChart.data.datasets[0].data = anzahl; // or you can iterate for multiple datasets
+
+                    myChart.update(); // finally update our chart 
+                }
+
+                function colors(steps)
+                {
+                    var colors = [];
+                    var memory = [];
+                    var g = 0;
+                    var b = 0;
+
+                    for(var i = 0; i < steps; i++)
+                    {
+                        var r = getRandomInt(255);
+
+                        if(memory.indexOf(r))
+                        {
+                            i--;
+                            continue;
+                        }
+
+                        memory.push(r);
+
+                        colors.push('rgba(' + r + ',' + g + ',' + b + ','  + ' 0.6)');
+                        
+                    }
+
+                    return colors;
+                 }
+
+                $.get({
+                    url: url,
+                    success: function(data)
+                    {
+                        auswertung(data);
+                    }
+                });
+
+                // leeres Diagramm
+                var myChart = new Chart(ctx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: [],
+                        datasets: [
+                            {
+                                label: "Anzahl Bäume",
+                                fill: true, // Fläche füllen
+                                lineTension: 0.1,
+                                // backgroundColor: "rgba(77, 77, 255,0.6)", // Balkenfarbe
+                                backgroundColor: colors(10), // Balkenfarbe
+                                borderColor: "rgba(0, 0, 0, 1)", // Balkenrand
+                                borderCapStyle: 'butt',
+                                borderDash: [],
+                                borderDashOffset: 0.0,
+                                borderJoinStyle: 'miter',
+                                pointBorderColor: "rgba(75,192,192,1)",
+                                pointBackgroundColor: "#fff",
+                                pointBorderWidth: 1,
+                                pointHoverRadius: 5,
+                                pointHoverBackgroundColor: "rgba(75,192,192,1)",
+                                pointHoverBorderColor: "rgba(220,220,220,1)",
+                                pointHoverBorderWidth: 2,
+                                hoverBackgroundColor: 'rgba(200, 200, 200, 1)', // Maus über Abschnitt
+                                hoverBorderColor: 'rgba(200, 200, 200, 1)', // Maus über Abschnitt
+                                pointRadius: 1,
+                                pointHitRadius: 10,
+                                data: [],
+                                spanGaps: false,
+                            }
+                        ]
+                    },
+                    options: {
+                        tooltips: {
+                            mode: 'index',
+                            intersect: false
+                        },
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero:false
+                                }
+                            }]
+                        }
+                    }
+                });
+
+                
+            </script>
+        </div>
+
+        <div class="col-lg-3 col-md-2 col-sm-1">
+    </div>
+</section>
