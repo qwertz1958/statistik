@@ -50,7 +50,7 @@
 
                     // leeres Diagramm
                     var myChart = new Chart(ctx, {
-                        type: 'pie',
+                        type: 'bar',
                         data: {
                             labels: [],
                             datasets: [
@@ -59,8 +59,8 @@
                                     fill: true, // Fläche füllen
                                     lineTension: 0.1,
                                     // backgroundColor: "rgba(77, 77, 255,0.6)", // Balkenfarbe
-                                    backgroundColor: [], // Balkenfarbe
-                                    borderColor: "rgba(0, 0, 179,1)", // Balkenrand
+                                    backgroundColor: ['rgba(0, 0, 179, 0.4)'], // Balkenfarbe
+                                    borderColor: "rgba(0, 0, 0, 1)", // Balkenrand
                                     borderCapStyle: 'butt',
                                     borderDash: [],
                                     borderDashOffset: 0.0,
@@ -103,15 +103,11 @@
                             
                             label.push(data[i].label);
                             anzahl.push(data[i].anzahl);
-
-                            var o = Math.round, r = Math.random, s = 255;
-                            color.push('rgb(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ')');
                         }
 
                         // console.dir(color);
                         myChart.data.labels = label;
                         myChart.data.datasets[0].data = anzahl; // or you can iterate for multiple datasets
-                        // myChart.backgroundColor = color; // or you can iterate for multiple datasets
 
                         myChart.update(); // finally update our chart 
                     });
