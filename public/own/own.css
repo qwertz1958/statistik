@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+
+.blau{
+	background-color: #3f7ea5;
+}
+
+.text_weiss{
+	color: white;
+}
+
+.navbar-margin{
+	margin:  20px;
+}
+
+.navbar-default .navbar-nav > li > a {
+	color: #ffffff;
+	background-color: transparent;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.navbar-default .navbar-nav > li > a:hover{
+	background-color: #6ba4c7;
+	color:  #fff;
+}
+
+.navbar-default .navbar-brand:focus, .navbar-default .navbar-brand {
+	color: #fff;
+	background-color: transparent;
+}
+
+footer > div{
+	background-color: #3f7ea5;
+	padding-top:  20px;
+	padding-bottom:  20px;
+	color:  white;
+}
+
+div[class^="col-"] {
+	box-sizing: border-box;
+	color: rgb(0, 0, 0);
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 16px;
+	line-height: 20px;
+	min-height: 1px;
+	outline-width: 1px;
+	padding-bottom: 20px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+/*
+div[class="row"] {
+    outline: 1px dotted rgba(0, 0, 0, 0.25);
+}
+
+div[class^="col-"] {
+    background-color: rgba(255, 0, 0, 0.2);
+    outline: 1px dotted rgba(0, 0, 0, 0.5);
+}
+*/
