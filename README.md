@@ -40,9 +40,13 @@ https://github.com/zemian/php-crud-api/blob/zemian_my-examples/my-examples/my-cu
 
 
 ## Credits
-+ https://www.slimframework.com/
-+ https://github.com/mevdschee/php-crud-api
-+ https://github.com/JocaPC/jquery-view-engine
-+ http://tabulator.info/
-+ https://www.chartjs.org/
-+ https://leafletjs.com/
+
+| Quelle | Lizenz |
+| --- | --- |
+| [ Php Slim Framework Vers. 3.x ](https://www.slimframework.com/) |  [MIT](https://de.wikipedia.org/wiki/MIT-Lizenz)  |
+| [ Php Crud API Vers. 2.13.3 ](https://github.com/mevdschee/php-crud-api) | [MIT](https://de.wikipedia.org/wiki/MIT-Lizenz) |
+| [ JQuery View Engine ](https://github.com/JocaPC/jquery-view-engine) | |
+| [ Javascript Tabulator Vers.: 5.1.0 ](https://github.com/olifolkerd/tabulator) | [MIT](https://de.wikipedia.org/wiki/MIT-Lizenz) |                           
+| [ ChartJS Vers.: 3.7.0 ](https://github.com/chartjs/Chart.js) | [MIT](https://de.wikipedia.org/wiki/MIT-Lizenz) |
+| [ Leaflet Vers.: 1.7.1 ](https://github.com/Leaflet/Leaflet) |  [BSD Lizenz](https://de.wikipedia.org/wiki/BSD-Lizenz) 
+| [ JQuery Vers.: 3.6.0 ](https://github.com/jquery/jquery) | [MIT](https://de.wikipedia.org/wiki/MIT-Lizenz) | 
