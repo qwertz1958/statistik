@@ -3,7 +3,6 @@
 	+ Text
 	+ Tabelle
 	+ Diagramme
-	+ Kartenmaterial
 + Vorteile:
 	+ kostengünstig
 	+ geringer personeller Aufwand
