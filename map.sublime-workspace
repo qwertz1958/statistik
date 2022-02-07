@@ -84,84 +84,10 @@
 	"buffers":
 	[
 		{
-			"file": "public/template/test3.html",
+			"file": "public/template/chart1.js",
 			"settings":
 			{
-				"buffer_size": 6348,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			},
-			"undo_stack":
-			[
-				[
-					7,
-					1,
-					"insert",
-					{
-						"characters": ".."
-					},
-					"AgAAAKkGAAAAAAAAqgYAAAAAAAAAAAAAqgYAAAAAAACrBgAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAqQYAAAAAAACpBgAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					18,
-					1,
-					"insert",
-					{
-						"characters": ".."
-					},
-					"AgAAAEQJAAAAAAAARQkAAAAAAAAAAAAARQkAAAAAAABGCQAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAARAkAAAAAAABECQAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					26,
-					1,
-					"insert",
-					{
-						"characters": ".."
-					},
-					"AgAAAIgJAAAAAAAAiQkAAAAAAAAAAAAAiQkAAAAAAACKCQAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAiAkAAAAAAACICQAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					48,
-					1,
-					"right_delete",
-					null,
-					"AQAAAJ0IAAAAAAAAnQgAAAAAAAAxAAAALS0gQ29udGVudCBlaW5mw7xnZW4gLS0+CgoJCTwhLS0gRW5kZSBDb250ZW50IC0tPg",
-					"AQAAAAAAAAABAAAAnQgAAAAAAADNCAAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					51,
-					1,
-					"left_delete",
-					null,
-					"AQAAAJwIAAAAAAAAnAgAAAAAAAABAAAAIQ",
-					"AQAAAAAAAAABAAAAnQgAAAAAAACdCAAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					53,
-					1,
-					"left_delete",
-					null,
-					"AQAAAJsIAAAAAAAAmwgAAAAAAAABAAAAPA",
-					"AQAAAAAAAAABAAAAnAgAAAAAAACcCAAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					55,
-					1,
-					"paste",
-					null,
-					"AQAAAJsIAAAAAAAAGhQAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAmwgAAAAAAACbCAAAAAAAAAAAAAAAAPC/"
-				]
-			]
-		},
-		{
-			"file": "public/template/test2.html",
-			"settings":
-			{
-				"buffer_size": 3680,
+				"buffer_size": 2174,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			},
@@ -279,30 +205,38 @@
 	"expanded_folders":
 	[
 		"/opt/lampp/htdocs/map",
-		"/opt/lampp/htdocs/map/_geojson",
 		"/opt/lampp/htdocs/map/public",
 		"/opt/lampp/htdocs/map/public/template"
 	],
 	"file_history":
 	[
-		"/opt/lampp/htdocs/map/public/template/test_leer.html",
-		"/opt/lampp/htdocs/map/public/template/test3.html",
-		"/opt/lampp/htdocs/map/public/template/test2.html",
-		"/opt/lampp/htdocs/map/public/js/bootstrap.js",
 		"/opt/lampp/htdocs/map/README.md",
-		"/opt/lampp/htdocs/map/_geojson/kreise_niedrig.geo.json",
+		"/opt/lampp/htdocs/map/public/template/chart3.html",
+		"/opt/lampp/htdocs/map/public/template/chart3.js",
+		"/opt/lampp/htdocs/map/public/template/chart2.js",
+		"/opt/lampp/htdocs/map/public/template/chart2.html",
+		"/opt/lampp/htdocs/map/public/template/chart1.js",
 		"/opt/lampp/htdocs/map/public/template/layout.html",
-		"/opt/lampp/htdocs/map/config/route.php",
-		"/opt/lampp/htdocs/map/public/template/vorlage.html",
-		"/opt/lampp/htdocs/map/config/navigation.php",
-		"/opt/lampp/htdocs/map/public/template/test1.html",
+		"/opt/lampp/htdocs/map/public/template/chart1.html",
+		"/opt/lampp/htdocs/map/doughnut.md",
+		"/opt/lampp/htdocs/map/public/template/home.html",
 		"/opt/lampp/htdocs/map/public/template/tabelle.html",
-		"/opt/lampp/htdocs/map/test.txt",
+		"/opt/lampp/htdocs/map/tabelle.md",
+		"/opt/lampp/htdocs/map/balkendiagramm.md",
+		"/opt/lampp/htdocs/map/config/navigation.php",
 		"/opt/lampp/htdocs/map/public/template/text.html",
 		"/opt/lampp/htdocs/map/public/template/leer.html",
+		"/opt/lampp/htdocs/map/public/template/test1.html",
+		"/opt/lampp/htdocs/map/public/template/test3.html",
+		"/opt/lampp/htdocs/map/public/template/test2.html",
+		"/opt/lampp/htdocs/map/public/template/test_leer.html",
+		"/opt/lampp/htdocs/map/public/js/bootstrap.js",
+		"/opt/lampp/htdocs/map/_geojson/kreise_niedrig.geo.json",
+		"/opt/lampp/htdocs/map/config/route.php",
+		"/opt/lampp/htdocs/map/public/template/vorlage.html",
+		"/opt/lampp/htdocs/map/test.txt",
 		"/opt/lampp/htdocs/map/public/template/charts.html",
 		"/opt/lampp/htdocs/map/public/template/test.html",
-		"/opt/lampp/htdocs/map/public/template/home.html",
 		"/opt/lampp/htdocs/map/.env",
 		"/opt/lampp/htdocs/map/public/index.php",
 		"/opt/lampp/htdocs/map/config/action.php",
@@ -403,20 +337,11 @@
 		"/media/stephan/Elements/Stephan/2022-01-16 Frostglas Beitrag/Lyrik/Lyrik zum Thema Frost.txt",
 		"/media/stephan/Elements/Stephan/2022-01-16 Schule Wettbewerbe/Mathematikolympiade – Schulstufe.txt",
 		"/media/stephan/Elements/Stephan/2022-01-16 Schule Wettbewerbe/Vorlesewettbewerb.txt",
-		"/media/stephan/Elements/Stephan/450 Euro Job/adressen.txt",
-		"/opt/lampp/phpmyadmin/config.inc.php",
-		"/opt/lampp/htdocs/php-crud-api/examples/clients/leaflet/geojson-layer.js",
-		"/opt/lampp/htdocs/php-crud-api/examples/clients/leaflet/geojson-tile-layer.js",
-		"/opt/lampp/htdocs/php-crud-api/examples/clients/leaflet/vanilla.html",
-		"/opt/lampp/htdocs/php-crud-api/api.php",
-		"/opt/lampp/htdocs/php-crud-api/examples/index.html",
-		"/media/stephan/Elements/Stephan/450 Euro Job/mailtext.txt",
-		"/opt/lampp/etc/extra/httpd-vhosts.conf",
-		"/opt/lampp/htdocs/php-crud-api/test1.php"
+		"/media/stephan/Elements/Stephan/450 Euro Job/adressen.txt"
 	],
 	"find":
 	{
-		"height": 38.0
+		"height": 26.0
 	},
 	"find_in_files":
 	{
@@ -476,20 +401,20 @@
 			[
 				{
 					"buffer": 0,
-					"file": "public/template/test3.html",
+					"file": "public/template/chart1.js",
 					"selected": true,
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6348,
+						"buffer_size": 2174,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5038,
-								5038
+								1771,
+								1771
 							]
 						],
 						"settings":
@@ -501,24 +426,24 @@
 								{
 									"1":
 									[
-										5037,
-										5038
+										2162,
+										2163
 									]
 								},
 								"icon":
 								{
 									"1":
 									[
-										"Packages/BracketHighlighter/icons/square_bracket.png",
-										"region.bluish"
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"region.purplish"
 									]
 								},
 								"open":
 								{
 									"1":
 									[
-										4876,
-										4877
+										1770,
+										1771
 									]
 								},
 								"unmatched":
@@ -532,190 +457,68 @@
 								"bh_c_define_open",
 								"bh_c_define_close",
 								"bh_c_define_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
 								"bh_square_close",
 								"bh_square_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content"
-							],
-							"function_name_status_row": 137,
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1382.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"stack_multiselect": false,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "public/template/test2.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3680,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								650,
-								3593
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-									"1":
-									[
-										673,
-										679
-									]
-								},
-								"icon":
-								{
-									"1":
-									[
-										"Packages/BracketHighlighter/icons/tag.png",
-										"region.orangish"
-									]
-								},
-								"open":
-								{
-									"1":
-									[
-										651,
-										657
-									]
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
 								"bh_curly",
 								"bh_curly_center",
 								"bh_curly_open",
 								"bh_curly_close",
 								"bh_curly_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
 								"bh_round",
 								"bh_round_center",
 								"bh_round_open",
 								"bh_round_close",
 								"bh_round_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
 								"bh_unmatched_close",
 								"bh_unmatched_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
 								"bh_regex",
 								"bh_regex_center",
 								"bh_regex_open",
 								"bh_regex_close",
 								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
 								"bh_angle",
 								"bh_angle_center",
 								"bh_angle_open",
 								"bh_angle_close",
-								"bh_angle_content"
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
 							],
-							"function_name_status_row": 26,
+							"function_name_status_row": 55,
 							"git_gutter_is_enabled": true,
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1275.0,
+						"translation.y": 357.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"stack_multiselect": false,
 					"type": "text"
 				}
