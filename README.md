@@ -38,6 +38,7 @@ https://github.com/zemian/php-crud-api/blob/zemian_my-examples/my-examples/my-cu
 | 0.7 | Tabelle mit Filterfunktion |
 | 0.8 | Darstellung des Ergebnis in Textform |
 | 0.9 | Überarbeitung Layout und festlegen der Lizenz |
+| 0.10 | Markdown, Dokumentation der Javascript Dateien |
 
 
 ## Credits
