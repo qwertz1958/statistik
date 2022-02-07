@@ -20,10 +20,6 @@
 ## Github Account
 + https://github.com/qwertz1958/map
 
-## Custom Controller
-https://github.com/zemian/php-crud-api/blob/zemian_my-examples/my-examples/my-custom-controllers-query.php
-
-
 ## Tags des Projektes
 
 | Tag | Bemerkung |
