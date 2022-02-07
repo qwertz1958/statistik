@@ -8,11 +8,9 @@ $container['navigation'] = function($container)
 	$navigation[] = ['link' => '/view/home','linkText' => 'Projektbeschreibung'];
 	$navigation[] = ['link' => '/view/text','linkText' => 'Text'];
 	$navigation[] = ['link' => '/view/tabelle', 'linkText' => 'Tabelle'];
-	$navigation[] = ['link' => '/view/charts', 'linkText' => 'Diagramme'];
-	$navigation[] = ['link' => '/view/test', 'linkText' => 'Test'];
-	$navigation[] = ['link' => '/view/test1', 'linkText' => 'Test 1'];
-	$navigation[] = ['link' => '/view/test2', 'linkText' => 'Test 2'];
-	$navigation[] = ['link' => '/view/test3', 'linkText' => 'Test 3'];
+	$navigation[] = ['link' => '/view/chart1', 'linkText' => 'Diagramm 1'];
+	$navigation[] = ['link' => '/view/chart2', 'linkText' => 'Diagramm 2'];
+	$navigation[] = ['link' => '/view/chart3', 'linkText' => 'Diagramm 3'];
 
 	return $navigation;
 };
