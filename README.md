@@ -50,4 +50,5 @@ https://github.com/zemian/php-crud-api/blob/zemian_my-examples/my-examples/my-cu
 | [ Javascript Tabulator Vers.: 5.1.0 ](https://github.com/olifolkerd/tabulator) | [MIT](https://de.wikipedia.org/wiki/MIT-Lizenz) |                           
 | [ ChartJS Vers.: 3.7.0 ](https://github.com/chartjs/Chart.js) | [MIT](https://de.wikipedia.org/wiki/MIT-Lizenz) |
 | [ Leaflet Vers.: 1.7.1 ](https://github.com/Leaflet/Leaflet) |  [BSD Lizenz Simplified](https://de.wikipedia.org/wiki/BSD-Lizenz) 
-| [ JQuery Vers.: 3.6.0 ](https://github.com/jquery/jquery) | [MIT](https://de.wikipedia.org/wiki/MIT-Lizenz) | 
+| [ JQuery Vers.: 3.6.0 ](https://github.com/jquery/jquery) | [MIT](https://de.wikipedia.org/wiki/MIT-Lizenz) |
+| [ Bootstrap Vers.: 3.3.7 ](https://github.com/jquery/jquery) | [MIT](https://de.wikipedia.org/wiki/MIT-Lizenz) | 

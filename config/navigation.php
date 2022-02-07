@@ -12,6 +12,7 @@ $container['navigation'] = function($container)
 	$navigation[] = ['link' => '/view/test', 'linkText' => 'Test'];
 	$navigation[] = ['link' => '/view/test1', 'linkText' => 'Test 1'];
 	$navigation[] = ['link' => '/view/test2', 'linkText' => 'Test 2'];
+	$navigation[] = ['link' => '/view/test3', 'linkText' => 'Test 3'];
 
 	return $navigation;
 };

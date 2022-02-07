@@ -37,54 +37,7 @@
 
                 var ctx = $('#myChart');
 
-                function getRandomInt(max)
-                {
-
-                  return Math.floor(Math.random() * max);
-                }
-
-                function auswertung(data)
-                {
-                    var j = data.length;
-
-                    for(var i = 0; i < j; i++){
-                        
-                        label.push(data[i].label);
-                        anzahl.push(data[i].anzahl);
-                    }
-
-                    // console.dir(color);
-                    myChart.data.labels = label;
-                    myChart.data.datasets[0].data = anzahl; // or you can iterate for multiple datasets
-
-                    myChart.update(); // finally update our chart 
-                }
-
-                function colors(steps)
-                {
-                    var colors = [];
-                    var memory = [];
-                    var g = 0;
-                    var b = 0;
-
-                    for(var i = 0; i < steps; i++)
-                    {
-                        var r = getRandomInt(255);
-
-                        if(memory.indexOf(r))
-                        {
-                            i--;
-                            continue;
-                        }
-
-                        memory.push(r);
-
-                        colors.push('rgba(' + r + ',' + g + ',' + b + ','  + ' 0.6)');
-                        
-                    }
-
-                    return colors;
-                 }
+                
 
                 $.get({
                     url: url,
@@ -93,6 +46,12 @@
                         auswertung(data);
                     }
                 });
+
+                function auswertung(data)
+                {
+                    var length = data.length;
+
+                }
 
                 // leeres Diagramm
                 var myChart = new Chart(ctx, {
@@ -104,8 +63,8 @@
                                 label: "Anzahl Bäume",
                                 fill: true, // Fläche füllen
                                 lineTension: 0.1,
-                                // backgroundColor: "rgba(77, 77, 255,0.6)", // Balkenfarbe
-                                backgroundColor: colors(10), // Balkenfarbe
+                                backgroundColor: "rgba(77, 77, 255,0.6)", // Balkenfarbe
+                                // backgroundColor: , // Balkenfarbe
                                 borderColor: "rgba(0, 0, 0, 1)", // Balkenrand
                                 borderCapStyle: 'butt',
                                 borderDash: [],
