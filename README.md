@@ -38,7 +38,7 @@
 
 ## Credits
 
-| Quelle | Lizenz |
+| Quelle | Lizenz, wenn vorhanden |
 | --- | --- |
 | [ Php Slim Framework Vers. 3.x ](https://www.slimframework.com/) |  [MIT](https://de.wikipedia.org/wiki/MIT-Lizenz)  |
 | [ Php Crud API Vers. 2.13.3 ](https://github.com/mevdschee/php-crud-api) | [MIT](https://de.wikipedia.org/wiki/MIT-Lizenz) |
@@ -47,3 +47,6 @@
 | [ ChartJS Vers.: 3.7.0 ](https://github.com/chartjs/Chart.js) | [MIT](https://de.wikipedia.org/wiki/MIT-Lizenz) |
 | [ JQuery Vers.: 3.6.0 ](https://github.com/jquery/jquery) | [MIT](https://de.wikipedia.org/wiki/MIT-Lizenz) |
 | [ Bootstrap Vers.: 3.3.7 ](https://github.com/jquery/jquery) | [MIT](https://de.wikipedia.org/wiki/MIT-Lizenz) | 
+| [ JS-Statistical-Calculator  ](https://github.com/SuperSultan/JS-Statistical-Calculator) | |
+| [ Lightweight-JS-Statistics-Kit ](https://github.com/mtwarog/Lightweight-JS-Statistics-Kit) | |
+| [ percentile-calculator ](https://github.com/archik408/percentile-calculator) | |
