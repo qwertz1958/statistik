@@ -10,7 +10,7 @@ $( document ).ready(function()
   function buildURL()
   {
     var datum_von = $("#jahr_von").val() + '-' + $("#monat_von").val() + '-01';
-    var datum_bis = $("#jahr_bis").val() + '-' + $("#monat_bis").val() + '-01';
+    var datum_bis = $("#jahr_bis").val() + '-' + $("#monat_bis").val() + '-31';
 
     url_new = url + filter_von + datum_von + filter_bis + datum_bis + spalten + '&order=datum';
 
@@ -29,14 +29,15 @@ $( document ).ready(function()
     {
       clean_data.push(data[i].chlorophyll);
     }
-
+    
+    $("#count").html(clean_data.length);
     $("#max").html(findMax(clean_data));
     $("#min").html(findMin(clean_data));
     $("#median").html(calcMedian(clean_data));
     $("#modus").html(calcMode(clean_data));
-    $("#mean").html(calcMean(clean_data));
-    $("#spannweite").html(calcVariance(clean_data));
-    $("#standardabweichung").html(calcStd(clean_data));
+    $("#mean").html(calcMeanArithmetic(clean_data));
+    $("#spannweite").html(calculateVariance(clean_data));
+    $("#standardabweichung").html(calculateStd(clean_data));
 
     return;
   }
