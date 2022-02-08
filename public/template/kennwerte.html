@@ -1,0 +1,133 @@
+<section>
+    <div class="row content-section text-center">
+
+        <div class="content-section-heading">
+            <h2 class="mb-5">Kennwerte Chlorophyll</h2>
+        </div>
+
+        <div class="col-lg-3 col-md-2 col-sm-1"></div>
+
+        <div class="col-lg-6 col-md-8 col-sm-10 col-xs-12 text-left">
+            <p>
+                <code>URL: <span id="url">/api/reords/baumkataster</span></code>
+            </p>
+
+            <p id="kennwerte">
+                Kennwerte Chlorophyll, zentrale Tendenzen: <br>
+
+                <ul id="zentralwerte">
+                    <li>Min: <span id="min"></span></li>
+                    <li>Max: <span id="max"></span></li>
+                    <li>Modus: <span id="modus"></span></li>
+                    <li>Median: <span id="median"></span></li>
+                    <li>Mittelwert: <span id="mean"></span></li>
+                </ul> 
+
+                Kennwerte Chlorophyll, Streuungswerte: <br>
+
+                <ul id="zentralwerte">
+                    <li>Spannweite: <span id="spannweite"></span></li>
+                    <li>Varianz: <span id="varianz"></span></li>
+                    <li>Standardabweichung: <span id="standardabweichung"></span></li>
+                    <li>Interquartilsabstand: <span id="interquartilsabstand"></span></li>
+                    <li>1. Quartil: <span id="quartile1"></span></li>
+                    <li>2. Quartil: <span id="quartile2"></span></li>
+                    <li>3. Quartil: <span id="quartile3"></span></li>
+                    <li>4. Quartil: <span id="quartile4"></span></li>
+                </ul>
+            </p>
+        </div>
+
+        <div class="col-lg-3 col-md-2 col-sm-1">
+    </div>
+</section>
+
+<!-- Beispiel -->
+<section>
+    <div class="row content-section text-center">
+
+        <div class="col-lg-3 col-md-2 col-sm-1"></div>
+
+        <div class="col-lg-6 col-md-8 col-sm-10 col-xs-12">
+
+            <!-- Filter Chlorophyll -->
+
+            <form class="form-horizontal">
+
+              <div class="form-group">
+                <label for="jahr_von" class="control-label col-md-2">Jahr von</label> 
+                <div class="col-md-4">
+                  <select id="jahr_von" name="jahr_von" class="select form-control" required="required">
+                    <option value="2019">2019</option>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="monat_von" class="control-label col-md-2">Monat von</label> 
+                <div class="col-md-4">
+                  <select id="monat_von" name="monat_von" class="select form-control" required="required">
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                    <option value="06">06</option>
+                    <option value="07">07</option>
+                    <option value="08">08</option>
+                    <option value="09">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="jahr_bis" class="control-label col-md-2">Jahr bis</label> 
+                <div class="col-md-4">
+                  <select id="jahr_bis" name="jahr_bis" class="select form-control" required="required">
+                    <option value="2019">2019</option>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="monat_bis" class="control-label col-md-2">Monat bis</label> 
+                <div class="col-md-4">
+                  <select id="monat_bis" name="monat_bis" class="select form-control" required="required">
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                    <option value="06">06</option>
+                    <option value="07">07</option>
+                    <option value="08">08</option>
+                    <option value="09">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-xs-offset-4 col-xs-8 text-left">
+                  <button name="rechnen" id="rechnen" type="button" class="btn btn-primary">Kennwerte ermitteln</button>
+                </div>
+              </div>
+            </form>
+
+            <!-- Javascript -->
+            <script type="text/javascript" src="/template/kennwerte.js"></script>
+            
+        </div>
+
+        <div class="col-lg-3 col-md-2 col-sm-1">
+    </div>
+</section>

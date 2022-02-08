@@ -22,6 +22,7 @@ function findMax(array) {
 			max = array[i];
 		}
 	}
+	
 	return max.toFixed(2);
 }
 

@@ -23,42 +23,7 @@
 
         <div class="col-lg-3 col-md-2 col-sm-1">
             
-            <script type="text/javascript">
-                $("#document").ready(function()
-                {
-                    // Erststart
-                    var url = "/api/records/kataster?filter=id,eq,10";
-
-                    $.get({url:url, dataType:"json"}).done(function(response){
-                        $("#list").view(response);
-                    });
-
-                    $("#query").html(url);
-                    
-                    // Button
-                    $("#add").on('click', function()
-                    {
-                        var appendix = $("#includes").val();
-
-                        if(appendix.trim()) {
-                            var url_neu = '';
-                            url_neu = url + "&include=" + appendix;
-                        }
-                        else
-                            url_neu = url;
-
-                        $.get({url:url_neu, dataType:"json"}).done(function(response){
-                            $("#list").view(response);
-                        });
-
-                        $("#query").html(url_neu);
-                    });
-
-                    
-
-                    
-                });
-            </script>
+            <script type="text/javascript" src="/template/text.js"></script>
         </div>
 
         <div class="col-lg-6 col-md-8 col-sm-10 col-xs-12"  align="left">

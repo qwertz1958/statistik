@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * Percentile calculator. Computes quartiles using (n-1 algorithm) + 1
  * 
@@ -88,5 +86,3 @@ class PercentileCalculator {
         return this._interpolation(n - 1); // array first element has zero index
     }
 }
-
-module.exports = PercentileCalculator;
