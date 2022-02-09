@@ -7,36 +7,41 @@
 
         <div class="col-lg-3 col-md-2 col-sm-1"></div>
 
-        <div class="col-lg-6 col-md-8 col-sm-10 col-xs-12 text-left">
+        <div class="col-lg-3 col-md-4 col-sm-8 col-xs-12 text-left">
             <p>
                 <code>URL: <span id="url">/api/reords/baumkataster</span></code>
             </p>
 
             <p id="kennwerte">
-                Kennwerte Chlorophyll, Zentralwerte: <br>
+                <a href="https://de.statista.com/statistik/lexikon/definition/72/kardinalskala/" target="_blank"> Kennwerte Chlorophyll, Zentralwerte: </a>
 
                 <ul id="zentralwerte">
-                    <li>Datensätze: <span id="count"></span></li>
-                    <li>Min: <span id="min"></span></li>
-                    <li>Max: <span id="max"></span></li>
-                    <li>Modus: <span id="modus"></span></li>
-                    <li>Median: <span id="median"></span></li>
-                    <li>Mittelwert: <span id="mean"></span></li>
+                    <li>Anzahl Datensätze: <span id="count"></span></li>
+                    <li> Min: <span id="min"></span></li>
+                    <li> Max: <span id="max"></span></li>
+                    <li><a href="https://de.statista.com/statistik/lexikon/definition/92/modus/" target="_blank"> Modus: </a><span id="modus"></span></li>
+                    <li><a href="https://de.statista.com/statistik/lexikon/definition/85/median/" target="_blank"> Median: </a><span id="median"></span></li>
+                    <li><a href="https://de.statista.com/statistik/lexikon/definition/91/mittelwert_und_arithmetisches_mittel/" target="_blank"> Mittelwert: </a><span id="mean"></span></li>
                 </ul> 
 
-                Kennwerte Chlorophyll, Streuungsmaße: <br>
+                <a href="https://de.statista.com/statistik/lexikon/definition/72/kardinalskala/" target="_blank"> Kennwerte Chlorophyll, Streuungsmaße: </a>
 
-                <ul id="zentralwerte">
-                    <li>Spannweite: <span id="spannweite"></span></li>
-                    <li>Varianz: <span id="varianz"></span></li>
-                    <li>Standardabweichung: <span id="standardabweichung"></span></li>
-                    <li>Interquartilsabstand: <span id="interquartilsabstand"></span></li>
-                    <li>1. Quartil: <span id="quartile1"></span></li>
-                    <li>2. Quartil: <span id="quartile2"></span></li>
-                    <li>3. Quartil: <span id="quartile3"></span></li>
-                    <li>4. Quartil: <span id="quartile4"></span></li>
+                <ul id="streuwerte">
+                    <li> <a href="https://de.statista.com/statistik/lexikon/definition/125/spannweite/" target="_blank"> Spannweite: </a><span id="spannweite"></span></li>
+                    <li> <a href="https://de.statista.com/statistik/lexikon/definition/138/varianz/" target="_blank"> Varianz: </a><span id="varianz"></span></li>
+                    <li> <a href="https://de.statista.com/statistik/lexikon/definition/126/standardabweichung/" target="_blank"> Standardabweichung: </a><span id="standardabweichung"></span></li>
+                    <li> <a href="https://de.wikipedia.org/wiki/Interquartilsabstand_(Deskriptive_Statistik)" target="_blank"> Interquartilsabstand: </a><span id="interquartilsabstand"></span></li>
+                    <li> <a href="https://de.statista.com/statistik/lexikon/definition/106/quantil/" target="_blank"> 1. Quartil: </a><span id="quartile1"></span></li>
+                    <li> <a href="https://de.statista.com/statistik/lexikon/definition/106/quantil/" target="_blank"> 2. Quartil: </a><span id="quartile2"></span></li>
+                    <li> <a href="https://de.statista.com/statistik/lexikon/definition/106/quantil/" target="_blank"> 3. Quartil: </a><span id="quartile3"></span></li>
+                    <li> <a href="https://de.statista.com/statistik/lexikon/definition/106/quantil/" target="_blank"> 4. Quartil: </a><span id="quartile4"></span></li>
                 </ul>
             </p>
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-sm-8 col-xs-12">
+            <p> Auswertung Boxplot: </p>
+            <canvas id="graph" height="400" class="col-lg-6 col-md-8 col-sm-10 col-xs-12"></canvas>
         </div>
 
         <div class="col-lg-3 col-md-2 col-sm-1">

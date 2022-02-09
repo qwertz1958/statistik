@@ -48,5 +48,4 @@
 | [ JQuery Vers.: 3.6.0 ](https://github.com/jquery/jquery) | [MIT](https://de.wikipedia.org/wiki/MIT-Lizenz) |
 | [ Bootstrap Vers.: 3.3.7 ](https://github.com/jquery/jquery) | [MIT](https://de.wikipedia.org/wiki/MIT-Lizenz) | 
 | [ JS-Statistical-Calculator  ](https://github.com/SuperSultan/JS-Statistical-Calculator) | |
-| [ Lightweight-JS-Statistics-Kit ](https://github.com/mtwarog/Lightweight-JS-Statistics-Kit) | |
-| [ percentile-calculator ](https://github.com/archik408/percentile-calculator) | |
+| [ Boxplot.js ](https://github.com/mattb0m/boxplot.js) | |

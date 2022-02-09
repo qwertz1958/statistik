@@ -29,16 +29,24 @@ $( document ).ready(function()
     {
       clean_data.push(data[i].chlorophyll);
     }
-    
-    $("#count").html(clean_data.length);
-    $("#max").html(findMax(clean_data));
-    $("#min").html(findMin(clean_data));
-    $("#median").html(calcMedian(clean_data));
-    $("#modus").html(calcMode(clean_data));
-    $("#mean").html(calcMeanArithmetic(clean_data));
-    $("#spannweite").html(calculateVariance(clean_data));
-    $("#standardabweichung").html(calculateStd(clean_data));
 
+    var statistik = new statisticalFunction(clean_data);
+    
+    // Zentralwerte
+    $("#count").html(clean_data.length);
+    $("#max").html(statistik.findMax());
+    $("#min").html(statistik.findMin());
+    $("#median").html(statistik.calcMedian());
+    $("#modus").html(statistik.calcMode());
+    $("#mean").html(statistik.calcMeanArithmetic());
+
+    // Streuung
+    $("#spannweite").html(statistik.calcSpan());
+    $("#standardabweichung").html(statistik.calculateStd());
+    $("#varianz").html(statistik.calculateVariance());
+
+
+    
     return;
   }
 
