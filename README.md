@@ -7,7 +7,12 @@
 	+ kostengünstig
 	+ geringer personeller Aufwand
 	+ Daten verlassen nicht die Firma
-	+ Abbildung im Intranet der Firma	
+	+ Abbildung im Intranet der Firma
+	+ An die Bedürfnisse einer Firma angepasst	
++ Ausgabeformate:
+	+ Openapi / Swagger
+	+ Json - Objekt
+	+ GeoJson - Objekt	
 
 
 ## Installation
@@ -15,10 +20,10 @@
 ## Projektbeschreibung und Anleitungen
 
 ## Demo
-+ Public: http://statistik.stephankrauss.de
++ [ Demo: ](http://statistik.stephankrauss.de)
 
 ## Github Account
-+ https://github.com/qwertz1958/map
++ https://github.com/qwertz1958/statistik
 
 ## Tags des Projektes
 

@@ -1,4 +1,4 @@
-var url = 'http://map.local/api/records/anzahlBaeume';
+var url = '/api/records/anzahlBaeume';
 
 var label = [];
 var anzahl = [];
