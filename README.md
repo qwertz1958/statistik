@@ -39,7 +39,7 @@
 
 ## Credits
 
-| Quelle | Lizenz, wenn vorhanden | Dokumentation |
+| Quelle | Lizenz, wenn vorhanden | zusätzliche Dokumentation |
 | --- | --- | --- |
 | [ Php Slim Framework Vers. 3.x ](https://www.slimframework.com/) |  [MIT](https://de.wikipedia.org/wiki/MIT-Lizenz)  | | 
 | [ Php Crud API Vers. 2.13.3 ](https://github.com/mevdschee/php-crud-api) | [MIT](https://de.wikipedia.org/wiki/MIT-Lizenz) | | 
