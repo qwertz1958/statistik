@@ -31,9 +31,12 @@ class graph {
     
     /* draw a box plot at a specified starting pos */
     /* TODO: Validate limits */
-    draw_boxplot_at(bp, ox, oy, w, h) {
+    draw_boxplot_at(bp, ox, oy, w, h)
+    {
         const PAD = 32, TITLE_H = 12;
+
         let y, ctx = this.ctx, uw = w/this.unitsx, min, q1, q2, q3, max;
+
         min = ((ox + bp.min*uw)|0) + 0.5;
         q1  = ((ox + bp.q1*uw )|0) + 0.5;
         q2  = ((ox + bp.q2*uw )|0) + 0.5;
@@ -74,14 +77,18 @@ class graph {
         ctx.lineTo(q3, y + h);
     }
     
-    clear() {
+    clear()
+    {
         let ctx = this.ctx, w = ctx.canvas.width, h = ctx.canvas.height, x = 0, y = 0;
         this.ctx.fillStyle = '#fff';
         ctx.clearRect(0, 0, w, h);
     }
     
-    draw() {
+    draw()
+    {
+        // Angaben Überschrift
         const PAD = 32, TICK_HEIGHT = 16, TITLE_H = 16;
+
         let ctx = this.ctx, w = ctx.canvas.width, h = ctx.canvas.height, x = 0, y = 0;
         
         /* calculate space available for plots */
@@ -101,9 +108,9 @@ class graph {
         this.clear();
         
         /* draw graph title */
-        ctx.font = TITLE_H + 'px monospace';
-        this.ctx.fillStyle = '#000';
-        ctx.fillText(this.title, PAD, PAD);
+        // ctx.font = TITLE_H + 'px monospace';
+        // this.ctx.fillStyle = '#000';
+        // ctx.fillText(this.title, PAD, PAD);
         
         /* draw plots */
         ctx.beginPath();

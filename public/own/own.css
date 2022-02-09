@@ -49,7 +49,7 @@ div[class^="col-"] {
 	padding-right: 15px;
 }
 
-
+/*
 div[class="row"] {
     outline: 1px dotted rgba(0, 0, 0, 0.25);
 }
@@ -58,3 +58,4 @@ div[class^="col-"] {
     background-color: rgba(255, 0, 0, 0.2);
     outline: 1px dotted rgba(0, 0, 0, 0.5);
 }
+*/

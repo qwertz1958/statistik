@@ -132,4 +132,43 @@ class statisticalFunction
 		
 		return std.toFixed(2);
 	}
+
+	// Percentile vom Daten - Array
+	getPercentile(percentile)
+	{
+		var sortedArray = this.array.sort();
+	    // this.data.sort(this.array);
+
+	    var index = (percentile/100) * sortedArray.length;
+
+	    var result;
+
+	    if (Math.floor(index) == index) {
+	         result = (sortedArray[(index-1)] + sortedArray[index])/2;
+	    }
+	    else {
+	        result = sortedArray[Math.floor(index)];
+	    }
+
+	    return result;
+	}
+
+	//because .sort() doesn't sort numbers correctly
+	numSort(a,b) { 
+	    return a - b; 
+	}
+
+	// Boxplot - Werte
+	getBoxValues()
+	{
+	    var boxValues = {};
+
+	    boxValues.low    = this.findMin();
+	    boxValues.q1     = this.getPercentile(25);
+	    boxValues.q2     = this.getPercentile(50);
+	    boxValues.q3     = this.getPercentile(75);
+	    boxValues.high   = this.findMax();
+
+	    return boxValues;
+	} 
 }

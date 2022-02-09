@@ -45,7 +45,35 @@ $( document ).ready(function()
     $("#standardabweichung").html(statistik.calculateStd());
     $("#varianz").html(statistik.calculateVariance());
 
+    var box = statistik.getBoxValues();
+    // console.dir(box);
+     
+    $("#low").html(box.low); 
+    $("#quartile1").html(box.q1);
+    $("#quartile2").html(box.q2);
+    $("#quartile3").html(box.q3);
+    $("#high").html(box.high);
 
+    
+    window.boxplotGraph = new graph(document.getElementById('graph'), 100, 10, 'Chlorophyll');
+
+    boxplotGraph.clear();
+    
+    var boxLow = parseInt(box.low);
+    var boxQ1 = parseInt(box.q1);
+    var boxQ2 = parseInt(box.q2);
+    var boxQ3 = parseInt(box.q3);
+    var boxHigh = parseInt(box.high);
+    var boxTtl = 'Streuwerte Chlorophyll'; 
+
+    var boxTtl = 'Streuwerte Chlorophyll'; 
+    $("#interquartilsabstand").html(boxQ3 - boxQ1);
+    
+    if(isNaN(boxLow) || isNaN(boxQ1) || isNaN(boxQ2) || isNaN(boxQ3) || isNaN(boxHigh)){
+      alert('Eingabe Daten Boxplot Fehlerhaft');
+    }
+    
+    boxplotGraph.add_boxplot(boxLow, boxQ1, boxQ2, boxQ3, boxHigh, boxTtl);
     
     return;
   }
