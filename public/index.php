@@ -8,6 +8,7 @@
  *
  */
 
+// phpinfo();
 // xdebug_info();
 // exit();
 
