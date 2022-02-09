@@ -35,6 +35,7 @@
 | 0.9 | Überarbeitung Layout und festlegen der Lizenz |
 | 0.10 | Markdown, Dokumentation der Javascript Dateien |
 | 0.11 | Befundierung der Daten mittels Boxplot | 
+| 1.0 | erste veröffentlichte Version | 
 
 
 ## Credits
