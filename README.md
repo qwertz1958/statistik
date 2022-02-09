@@ -15,7 +15,7 @@
 ## Projektbeschreibung und Anleitungen
 
 ## Demo
-+ Public: http://map.stephankrauss.de
++ Public: http://statistik.stephankrauss.de
 
 ## Github Account
 + https://github.com/qwertz1958/map
