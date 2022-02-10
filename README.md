@@ -44,8 +44,8 @@
 
 ## Dokumentation
 
-+ [ 1. Video Einleitung ](https://www.youtube.com/watch?v=di5X8kyTSHg){:target="_blank"}
-+ [ 2. Video Installation, Programmaufbau und Datenbasis ](https://www.youtube.com/watch?v=UvG9qPsgluY){:target="_blank"}
++ [ 1. Video Einleitung ](https://www.youtube.com/watch?v=di5X8kyTSHg)
++ [ 2. Video Installation, Programmaufbau und Datenbasis ](https://www.youtube.com/watch?v=UvG9qPsgluY)
 
 
 ## Credits
