@@ -1,6 +1,6 @@
 # Statistikprogramm StatistikCat
 
-<img src="statistik.stephankrauss.de/img/statistik.jpg" alt="Logo"/>
+<img src="http://statistik.stephankrauss.de/img/statistik.jpg" alt="Logo"/>
 
 
 
