@@ -21,11 +21,6 @@
 	+ Json - Objekt
 	+ GeoJson - Objekt	
 
-
-## Installation
-
-## Projektbeschreibung und Anleitungen
-
 ## Demo
 + [ Demo: ](http://statistik.stephankrauss.de)
 
