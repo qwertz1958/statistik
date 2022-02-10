@@ -54,16 +54,6 @@ try{
 // Navigation
 include_once('../config/navigation.php');     
 
-
-// Todo: Middleware , $_SESSION['kundenId'] = 25;
-// Die Url wird zerlegt und darauf geprüft ob sich das wort login darin befindet
-// Falls sich das Wort login darin befindet soll man auf die login seite weitergeleitet werden
-// Falls sich das Wort login nicht darin befindet soll der LoginChecker anspringen úm zu überprüfen
-
-//    $test = explode('/', $_SESSION['url']);
-//    if(!in_array('login', $test))
-//        $app->add($container[\App\Middleware\CheckLogin::class]);
-
 // Routing
     include_once('../config/route.php');
 
