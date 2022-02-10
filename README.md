@@ -1,4 +1,11 @@
-# Darstellung unternehmenskritischer Daten in Echtzeit
+# Statistikprogramm StatistikCat
+
+<img src="statistik.stephankrauss.de/img/statistik.jpg" alt="Logo"/>
+
+
+
+
+##  Darstellung unternehmenskritischer Daten in Echtzeit
 + Darstellungsformen:
 	+ Text
 	+ Tabelle
