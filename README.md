@@ -1,4 +1,4 @@
-# Statistikprogramm StatistikCat
+# Statistikprogramm 'StatisticsCat'
 
 <img src="http://statistik.stephankrauss.de/img/statistik.jpg" alt="Logo"/>
 
