@@ -4,118 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f523148f3a3d9b5f800cad2845664db7",
+    "content-hash": "70bc7717a1cf0feb1e6110fb5a694fb5",
     "packages": [
         {
-            "name": "antoineaugusti/easyphpcharts",
-            "version": "v0.1.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/AntoineAugusti/EasyPHPCharts.git",
-                "reference": "ce95e3a9fcf9170368f3252a4247de6c593e0134"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/AntoineAugusti/EasyPHPCharts/zipball/ce95e3a9fcf9170368f3252a4247de6c593e0134",
-                "reference": "ce95e3a9fcf9170368f3252a4247de6c593e0134",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Antoineaugusti\\EasyPHPCharts\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Antoine Augusti",
-                    "email": "antoine.augusti@gmail.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "A PHP class for chartjs.org charts.",
-            "homepage": "https://github.com/AntoineAugusti/EasyPHPCharts",
-            "keywords": [
-                "chart",
-                "chartjs",
-                "charts",
-                "php charts",
-                "visualization"
-            ],
-            "support": {
-                "issues": "https://github.com/AntoineAugusti/EasyPHPCharts/issues",
-                "source": "https://github.com/AntoineAugusti/EasyPHPCharts/tree/master"
-            },
-            "time": "2014-08-02T15:32:56+00:00"
-        },
-        {
-            "name": "grumpycrouton/grumpypdo",
-            "version": "1.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/GrumpyCrouton/GrumpyPDO.git",
-                "reference": "e36208b8d7c9e12906c2b42320e255b152d3c0a6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/GrumpyCrouton/GrumpyPDO/zipball/e36208b8d7c9e12906c2b42320e255b152d3c0a6",
-                "reference": "e36208b8d7c9e12906c2b42320e255b152d3c0a6",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.1.0"
-            },
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "grumpypdo.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Grumpy Crouton",
-                    "email": "grumpyhobby@gmail.com",
-                    "homepage": "https://grumpycrouton.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "GrumpyPDO for PHP",
-            "homepage": "https://github.com/GrumpyCrouton/GrumpyPDO/",
-            "keywords": [
-                "pdo",
-                "php",
-                "prepared statements",
-                "secure"
-            ],
-            "support": {
-                "issues": "https://github.com/GrumpyCrouton/GrumpyPDO/issues",
-                "source": "https://github.com/GrumpyCrouton/GrumpyPDO/tree/1.5"
-            },
-            "time": "2018-08-16T16:30:41+00:00"
-        },
-        {
             "name": "mevdschee/php-crud-api",
-            "version": "v2.13.1",
+            "version": "v2.13.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mevdschee/php-crud-api.git",
-                "reference": "0bcb9079b42457c97e8445b48fd533d4555f5609"
+                "reference": "5c7dfda38c4a3a1076b1b0e67cdb83a74a93aaf7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mevdschee/php-crud-api/zipball/0bcb9079b42457c97e8445b48fd533d4555f5609",
-                "reference": "0bcb9079b42457c97e8445b48fd533d4555f5609",
+                "url": "https://api.github.com/repos/mevdschee/php-crud-api/zipball/5c7dfda38c4a3a1076b1b0e67cdb83a74a93aaf7",
+                "reference": "5c7dfda38c4a3a1076b1b0e67cdb83a74a93aaf7",
                 "shasum": ""
             },
             "require": {
@@ -176,9 +78,9 @@
             ],
             "support": {
                 "issues": "https://github.com/mevdschee/php-crud-api/issues",
-                "source": "https://github.com/mevdschee/php-crud-api/tree/v2.13.1"
+                "source": "https://github.com/mevdschee/php-crud-api/tree/v2.13.3"
             },
-            "time": "2021-11-07T11:49:24+00:00"
+            "time": "2022-01-31T14:04:38+00:00"
         },
         {
             "name": "nikic/fast-route",
@@ -202,12 +104,12 @@
             },
             "type": "library",
             "autoload": {
-                "psr-4": {
-                    "FastRoute\\": "src/"
-                },
                 "files": [
                     "src/functions.php"
-                ]
+                ],
+                "psr-4": {
+                    "FastRoute\\": "src/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -232,16 +134,16 @@
         },
         {
             "name": "nyholm/psr7",
-            "version": "1.4.1",
+            "version": "1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Nyholm/psr7.git",
-                "reference": "2212385b47153ea71b1c1b1374f8cb5e4f7892ec"
+                "reference": "1461e07a0f2a975a52082ca3b769ca912b816226"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Nyholm/psr7/zipball/2212385b47153ea71b1c1b1374f8cb5e4f7892ec",
-                "reference": "2212385b47153ea71b1c1b1374f8cb5e4f7892ec",
+                "url": "https://api.github.com/repos/Nyholm/psr7/zipball/1461e07a0f2a975a52082ca3b769ca912b816226",
+                "reference": "1461e07a0f2a975a52082ca3b769ca912b816226",
                 "shasum": ""
             },
             "require": {
@@ -293,7 +195,7 @@
             ],
             "support": {
                 "issues": "https://github.com/Nyholm/psr7/issues",
-                "source": "https://github.com/Nyholm/psr7/tree/1.4.1"
+                "source": "https://github.com/Nyholm/psr7/tree/1.5.0"
             },
             "funding": [
                 {
@@ -305,7 +207,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-07-02T08:32:20+00:00"
+            "time": "2022-02-02T18:37:57+00:00"
         },
         {
             "name": "nyholm/psr7-server",
@@ -751,53 +653,6 @@
             "time": "2018-10-30T17:12:04+00:00"
         },
         {
-            "name": "silalahi/slim-logger",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/silalahi/slim-logger.git",
-                "reference": "a5275d4696e04c9a316c5cc269a22adde82acb59"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/silalahi/slim-logger/zipball/a5275d4696e04c9a316c5cc269a22adde82acb59",
-                "reference": "a5275d4696e04c9a316c5cc269a22adde82acb59",
-                "shasum": ""
-            },
-            "require": {
-                "psr/http-message": "^1.0"
-            },
-            "default-branch": true,
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Silalahi\\Slim\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "authors": [
-                {
-                    "name": "Jogi Silalahi",
-                    "email": "jogi@pistarlabs.com",
-                    "homepage": "http://jogisilalahi.com"
-                }
-            ],
-            "description": "File log writter class and middleware for Slim framework 3",
-            "homepage": "https://github.com/silalahi/slim-logger",
-            "keywords": [
-                "file",
-                "log",
-                "middleware",
-                "slim",
-                "writter"
-            ],
-            "support": {
-                "issues": "https://github.com/silalahi/slim-logger/issues",
-                "source": "https://github.com/silalahi/slim-logger/tree/master"
-            },
-            "time": "2016-10-31T06:34:16+00:00"
-        },
-        {
             "name": "slim/slim",
             "version": "3.12.3",
             "source": {
@@ -928,70 +783,6 @@
                 "source": "https://github.com/slimphp/Twig-View/tree/master"
             },
             "time": "2019-11-28T18:03:50+00:00"
-        },
-        {
-            "name": "spatie/array-to-xml",
-            "version": "2.16.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/spatie/array-to-xml.git",
-                "reference": "db39308c5236b69b89cadc3f44f191704814eae2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/spatie/array-to-xml/zipball/db39308c5236b69b89cadc3f44f191704814eae2",
-                "reference": "db39308c5236b69b89cadc3f44f191704814eae2",
-                "shasum": ""
-            },
-            "require": {
-                "ext-dom": "*",
-                "php": "^7.4|^8.0"
-            },
-            "require-dev": {
-                "mockery/mockery": "^1.2",
-                "phpunit/phpunit": "^9.0",
-                "spatie/phpunit-snapshot-assertions": "^4.2"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Spatie\\ArrayToXml\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Freek Van der Herten",
-                    "email": "freek@spatie.be",
-                    "homepage": "https://freek.dev",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Convert an array to xml",
-            "homepage": "https://github.com/spatie/array-to-xml",
-            "keywords": [
-                "array",
-                "convert",
-                "xml"
-            ],
-            "support": {
-                "issues": "https://github.com/spatie/array-to-xml/issues",
-                "source": "https://github.com/spatie/array-to-xml/tree/2.16.0"
-            },
-            "funding": [
-                {
-                    "url": "https://spatie.be/open-source/support-us",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/spatie",
-                    "type": "github"
-                }
-            ],
-            "time": "2020-11-18T22:03:17+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -1160,16 +951,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v3.3.7",
+            "version": "v3.3.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "8f168c6ffa3ce76d1786b3cd52275424a3fc675b"
+                "reference": "972d8604a92b7054828b539f2febb0211dd5945c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/8f168c6ffa3ce76d1786b3cd52275424a3fc675b",
-                "reference": "8f168c6ffa3ce76d1786b3cd52275424a3fc675b",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/972d8604a92b7054828b539f2febb0211dd5945c",
+                "reference": "972d8604a92b7054828b539f2febb0211dd5945c",
                 "shasum": ""
             },
             "require": {
@@ -1220,7 +1011,7 @@
             ],
             "support": {
                 "issues": "https://github.com/twigphp/Twig/issues",
-                "source": "https://github.com/twigphp/Twig/tree/v3.3.7"
+                "source": "https://github.com/twigphp/Twig/tree/v3.3.8"
             },
             "funding": [
                 {
@@ -1232,32 +1023,39 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-01-03T21:15:37+00:00"
+            "time": "2022-02-04T06:59:48+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
-            "version": "v2.4.0",
+            "version": "v2.6.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vlucas/phpdotenv.git",
-                "reference": "3cc116adbe4b11be5ec557bf1d24dc5e3a21d18c"
+                "reference": "2e93cc98e2e8e869f8d9cfa61bb3a99ba4fc4141"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/3cc116adbe4b11be5ec557bf1d24dc5e3a21d18c",
-                "reference": "3cc116adbe4b11be5ec557bf1d24dc5e3a21d18c",
+                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/2e93cc98e2e8e869f8d9cfa61bb3a99ba4fc4141",
+                "reference": "2e93cc98e2e8e869f8d9cfa61bb3a99ba4fc4141",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.9"
+                "php": "^5.3.9 || ^7.0 || ^8.0",
+                "symfony/polyfill-ctype": "^1.17"
             },
             "require-dev": {
-                "phpunit/phpunit": "^4.8 || ^5.0"
+                "ext-filter": "*",
+                "ext-pcre": "*",
+                "phpunit/phpunit": "^4.8.36 || ^5.7.27 || ^6.5.14 || ^7.5.20 || ^8.5.21"
+            },
+            "suggest": {
+                "ext-filter": "Required to use the boolean validator.",
+                "ext-pcre": "Required to use most of the library."
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.4-dev"
+                    "dev-master": "2.6-dev"
                 }
             },
             "autoload": {
@@ -1267,13 +1065,18 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "BSD-3-Clause-Attribution"
+                "BSD-3-Clause"
             ],
             "authors": [
                 {
+                    "name": "Graham Campbell",
+                    "email": "hello@gjcampbell.co.uk",
+                    "homepage": "https://github.com/GrahamCampbell"
+                },
+                {
                     "name": "Vance Lucas",
                     "email": "vance@vancelucas.com",
-                    "homepage": "http://www.vancelucas.com"
+                    "homepage": "https://github.com/vlucas"
                 }
             ],
             "description": "Loads environment variables from `.env` to `getenv()`, `$_ENV` and `$_SERVER` automagically.",
@@ -1284,67 +1087,19 @@
             ],
             "support": {
                 "issues": "https://github.com/vlucas/phpdotenv/issues",
-                "source": "https://github.com/vlucas/phpdotenv/tree/master"
+                "source": "https://github.com/vlucas/phpdotenv/tree/v2.6.9"
             },
-            "time": "2016-09-01T10:05:43+00:00"
-        },
-        {
-            "name": "webmozart/assert",
-            "version": "1.10.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/webmozarts/assert.git",
-                "reference": "6964c76c7804814a842473e0c8fd15bab0f18e25"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/webmozarts/assert/zipball/6964c76c7804814a842473e0c8fd15bab0f18e25",
-                "reference": "6964c76c7804814a842473e0c8fd15bab0f18e25",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.2 || ^8.0",
-                "symfony/polyfill-ctype": "^1.8"
-            },
-            "conflict": {
-                "phpstan/phpstan": "<0.12.20",
-                "vimeo/psalm": "<4.6.1 || 4.6.2"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^8.5.13"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.10-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Webmozart\\Assert\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
+            "funding": [
                 {
-                    "name": "Bernhard Schussek",
-                    "email": "bschussek@gmail.com"
+                    "url": "https://github.com/GrahamCampbell",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/vlucas/phpdotenv",
+                    "type": "tidelift"
                 }
             ],
-            "description": "Assertions to validate method input/output with nice error messages.",
-            "keywords": [
-                "assert",
-                "check",
-                "validate"
-            ],
-            "support": {
-                "issues": "https://github.com/webmozarts/assert/issues",
-                "source": "https://github.com/webmozarts/assert/tree/1.10.0"
-            },
-            "time": "2021-03-09T10:59:23+00:00"
+            "time": "2021-12-12T22:59:22+00:00"
         }
     ],
     "packages-dev": [
@@ -1474,9 +1229,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "silalahi/slim-logger": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

@@ -1,5 +1,5 @@
 {
-    "name": "kalle/warenwirtschaft-ng",
+    "name": "qwertz1958/statistik",
     "authors": [
         {
             "name": "Stephan Krauß",
@@ -14,11 +14,6 @@
     "require": {
         "slim/slim": "3.*",
         "slim/twig-view": "^2.5",
-        "webmozart/assert": "^1.10",
-        "grumpycrouton/grumpypdo": "^1.5",
-        "silalahi/slim-logger": "dev-master",
-        "spatie/array-to-xml": "^2.16",
-        "antoineaugusti/easyphpcharts": "^0.1.1",
         "vlucas/phpdotenv": "^v2.4.0",
         "mevdschee/php-crud-api": "^2.13.1"
     },

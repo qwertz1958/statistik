@@ -55,10 +55,7 @@ $app->any('/api[/{params:.*}]', function(Slim\Http\Request $request,Slim\Http\Re
             },
             'authorization.tableHandler' => function ($operation, $tableName)
             {
-                if($operation != 'list')
-                    return false;
-                else
-                    return true;
+                return in_array($operation, array('list','read','document'));     
             },
         ]);
     }
@@ -73,8 +70,14 @@ $app->any('/api[/{params:.*}]', function(Slim\Http\Request $request,Slim\Http\Re
             'driver' => $_ENV['PHP_CRUD_API_DRIVER'],
             'address' => $_ENV['PHP_CRUD_API_ADDRESS'],
             'port' => $_ENV['PHP_CRUD_API_PORT'],
-            'customControllers' => 'App\Action\Zusatz',
             'tables' => $allowedTables,
+            'middlewares' => 'authorization',
+            'authorization.tableHandler' => function ($operation, $tableName)
+            {
+                return in_array($operation, array('list','read','document'));
+                 
+                // return true; 
+            },
         ]);
     }
     
