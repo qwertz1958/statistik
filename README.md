@@ -1,4 +1,4 @@
-# Statistikprogramm 'StatisticsCat'
+# Statistikprogramm: 'Statistik Katze'
 
 <img src="http://statistik.stephankrauss.de/img/statistik.jpg" alt="Logo"/>
 
@@ -64,7 +64,10 @@
 | [ Bootstrap Vers.: 3.3.7 ](https://github.com/jquery/jquery) | [MIT](https://de.wikipedia.org/wiki/MIT-Lizenz) |  | 
 | [ JS-Statistical-Calculator  ](https://github.com/SuperSultan/JS-Statistical-Calculator) | | | 
 | [ Boxplot.js ](https://github.com/mattb0m/boxplot.js) | | |
-| [ Jingle ](https://freemusicarchive.org/music/Dee_Yan-Key#contact-artist) | [ CC BY-NC 4.0 ](https://creativecommons.org/licenses/by-nc/4.0/) || 
+| [ jquery-view-engine  ](https://github.com/JocaPC/jquery-view-engine) | | |    
+| [ Development: PhpMetrics ](https://github.com/phpmetrics/PhpMetrics) | [MIT](https://de.wikipedia.org/wiki/MIT-Lizenz) || 
+| [ Jingle / Sound ](https://freemusicarchive.org/music/Dee_Yan-Key#contact-artist) | [ CC BY-NC 4.0 ](https://creativecommons.org/licenses/by-nc/4.0/) ||
+
 
 ## Metriken
 

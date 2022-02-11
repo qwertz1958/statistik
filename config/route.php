@@ -74,9 +74,9 @@ $app->any('/api[/{params:.*}]', function(Slim\Http\Request $request,Slim\Http\Re
             'middlewares' => 'authorization',
             'authorization.tableHandler' => function ($operation, $tableName)
             {
-                // return in_array($operation, array('list','read','document'));
+                return in_array($operation, array('list','read','document'));
                  
-                return true; 
+                // return true; 
             },
         ]);
     }
