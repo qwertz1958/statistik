@@ -43,7 +43,7 @@
 | 0.10 | Markdown, Dokumentation der Javascript Dateien |
 | 0.11 | Befundierung der Daten mittels Boxplot | 
 | 0.12 | Beta-Version | 
-| 0.13 | Video - Dokumentation | 
+| 0.13 | Video - Dokumentation, Teil 1 und Teil 2 | 
 
 ## Dokumentation
 
