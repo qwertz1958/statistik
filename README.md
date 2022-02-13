@@ -1,4 +1,4 @@
-# Statistikprogramm: 'Statistik Katze'
+# Statistikprogramm: 'Statistik-Katze'
 
 <img src="http://statistik.stephankrauss.de/img/statistik.jpg" alt="Logo"/>
 
@@ -45,12 +45,14 @@
 | 0.12 | Beta-Version | 
 | 0.13 | Video - Dokumentation, Teil 1 und Teil 2 | 
 | 0.14 | Video - Dokumentation, Teil 3 | 
+| 0.15 | Video - Dokumentation, Teil 4 | 
 
 ## Dokumentation
 
 + [ 1. Video: Einleitung ](https://www.youtube.com/watch?v=di5X8kyTSHg)
 + [ 2. Video: Installation. Programmaufbau und Datenbasis ](https://www.youtube.com/watch?v=UvG9qPsgluY)
 + [ 3. Video: Response. OpenAPI, GeoJson und Json ](https://www.youtube.com/watch?v=A1AXW009tS8)
++ [ 4. Video: Frontend. Statistische Daten in Textform ](https://www.youtube.com/watch?v=vuvyyVm85d8)
 
 
 ## Credits
