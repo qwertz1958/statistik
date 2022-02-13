@@ -46,6 +46,7 @@
 | 0.13 | Video - Dokumentation, Teil 1 und Teil 2 | 
 | 0.14 | Video - Dokumentation, Teil 3 | 
 | 0.15 | Video - Dokumentation, Teil 4 | 
+| 0.16 | Video - Dokumentation, Teil 5 | 
 
 ## Dokumentation
 
@@ -53,6 +54,7 @@
 + [ 2. Video: Installation. Programmaufbau und Datenbasis ](https://www.youtube.com/watch?v=UvG9qPsgluY)
 + [ 3. Video: Response. OpenAPI, GeoJson und Json ](https://www.youtube.com/watch?v=A1AXW009tS8)
 + [ 4. Video: Frontend. Statistische Daten in Textform ](https://www.youtube.com/watch?v=vuvyyVm85d8)
++ [ 5. Video: Frontend. Statistische Daten als Tabelle ](https://www.youtube.com/watch?v=Ket-9wy2juI)
 
 
 ## Credits
@@ -68,7 +70,6 @@
 | [ Bootstrap Vers.: 3.3.7 ](https://github.com/jquery/jquery) | [MIT](https://de.wikipedia.org/wiki/MIT-Lizenz) |  | 
 | [ JS-Statistical-Calculator  ](https://github.com/SuperSultan/JS-Statistical-Calculator) | | | 
 | [ Boxplot.js ](https://github.com/mattb0m/boxplot.js) | | |
-| [ jquery-view-engine  ](https://github.com/JocaPC/jquery-view-engine) | | |    
 | [ Development: PhpMetrics ](https://github.com/phpmetrics/PhpMetrics) | [MIT](https://de.wikipedia.org/wiki/MIT-Lizenz) || 
 | [ Jingle / Sound ](https://freemusicarchive.org/music/Dee_Yan-Key#contact-artist) | [ CC BY-NC 4.0 ](https://creativecommons.org/licenses/by-nc/4.0/) ||
 
