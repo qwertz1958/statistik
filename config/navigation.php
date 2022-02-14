@@ -5,7 +5,9 @@ $container['navigation'] = function($container)
 {
     $navigation = [];
 
-	$navigation[] = ['link' => '/view/home','linkText' => 'Projektbeschreibung'];
+	$navigation[] = ['link' => '/view/home','linkText' => 'Start'];
+	$navigation[] = ['link' => '/view/demo1','linkText' => 'Videobeschreibung 1'];
+	$navigation[] = ['link' => '/view/demo2','linkText' => 'Videobeschreibung 2'];
 	$navigation[] = ['link' => '/view/text','linkText' => 'Text'];
 	$navigation[] = ['link' => '/view/kennwerte', 'linkText' => 'Kennwerte'];
 	$navigation[] = ['link' => '/view/tabelle', 'linkText' => 'Tabelle'];
