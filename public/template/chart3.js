@@ -17,7 +17,6 @@ function auswertung(data)
     }
 
     diagramm();
-
 }
 
 function diagramm()
@@ -31,11 +30,9 @@ function diagramm()
             datasets: [
                 {
                     label: "Anzahl Bäume",
-                    fill: true, // Fläche füllen
                     lineTension: 0.1,
                     backgroundColor: "rgba(77, 77, 255,0.6)", // Balkenfarbe
-                    backgroundColor: color, // Balkenfarbe
-                    // borderColor: "rgba(0, 0, 0, 1)", // Balkenrand
+                    backgroundColor: color, // Farben
                     borderCapStyle: 'butt',
                     borderDash: [],
                     borderDashOffset: 0.0,
@@ -68,8 +65,6 @@ function diagramm()
 // Start
 $.get({
     url: url,
-    crossDomain: true,
-    headers: {  'Access-Control-Allow-Origin': 'http://map.local' },
     success: function(data)
     {
         auswertung(data);
