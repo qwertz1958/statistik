@@ -56,6 +56,7 @@
 + [ 3. Video: Response. OpenAPI, GeoJson und Json ](https://www.youtube.com/watch?v=A1AXW009tS8)
 + [ 4. Video: Frontend. Statistische Daten in Textform ](https://www.youtube.com/watch?v=vuvyyVm85d8)
 + [ 5. Video: Frontend. Statistische Daten als Tabelle ](https://www.youtube.com/watch?v=Ket-9wy2juI)
++ [ 6. Video: Frontend. Statistische Daten als Diagramm ](https://www.youtube.com/embed/ebxwrATKpXM)
 
 
 ## Credits
