@@ -47,6 +47,7 @@
 | 0.14 | Video - Dokumentation, Teil 3 | 
 | 0.15 | Video - Dokumentation, Teil 4 | 
 | 0.16 | Video - Dokumentation, Teil 5 | 
+| 0.17 | Video - Dokumentation, Teil 6 | 
 
 ## Dokumentation
 
